@@ -1,4 +1,5 @@
 # Quack-iOS
+꽥 iOS 애플리케이션 레포지토리입니다.
 Quack iOS Application Repository
 
 ## 🕊️ Branch Naming Convention
