@@ -137,9 +137,12 @@ struct InitialView: View {
                      동의 거부시 서비스 이용이 제한됩니다.
                      """
                 )
+                .font(.pretendard(.number(400), size: 10))
+                .multilineTextAlignment(.center)
                 .padding(.horizontal, 72)
                 .padding(.bottom, 24)
                 .padding(.top, 36)
+                
                 
                 Button(action: {
                     
@@ -157,7 +160,7 @@ struct InitialView: View {
                 .padding(.horizontal, 16)
             }
             .frame(maxWidth: .infinity)
-            .presentationDetents([.medium]) // TODO: 높이 설정해주기
+            .presentationDetents([.large]) // TODO: 높이 설정해주기
 //            .presentationBackground(.)
         })
     }
