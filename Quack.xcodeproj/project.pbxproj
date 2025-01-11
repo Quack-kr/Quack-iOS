@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		938B7B942D32C34C009B2CE8 /* PretendardVariable.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 938B7B932D32C34C009B2CE8 /* PretendardVariable.ttf */; };
+		938B7B9D2D32C48C009B2CE8 /* TheJamsilThin.otf in Resources */ = {isa = PBXBuildFile; fileRef = 938B7B962D32C48C009B2CE8 /* TheJamsilThin.otf */; };
+		938B7B9E2D32C48C009B2CE8 /* TheJamsilLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = 938B7B972D32C48C009B2CE8 /* TheJamsilLight.otf */; };
+		938B7B9F2D32C48C009B2CE8 /* TheJamsilRegular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 938B7B982D32C48C009B2CE8 /* TheJamsilRegular.otf */; };
+		938B7BA02D32C48C009B2CE8 /* TheJamsilMedium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 938B7B992D32C48C009B2CE8 /* TheJamsilMedium.otf */; };
+		938B7BA12D32C48C009B2CE8 /* TheJamsilBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 938B7B9A2D32C48C009B2CE8 /* TheJamsilBold.otf */; };
+		938B7BA22D32C48C009B2CE8 /* TheJamsilExtraBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 938B7B9B2D32C48C009B2CE8 /* TheJamsilExtraBold.otf */; };
 		93B434932D328ECC0087C3ED /* QuackApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B434922D328ECC0087C3ED /* QuackApp.swift */; };
 		93B434952D328ECC0087C3ED /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B434942D328ECC0087C3ED /* ContentView.swift */; };
 		93B434972D328ECC0087C3ED /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B434962D328ECC0087C3ED /* Item.swift */; };
@@ -35,6 +42,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		938B7B932D32C34C009B2CE8 /* PretendardVariable.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = PretendardVariable.ttf; sourceTree = "<group>"; };
+		938B7B952D32C3BF009B2CE8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		938B7B962D32C48C009B2CE8 /* TheJamsilThin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = TheJamsilThin.otf; sourceTree = "<group>"; };
+		938B7B972D32C48C009B2CE8 /* TheJamsilLight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = TheJamsilLight.otf; sourceTree = "<group>"; };
+		938B7B982D32C48C009B2CE8 /* TheJamsilRegular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = TheJamsilRegular.otf; sourceTree = "<group>"; };
+		938B7B992D32C48C009B2CE8 /* TheJamsilMedium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = TheJamsilMedium.otf; sourceTree = "<group>"; };
+		938B7B9A2D32C48C009B2CE8 /* TheJamsilBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = TheJamsilBold.otf; sourceTree = "<group>"; };
+		938B7B9B2D32C48C009B2CE8 /* TheJamsilExtraBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = TheJamsilExtraBold.otf; sourceTree = "<group>"; };
 		93B4348F2D328ECC0087C3ED /* Quack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Quack.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		93B434922D328ECC0087C3ED /* QuackApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuackApp.swift; sourceTree = "<group>"; };
 		93B434942D328ECC0087C3ED /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -73,6 +88,44 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		938B7B912D32C303009B2CE8 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				938B7B922D32C31A009B2CE8 /* Fonts */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		938B7B922D32C31A009B2CE8 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				938B7BA32D32C56F009B2CE8 /* Pretendard */,
+				938B7B9C2D32C48C009B2CE8 /* The_Jamsil_OTF_2024 */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		938B7B9C2D32C48C009B2CE8 /* The_Jamsil_OTF_2024 */ = {
+			isa = PBXGroup;
+			children = (
+				938B7B962D32C48C009B2CE8 /* TheJamsilThin.otf */,
+				938B7B972D32C48C009B2CE8 /* TheJamsilLight.otf */,
+				938B7B982D32C48C009B2CE8 /* TheJamsilRegular.otf */,
+				938B7B992D32C48C009B2CE8 /* TheJamsilMedium.otf */,
+				938B7B9A2D32C48C009B2CE8 /* TheJamsilBold.otf */,
+				938B7B9B2D32C48C009B2CE8 /* TheJamsilExtraBold.otf */,
+			);
+			path = The_Jamsil_OTF_2024;
+			sourceTree = "<group>";
+		};
+		938B7BA32D32C56F009B2CE8 /* Pretendard */ = {
+			isa = PBXGroup;
+			children = (
+				938B7B932D32C34C009B2CE8 /* PretendardVariable.ttf */,
+			);
+			path = Pretendard;
+			sourceTree = "<group>";
+		};
 		93B434862D328ECC0087C3ED = {
 			isa = PBXGroup;
 			children = (
@@ -96,6 +149,8 @@
 		93B434912D328ECC0087C3ED /* Quack */ = {
 			isa = PBXGroup;
 			children = (
+				938B7B952D32C3BF009B2CE8 /* Info.plist */,
+				938B7B912D32C303009B2CE8 /* Assets */,
 				93B434922D328ECC0087C3ED /* QuackApp.swift */,
 				93B434942D328ECC0087C3ED /* ContentView.swift */,
 				93B434962D328ECC0087C3ED /* Item.swift */,
@@ -234,8 +289,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				938B7BA12D32C48C009B2CE8 /* TheJamsilBold.otf in Resources */,
+				938B7B9F2D32C48C009B2CE8 /* TheJamsilRegular.otf in Resources */,
+				938B7BA02D32C48C009B2CE8 /* TheJamsilMedium.otf in Resources */,
 				93B4349C2D328ECD0087C3ED /* Preview Assets.xcassets in Resources */,
 				93B434992D328ECD0087C3ED /* Assets.xcassets in Resources */,
+				938B7B9E2D32C48C009B2CE8 /* TheJamsilLight.otf in Resources */,
+				938B7B9D2D32C48C009B2CE8 /* TheJamsilThin.otf in Resources */,
+				938B7B942D32C34C009B2CE8 /* PretendardVariable.ttf in Resources */,
+				938B7BA22D32C48C009B2CE8 /* TheJamsilExtraBold.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -429,6 +491,7 @@
 				DEVELOPMENT_TEAM = 834B9VMHHG;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Quack/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -459,6 +522,7 @@
 				DEVELOPMENT_TEAM = 834B9VMHHG;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Quack/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
