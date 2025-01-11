@@ -14,6 +14,7 @@
 		938B7BA02D32C48C009B2CE8 /* TheJamsilMedium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 938B7B992D32C48C009B2CE8 /* TheJamsilMedium.otf */; };
 		938B7BA12D32C48C009B2CE8 /* TheJamsilBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 938B7B9A2D32C48C009B2CE8 /* TheJamsilBold.otf */; };
 		938B7BA22D32C48C009B2CE8 /* TheJamsilExtraBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 938B7B9B2D32C48C009B2CE8 /* TheJamsilExtraBold.otf */; };
+		938B7BA62D32C72C009B2CE8 /* FontManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 938B7BA52D32C72C009B2CE8 /* FontManager.swift */; };
 		93B434932D328ECC0087C3ED /* QuackApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B434922D328ECC0087C3ED /* QuackApp.swift */; };
 		93B434952D328ECC0087C3ED /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B434942D328ECC0087C3ED /* ContentView.swift */; };
 		93B434972D328ECC0087C3ED /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B434962D328ECC0087C3ED /* Item.swift */; };
@@ -50,6 +51,7 @@
 		938B7B992D32C48C009B2CE8 /* TheJamsilMedium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = TheJamsilMedium.otf; sourceTree = "<group>"; };
 		938B7B9A2D32C48C009B2CE8 /* TheJamsilBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = TheJamsilBold.otf; sourceTree = "<group>"; };
 		938B7B9B2D32C48C009B2CE8 /* TheJamsilExtraBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = TheJamsilExtraBold.otf; sourceTree = "<group>"; };
+		938B7BA52D32C72C009B2CE8 /* FontManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontManager.swift; sourceTree = "<group>"; };
 		93B4348F2D328ECC0087C3ED /* Quack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Quack.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		93B434922D328ECC0087C3ED /* QuackApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuackApp.swift; sourceTree = "<group>"; };
 		93B434942D328ECC0087C3ED /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -126,6 +128,14 @@
 			path = Pretendard;
 			sourceTree = "<group>";
 		};
+		938B7BA42D32C6FA009B2CE8 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				938B7BA52D32C72C009B2CE8 /* FontManager.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		93B434862D328ECC0087C3ED = {
 			isa = PBXGroup;
 			children = (
@@ -149,6 +159,7 @@
 		93B434912D328ECC0087C3ED /* Quack */ = {
 			isa = PBXGroup;
 			children = (
+				938B7BA42D32C6FA009B2CE8 /* Extensions */,
 				938B7B952D32C3BF009B2CE8 /* Info.plist */,
 				938B7B912D32C303009B2CE8 /* Assets */,
 				93B434922D328ECC0087C3ED /* QuackApp.swift */,
@@ -324,6 +335,7 @@
 			files = (
 				93B434952D328ECC0087C3ED /* ContentView.swift in Sources */,
 				93B434972D328ECC0087C3ED /* Item.swift in Sources */,
+				938B7BA62D32C72C009B2CE8 /* FontManager.swift in Sources */,
 				93B434932D328ECC0087C3ED /* QuackApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
