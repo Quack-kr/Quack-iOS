@@ -98,7 +98,6 @@
 			children = (
 				93F6C6822D32A92400009587 /* Views */,
 				93B434922D328ECC0087C3ED /* QuackApp.swift */,
-				93B434942D328ECC0087C3ED /* ContentView.swift */,
 				93B434962D328ECC0087C3ED /* Item.swift */,
 				93B434982D328ECD0087C3ED /* Assets.xcassets */,
 				93B4349A2D328ECD0087C3ED /* Preview Content */,
@@ -134,6 +133,7 @@
 		93F6C6822D32A92400009587 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				93B434942D328ECC0087C3ED /* ContentView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
