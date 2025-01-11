@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		9389FC552D32ACE60092F336 /* InitialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9389FC542D32ACE60092F336 /* InitialView.swift */; };
+		9389FC572D32AD2D0092F336 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9389FC562D32AD2D0092F336 /* SignUpView.swift */; };
 		93B434932D328ECC0087C3ED /* QuackApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B434922D328ECC0087C3ED /* QuackApp.swift */; };
 		93B434952D328ECC0087C3ED /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B434942D328ECC0087C3ED /* ContentView.swift */; };
 		93B434972D328ECC0087C3ED /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B434962D328ECC0087C3ED /* Item.swift */; };
@@ -37,6 +38,7 @@
 
 /* Begin PBXFileReference section */
 		9389FC542D32ACE60092F336 /* InitialView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialView.swift; sourceTree = "<group>"; };
+		9389FC562D32AD2D0092F336 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		93B4348F2D328ECC0087C3ED /* Quack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Quack.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		93B434922D328ECC0087C3ED /* QuackApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuackApp.swift; sourceTree = "<group>"; };
 		93B434942D328ECC0087C3ED /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -137,6 +139,7 @@
 			children = (
 				93B434942D328ECC0087C3ED /* ContentView.swift */,
 				9389FC542D32ACE60092F336 /* InitialView.swift */,
+				9389FC562D32AD2D0092F336 /* SignUpView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -275,6 +278,7 @@
 				9389FC552D32ACE60092F336 /* InitialView.swift in Sources */,
 				93B434972D328ECC0087C3ED /* Item.swift in Sources */,
 				93B434932D328ECC0087C3ED /* QuackApp.swift in Sources */,
+				9389FC572D32AD2D0092F336 /* SignUpView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
