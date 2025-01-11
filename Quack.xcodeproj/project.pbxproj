@@ -96,6 +96,7 @@
 		93B434912D328ECC0087C3ED /* Quack */ = {
 			isa = PBXGroup;
 			children = (
+				93F6C6822D32A92400009587 /* Views */,
 				93B434922D328ECC0087C3ED /* QuackApp.swift */,
 				93B434942D328ECC0087C3ED /* ContentView.swift */,
 				93B434962D328ECC0087C3ED /* Item.swift */,
@@ -128,6 +129,13 @@
 				93B434B12D328ECE0087C3ED /* QuackUITestsLaunchTests.swift */,
 			);
 			path = QuackUITests;
+			sourceTree = "<group>";
+		};
+		93F6C6822D32A92400009587 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
