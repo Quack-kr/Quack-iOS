@@ -33,11 +33,11 @@ extension Font {
                 return "TheJamsilOTF6ExtraBold"
             case .number(let num):
                 switch num {
-                case 400:
+                case 400: // Regular
                     return "TheJamsilOTF3Regular"
-                case 500:
+                case 500: // Medium
                     return "TheJamsilOTF4Medium"
-                case 700:
+                case 700: // Bold
                     return "TheJamsilOTF5Bold"
                 default:
                     return "TheJamsilOTF3Regular"
@@ -85,14 +85,14 @@ extension Font {
                 return "PretendardVariable-Black"
             case .number(let num):
                 switch num {
-                case 400:
+                case 400: // Regular
                     return "PretendardVariable-Regular"
-                case 500:
+                case 500: // Medium
                     return "PretendardVariable-Medium"
-                case 600:
+                case 600: // Semibold
                     return "PretendardVariable-SemiBold"
-                case 700:
-                    return "retendardVariable-Bold"
+                case 700: // Bold
+                    return "PretendardVariable-Bold"
                 default:
                     return "PretendardVariable-Regular"
                 }

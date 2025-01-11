@@ -25,8 +25,9 @@ struct InitialView: View {
                     // TODO: 카카오 로그인 이미지로 넣기
                     ZStack {
                         Rectangle()
-                            .frame(width: 343, height: 53)
                             .cornerRadius(8)
+                            .frame(height: 50)
+                            .padding(.horizontal, 16)
                     }
                 }
                 
@@ -34,8 +35,9 @@ struct InitialView: View {
                     
                 }){
                     Rectangle()
-                        .frame(width: 343, height: 53)
                         .cornerRadius(8)
+                        .frame(height: 50)
+                        .padding(.horizontal, 16)
                         .foregroundStyle(.white)
                     
                 }
@@ -44,7 +46,9 @@ struct InitialView: View {
                     
                 }){
                     Rectangle()
-                        .frame(width: 343, height: 53)
+                        .cornerRadius(8)
+                        .frame(height: 50)
+                        .padding(.horizontal, 16)
                         .cornerRadius(8)
                         .foregroundStyle(.white)
                 }
@@ -53,34 +57,49 @@ struct InitialView: View {
                     .foregroundStyle(.gray)
             }
         }
+        .frame(maxWidth: .infinity)
         .padding(.top,200)
         .padding(.bottom, 50)
         .sheet(isPresented: $isSheetPresented, onDismiss: didDismiss, content: {
             VStack {
+                // TODO: sheet close 기능 구현하기? -> 현재 전체 화면에 다 적용되어 있음
+                Capsule()
+                    .foregroundStyle(.EFEEDF)
+                    .frame(height: 8)
+                    .padding(.top, 16)
+                    .padding(.horizontal, 168)
+                
                 Spacer()
                 
                 Text("약관동의")
                     .padding(.bottom, 16)
+                    .font(.pretendard(.number(700), size: 18))
+                    .foregroundStyle(.EFEEDF)
                 
                 VStack() {
                     Button(action: {}) {
                         HStack {
                             // TODO: 체크 이미지 넣기
                             Image(systemName: "checkmark.circle")
+                                .font(.system(size: 24))
 
                             Text("이용약관 모두 동의")
                             
                             Spacer()
                         }
+                        .foregroundStyle(.EFEEDF)
                         .padding(.leading, 10)
                         .padding(.vertical, 10)
+                        .overlay(
+                            RoundedRectangle(cornerRadius: 110)
+                                            .stroke(Color.EFEEDF, lineWidth: 1) //TODO: stroke 색상 변경
+                        )
+                        .padding(.horizontal, 24)
+                        .padding(.bottom, 16)
+                        .onTapGesture {
+                            // TODO: 모두 동의 기능 추가하기
+                        }
                     }
-                    .overlay(
-                        RoundedRectangle(cornerRadius: 110)
-                                        .stroke(Color.black, lineWidth: 1) //TODO: stroke 색상 변경
-                    )
-                    .padding(.horizontal, 24)
-                    .padding(.bottom, 16)
                     
                     VStack(spacing: 24) {
                         HStack {
@@ -160,8 +179,8 @@ struct InitialView: View {
                 .padding(.horizontal, 16)
             }
             .frame(maxWidth: .infinity)
-            .presentationDetents([.large]) // TODO: 높이 설정해주기
-//            .presentationBackground(.)
+            .presentationDetents([.fraction(0.67)])
+            .presentationBackground(._323230)
         })
     }
     
