@@ -17,7 +17,7 @@ struct ContentView: View {
             Color.background
                 .ignoresSafeArea()
             
-            // InitialView()
+             InitialView()
         }
     }
 }
