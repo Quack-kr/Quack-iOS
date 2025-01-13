@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9389FC552D32ACE60092F336 /* InitialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9389FC542D32ACE60092F336 /* InitialView.swift */; };
+		9389FC572D32AD2D0092F336 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9389FC562D32AD2D0092F336 /* SignUpView.swift */; };
 		938B7B942D32C34C009B2CE8 /* PretendardVariable.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 938B7B932D32C34C009B2CE8 /* PretendardVariable.ttf */; };
 		938B7B9D2D32C48C009B2CE8 /* TheJamsilThin.otf in Resources */ = {isa = PBXBuildFile; fileRef = 938B7B962D32C48C009B2CE8 /* TheJamsilThin.otf */; };
 		938B7B9E2D32C48C009B2CE8 /* TheJamsilLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = 938B7B972D32C48C009B2CE8 /* TheJamsilLight.otf */; };
@@ -44,6 +46,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9389FC542D32ACE60092F336 /* InitialView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialView.swift; sourceTree = "<group>"; };
+		9389FC562D32AD2D0092F336 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		938B7B932D32C34C009B2CE8 /* PretendardVariable.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = PretendardVariable.ttf; sourceTree = "<group>"; };
 		938B7B952D32C3BF009B2CE8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		938B7B962D32C48C009B2CE8 /* TheJamsilThin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = TheJamsilThin.otf; sourceTree = "<group>"; };
@@ -162,11 +166,11 @@
 		93B434912D328ECC0087C3ED /* Quack */ = {
 			isa = PBXGroup;
 			children = (
+				93F6C6822D32A92400009587 /* Views */,
 				938B7BA42D32C6FA009B2CE8 /* Extensions */,
 				938B7B952D32C3BF009B2CE8 /* Info.plist */,
 				938B7B912D32C303009B2CE8 /* Resources */,
 				93B434922D328ECC0087C3ED /* QuackApp.swift */,
-				93B434942D328ECC0087C3ED /* ContentView.swift */,
 				93B434962D328ECC0087C3ED /* Item.swift */,
 				93B434982D328ECD0087C3ED /* Assets.xcassets */,
 				93B4349A2D328ECD0087C3ED /* Preview Content */,
@@ -197,6 +201,16 @@
 				93B434B12D328ECE0087C3ED /* QuackUITestsLaunchTests.swift */,
 			);
 			path = QuackUITests;
+			sourceTree = "<group>";
+		};
+		93F6C6822D32A92400009587 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				93B434942D328ECC0087C3ED /* ContentView.swift */,
+				9389FC542D32ACE60092F336 /* InitialView.swift */,
+				9389FC562D32AD2D0092F336 /* SignUpView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -337,10 +351,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				93B434952D328ECC0087C3ED /* ContentView.swift in Sources */,
+				9389FC552D32ACE60092F336 /* InitialView.swift in Sources */,
 				93DD282C2D34D4C300C111E8 /* ColorManager.swift in Sources */,
 				93B434972D328ECC0087C3ED /* Item.swift in Sources */,
 				938B7BA62D32C72C009B2CE8 /* FontManager.swift in Sources */,
 				93B434932D328ECC0087C3ED /* QuackApp.swift in Sources */,
+				9389FC572D32AD2D0092F336 /* SignUpView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

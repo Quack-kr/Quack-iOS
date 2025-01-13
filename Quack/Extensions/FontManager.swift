@@ -15,6 +15,7 @@ extension Font {
         case medium
         case bold
         case extrabold
+        case number(Int)
         
         var value: String {
             switch self {
@@ -30,6 +31,18 @@ extension Font {
                 return "TheJamsilOTF5Bold"
             case .extrabold:
                 return "TheJamsilOTF6ExtraBold"
+            case .number(let num):
+                switch num {
+                case 400: // Regular
+                    return "TheJamsilOTF3Regular"
+                case 500: // Medium
+                    return "TheJamsilOTF4Medium"
+                case 700: // Bold
+                    return "TheJamsilOTF5Bold"
+                default:
+                    return "TheJamsilOTF3Regular"
+                }
+                
             }
         }
     }
@@ -48,6 +61,7 @@ extension Font {
         case bold
         case extrabold
         case black
+        case number(Int)
         
         var value: String {
             switch self {
@@ -69,6 +83,19 @@ extension Font {
                 return "PretendardVariable-ExtraBold"
             case .black:
                 return "PretendardVariable-Black"
+            case .number(let num):
+                switch num {
+                case 400: // Regular
+                    return "PretendardVariable-Regular"
+                case 500: // Medium
+                    return "PretendardVariable-Medium"
+                case 600: // Semibold
+                    return "PretendardVariable-SemiBold"
+                case 700: // Bold
+                    return "PretendardVariable-Bold"
+                default:
+                    return "PretendardVariable-Regular"
+                }
             }
         }
     }
