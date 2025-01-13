@@ -92,12 +92,12 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		938B7B912D32C303009B2CE8 /* Assets */ = {
+		938B7B912D32C303009B2CE8 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
 				938B7B922D32C31A009B2CE8 /* Fonts */,
 			);
-			path = Assets;
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		938B7B922D32C31A009B2CE8 /* Fonts */ = {
@@ -164,7 +164,7 @@
 			children = (
 				938B7BA42D32C6FA009B2CE8 /* Extensions */,
 				938B7B952D32C3BF009B2CE8 /* Info.plist */,
-				938B7B912D32C303009B2CE8 /* Assets */,
+				938B7B912D32C303009B2CE8 /* Resources */,
 				93B434922D328ECC0087C3ED /* QuackApp.swift */,
 				93B434942D328ECC0087C3ED /* ContentView.swift */,
 				93B434962D328ECC0087C3ED /* Item.swift */,
