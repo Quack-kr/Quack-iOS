@@ -13,21 +13,21 @@ extension Color {
         case "#EFEEDF":
             self.init(.alabaster)
         case "#D7D5C1":
-            self.init(.pastelGray)
+            self.init(.pastelgray)
         case "#A8A7A1":
-            self.init(.quickSilver)
+            self.init(.quicksilver)
         case "#68675E":
-            self.init(.graniteGray)
+            self.init(.granitegray)
         case "#525250":
-            self.init(.davysGray)
+            self.init(.davysgray)
         case "#323230":
-            self.init(.darkCharcoal)
+            self.init(.darkcharcoal)
         case "#2A2925":
-            self.init(.pineTree)
+            self.init(.pinetree)
         case "#21211D":
-            self.init(.raisinBlack)
+            self.init(.raisinblack)
         case "#171714":
-            self.init(.chineseBlack)
+            self.init(.chineseblack)
         default:
             self.init(.clear)
         }
