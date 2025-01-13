@@ -25,6 +25,7 @@
 		93B434A62D328ECE0087C3ED /* QuackTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B434A52D328ECE0087C3ED /* QuackTests.swift */; };
 		93B434B02D328ECE0087C3ED /* QuackUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B434AF2D328ECE0087C3ED /* QuackUITests.swift */; };
 		93B434B22D328ECE0087C3ED /* QuackUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B434B12D328ECE0087C3ED /* QuackUITestsLaunchTests.swift */; };
+		93DD282C2D34D4C300C111E8 /* ColorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93DD282B2D34D4C300C111E8 /* ColorManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +68,7 @@
 		93B434AB2D328ECE0087C3ED /* QuackUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QuackUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		93B434AF2D328ECE0087C3ED /* QuackUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuackUITests.swift; sourceTree = "<group>"; };
 		93B434B12D328ECE0087C3ED /* QuackUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuackUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		93DD282B2D34D4C300C111E8 /* ColorManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,12 +96,12 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		938B7B912D32C303009B2CE8 /* Assets */ = {
+		938B7B912D32C303009B2CE8 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
 				938B7B922D32C31A009B2CE8 /* Fonts */,
 			);
-			path = Assets;
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		938B7B922D32C31A009B2CE8 /* Fonts */ = {
@@ -136,6 +138,7 @@
 			isa = PBXGroup;
 			children = (
 				938B7BA52D32C72C009B2CE8 /* FontManager.swift */,
+				93DD282B2D34D4C300C111E8 /* ColorManager.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -166,7 +169,7 @@
 				93F6C6822D32A92400009587 /* Views */,
 				938B7BA42D32C6FA009B2CE8 /* Extensions */,
 				938B7B952D32C3BF009B2CE8 /* Info.plist */,
-				938B7B912D32C303009B2CE8 /* Assets */,
+				938B7B912D32C303009B2CE8 /* Resources */,
 				93B434922D328ECC0087C3ED /* QuackApp.swift */,
 				93B434962D328ECC0087C3ED /* Item.swift */,
 				93B434982D328ECD0087C3ED /* Assets.xcassets */,
@@ -349,6 +352,7 @@
 			files = (
 				93B434952D328ECC0087C3ED /* ContentView.swift in Sources */,
 				9389FC552D32ACE60092F336 /* InitialView.swift in Sources */,
+				93DD282C2D34D4C300C111E8 /* ColorManager.swift in Sources */,
 				93B434972D328ECC0087C3ED /* Item.swift in Sources */,
 				938B7BA62D32C72C009B2CE8 /* FontManager.swift in Sources */,
 				93B434932D328ECC0087C3ED /* QuackApp.swift in Sources */,
@@ -520,11 +524,12 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Quack/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.food-and-drink";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -533,9 +538,13 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = Quack.Quack;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -551,11 +560,12 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Quack/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.food-and-drink";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -564,9 +574,13 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = Quack.Quack;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
