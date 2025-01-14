@@ -17,12 +17,15 @@ struct SignUpView: View {
             VStack {
                 HStack {
                     Text("이것만 하면 회원가입 끝!")
-                        .font(.title2)
+                        .font(.pretendard(.number(700)))
+                        .foregroundStyle(Color(hex:"#EFEEDF"))
+
                     Spacer()
                 }
                 HStack {
                     Text("꽥을 이용할 마지막 단계!")
-                        .font(.footnote)
+                        .font(.pretendard(.number(400)))
+                        .foregroundStyle(Color(hex: "#A8A7A1"))
                     Spacer()
                 }
             }
@@ -34,10 +37,13 @@ struct SignUpView: View {
                 VStack(alignment: .leading){
                     HStack {
                         Text("닉네임")
+                            .font(.theJamsil(.number(700)))
+                            .foregroundStyle(Color(hex:"#A8A7A1"))
                         
                         Spacer()
                         
                         Text("\(nickname_len)/20")
+                        
                     }
                     ZStack {
                         TextField("닉네임을 입력하세요.", text: $nickname)
@@ -56,6 +62,8 @@ struct SignUpView: View {
                 VStack(alignment: .leading) {
                     HStack {
                         Text("이메일")
+                            .font(.theJamsil(.number(700)))
+                            .foregroundStyle(Color(hex:"#A8A7A1"))
                         
                         Spacer()
                     }
@@ -72,7 +80,8 @@ struct SignUpView: View {
                     
                     // TODO: InitialView로부터 소셜 로그인 방식 넘겨받기
                     Text("카카오로 가입한 계정이에요.")
-                        .font(.caption)
+                        .font(.theJamsil(.number(400)))
+                        .foregroundStyle(Color(hex:"#A8A7A1"))
                         .padding(.leading, 16)
                 }
             }

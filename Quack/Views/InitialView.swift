@@ -7,10 +7,8 @@
 
 import SwiftUI
 
-import SwiftUI
-
 struct InitialView: View {
-    @State private var isSheetPresented = true;
+    @State private var isSheetPresented = false;
     
     var body: some View {
         VStack {
@@ -23,12 +21,26 @@ struct InitialView: View {
                 Button(action: {
                 }){
                     // TODO: 카카오 로그인 이미지로 넣기
-                    ZStack {
-                        Rectangle()
-                            .cornerRadius(8)
-                            .frame(height: 50)
-                            .padding(.horizontal, 16)
+                    VStack {
+                        HStack {
+                            Image(systemName: "message.fill")
+                            
+                            Spacer()
+                            
+                            Text("카카오로 로그인")
+                            
+                            Spacer()
+                        }
+                        .foregroundStyle(Color(hex: "#171714"))
+                        .padding(.vertical, 16)
                     }
+                    .background(
+                        Rectangle()
+                            .cornerRadius(12)
+                            .foregroundStyle(.point)
+                    )
+                    .padding(.horizontal, 16)
+                    
                 }
                 
                 Button(action: {
