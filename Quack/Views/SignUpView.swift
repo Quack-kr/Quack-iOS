@@ -17,7 +17,7 @@ struct SignUpView: View {
             VStack {
                 HStack {
                     Text("이것만 하면 회원가입 끝!")
-                        .font(.pretendard(.number(700)))
+                        .font(.pretendard(.number(800)))
                         .foregroundStyle(Color(hex:"#EFEEDF"))
 
                     Spacer()
@@ -43,18 +43,24 @@ struct SignUpView: View {
                         Spacer()
                         
                         Text("\(nickname_len)/20")
+                            .font(.pretendard(.number(500)))
+                            .foregroundStyle(Color(hex:"#A8A7A1"))
                         
                     }
                     ZStack {
                         TextField("닉네임을 입력하세요.", text: $nickname)
                             .padding(.leading, 16)
+                            .font(.pretendard(.number(700)))
+                            .foregroundStyle(Color(hex:"#EFEEDF"))
 
                     }
                     .frame(height: 53)
                     .cornerRadius(8)
+                    .foregroundStyle(Color(hex:"#323230"))
                     
                     Text("꽥에서 사용하실 이름이에요.")
-                        .font(.caption)
+                        .font(.pretendard(.number(400)))
+                        .foregroundStyle(.point)
                         .padding(.leading, 16)
                 }
                 
@@ -72,6 +78,9 @@ struct SignUpView: View {
                             // TODO: 서버로부터 전송받은 이메일로 변경
                             Text("papa021326@naver.com")
                                 .padding(.leading, 16)
+                                .font(.pretendard(.number(700)))
+                                .foregroundStyle(Color(hex:"#525250"))
+                            
                             Spacer()
                         }
                     }
@@ -99,7 +108,10 @@ struct SignUpView: View {
                         .cornerRadius(8)
                     
                     Text("시작하기")
+                        .font(.pretendard(.number(700)))
+                        .foregroundStyle(Color(hex:"#171714"))
                 }
+                .foregroundStyle(.point)
             }
         }
         .padding(.horizontal, 16)

@@ -8,12 +8,11 @@
 import SwiftUI
 
 struct InitialView: View {
-    @State private var isSheetPresented = false;
+    @State private var isSheetPresented = true;
     
     var body: some View {
         VStack {
-            // TODO: Logo 이미지 넣기
-            Image(.logowithtext)
+            Image(.logoWithText)
             
             Spacer()
             
@@ -90,8 +89,7 @@ struct InitialView: View {
                 VStack() {
                     Button(action: {}) {
                         HStack {
-                            // TODO: 체크 이미지 넣기
-                            Image(.checkcircle)
+                            Image(.checkCircle)
                                 .font(.system(size: 24))
 
                             Text("이용약관 모두 동의")
@@ -114,53 +112,47 @@ struct InitialView: View {
                     
                     VStack(spacing: 24) {
                         HStack {
-                            Image(.checkcircle)
+                            Image(.checkCircle)
                             
                             Text("서비스 이용약관 동의 (필수)")
                                 .foregroundStyle(Color(hex:"#EFEEDF"))
                             
                             Spacer()
                             
-                            Image(.rightshevron)
+                            Image(.rightShevron)
                         }
                         
                         HStack {
-                            // TODO: 체크이미지 추가
-                            Image(.checkcircle)
+                            Image(.checkCircle)
                             
                             Text("개인정보 수집 및 이용 동의 (필수)")
                                 .foregroundStyle(Color(hex:"#EFEEDF"))
                             
                             Spacer()
                             
-                            // TODO: 화살표 이미지 넣기
-                            Image(.rightshevron)
+                            Image(.rightShevron)
                         }
                         
                         HStack {
-                            // TODO: 체크이미지 추가
-                            Image(.checkcircle)
+                            Image(.checkCircle)
                             
                             Text("위치정보 서비스 이용약관 동의 (필수)")
                                 .foregroundStyle(Color(hex:"#EFEEDF"))
                             
                             Spacer()
                             
-                            // TODO: 화살표 이미지 넣기
-                            Image(.rightshevron)
+                            Image(.rightShevron)
                         }
                         
                         HStack {
-                            // TODO: 체크이미지 추가
-                            Image(.checkcircle)
+                            Image(.checkCircle)
                             
                             Text("마케팅 정보 활용 동의 (선택)")
                                 .foregroundStyle(Color(hex:"#EFEEDF"))
                             
                             Spacer()
                             
-                            // TODO: 화살표 이미지 넣기
-                            Image(.rightshevron)
+                            Image(.rightShevron)
                         }
                     }
                     .padding(.horizontal, 34)

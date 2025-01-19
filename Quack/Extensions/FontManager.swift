@@ -93,6 +93,8 @@ extension Font {
                     return "PretendardVariable-SemiBold"
                 case 700: // Bold
                     return "PretendardVariable-Bold"
+                case 800:
+                    return "PretendardVariable-ExtraBold"
                 default:
                     return "PretendardVariable-Regular"
                 }

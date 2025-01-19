@@ -26,6 +26,11 @@
 		93B434B02D328ECE0087C3ED /* QuackUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B434AF2D328ECE0087C3ED /* QuackUITests.swift */; };
 		93B434B22D328ECE0087C3ED /* QuackUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B434B12D328ECE0087C3ED /* QuackUITestsLaunchTests.swift */; };
 		93DD282C2D34D4C300C111E8 /* ColorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93DD282B2D34D4C300C111E8 /* ColorManager.swift */; };
+		FE05A7492D3D20EE0078E498 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE05A7482D3D20EE0078E498 /* HomeView.swift */; };
+		FE05A74B2D3D2E400078E498 /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE05A74A2D3D2E400078E498 /* TabBarView.swift */; };
+		FE05A74D2D3D319D0078E498 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE05A74C2D3D319D0078E498 /* SearchView.swift */; };
+		FE05A74F2D3D32970078E498 /* SubstractView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE05A74E2D3D32970078E498 /* SubstractView.swift */; };
+		FE05A7512D3D329F0078E498 /* MyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE05A7502D3D329F0078E498 /* MyView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +74,11 @@
 		93B434AF2D328ECE0087C3ED /* QuackUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuackUITests.swift; sourceTree = "<group>"; };
 		93B434B12D328ECE0087C3ED /* QuackUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuackUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		93DD282B2D34D4C300C111E8 /* ColorManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorManager.swift; sourceTree = "<group>"; };
+		FE05A7482D3D20EE0078E498 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		FE05A74A2D3D2E400078E498 /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
+		FE05A74C2D3D319D0078E498 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
+		FE05A74E2D3D32970078E498 /* SubstractView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubstractView.swift; sourceTree = "<group>"; };
+		FE05A7502D3D329F0078E498 /* MyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -209,8 +219,21 @@
 				93B434942D328ECC0087C3ED /* ContentView.swift */,
 				9389FC542D32ACE60092F336 /* InitialView.swift */,
 				9389FC562D32AD2D0092F336 /* SignUpView.swift */,
+				FE05A7522D3D32A90078E498 /* Tabs */,
+				FE05A74A2D3D2E400078E498 /* TabBarView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		FE05A7522D3D32A90078E498 /* Tabs */ = {
+			isa = PBXGroup;
+			children = (
+				FE05A7482D3D20EE0078E498 /* HomeView.swift */,
+				FE05A74C2D3D319D0078E498 /* SearchView.swift */,
+				FE05A74E2D3D32970078E498 /* SubstractView.swift */,
+				FE05A7502D3D329F0078E498 /* MyView.swift */,
+			);
+			path = Tabs;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -352,10 +375,15 @@
 			files = (
 				93B434952D328ECC0087C3ED /* ContentView.swift in Sources */,
 				9389FC552D32ACE60092F336 /* InitialView.swift in Sources */,
+				FE05A74F2D3D32970078E498 /* SubstractView.swift in Sources */,
 				93DD282C2D34D4C300C111E8 /* ColorManager.swift in Sources */,
 				93B434972D328ECC0087C3ED /* Item.swift in Sources */,
+				FE05A7512D3D329F0078E498 /* MyView.swift in Sources */,
+				FE05A74D2D3D319D0078E498 /* SearchView.swift in Sources */,
 				938B7BA62D32C72C009B2CE8 /* FontManager.swift in Sources */,
+				FE05A7492D3D20EE0078E498 /* HomeView.swift in Sources */,
 				93B434932D328ECC0087C3ED /* QuackApp.swift in Sources */,
+				FE05A74B2D3D2E400078E498 /* TabBarView.swift in Sources */,
 				9389FC572D32AD2D0092F336 /* SignUpView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
