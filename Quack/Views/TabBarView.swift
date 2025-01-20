@@ -16,54 +16,59 @@ struct TabBarView: View {
     }
     
     var body: some View {
-        
-        TabView(selection: $selection,
-                content:  {
-            HomeView()
-                .tabItem {
-                    VStack {
-                        Image(.home)
+        ZStack {
+            Color.background
+                .ignoresSafeArea()
+            
+            TabView(selection: $selection,
+                    content:  {
+                HomeView()
+                    .tabItem {
+                        VStack {
+                            Image(.home)
+                                .renderingMode(/*@START_MENU_TOKEN@*/.template/*@END_MENU_TOKEN@*/)
+                                .frame(width: 24)
+                            
+                            Text("홈")
+                                .font(.pretendard(.number(400)))
+                                .foregroundStyle(Color(hex: "#EFEEDF"))
+                        } }.tag(0)
+                
+                SearchView()
+                    .tabItem {
+                        Image(.search)
                             .renderingMode(/*@START_MENU_TOKEN@*/.template/*@END_MENU_TOKEN@*/)
                             .frame(width: 24)
                         
-                        Text("홈")
+                        Text("검색")
                             .font(.pretendard(.number(400)))
                             .foregroundStyle(Color(hex: "#EFEEDF"))
-                    } }.tag(0)
-            
-            SearchView()
-                .tabItem {
-                    Image(.search)
-                        .renderingMode(/*@START_MENU_TOKEN@*/.template/*@END_MENU_TOKEN@*/)
-                        .frame(width: 24)
-                    
-                    Text("검색")
-                        .font(.pretendard(.number(400)))
-                        .foregroundStyle(Color(hex: "#EFEEDF"))
-                }.tag(1)
-            
-            SubstractView()
-                .tabItem {
-                    Image(.substract)
-                        .renderingMode(/*@START_MENU_TOKEN@*/.template/*@END_MENU_TOKEN@*/)
-                        .frame(width: 24)
-                    
-                    Text("뺴기")
-                        .font(.pretendard(.number(400)))
-                        .foregroundStyle(Color(hex: "#EFEEDF"))
-                }.tag(2)
-            SubstractView()
-                .tabItem {
-                    Image(.my)
-                        .renderingMode(/*@START_MENU_TOKEN@*/.template/*@END_MENU_TOKEN@*/)
-                        .frame(width: 24)
-                    
-                    Text("마이")
-                        .font(.pretendard(.number(400)))
-                        .foregroundStyle(Color(hex: "#EFEEDF"))
-                }.tag(3)
-        })
-        .accentColor(Color(hex:"#EFEEDF"))
+                    }.tag(1)
+                
+                SubstractView()
+                    .tabItem {
+                        Image(.substract)
+                            .renderingMode(/*@START_MENU_TOKEN@*/.template/*@END_MENU_TOKEN@*/)
+                            .frame(width: 24)
+                        
+                        Text("뺴기")
+                            .font(.pretendard(.number(400)))
+                            .foregroundStyle(Color(hex: "#EFEEDF"))
+                    }.tag(2)
+                SubstractView()
+                    .tabItem {
+                        Image(.my)
+                            .renderingMode(/*@START_MENU_TOKEN@*/.template/*@END_MENU_TOKEN@*/)
+                            .frame(width: 24)
+                        
+                        Text("마이")
+                            .font(.pretendard(.number(400)))
+                            .foregroundStyle(Color(hex: "#EFEEDF"))
+                    }.tag(3)
+            })
+            .accentColor(Color(hex:"#EFEEDF"))
+        }
+//        .background(Color.background)
         
 //        ZStack {
 //            tabContent(type: tabType)
