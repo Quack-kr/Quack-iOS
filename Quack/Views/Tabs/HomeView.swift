@@ -13,7 +13,7 @@ struct HomeView: View {
     var body: some View {
         VStack {
             HStack { // header
-                Image(.logoWithText) // TODO: Logo 이미지 추가
+                Image(.logo)
                 
                 Button(action: {
                     isSheetPresented.toggle()
@@ -23,18 +23,18 @@ struct HomeView: View {
                             .font(.theJamsil(.number(700)))
                             .foregroundStyle(Color(hex: "#EFEEDF"))
                         
-                        Image(.rightShevron) // TODO: DownShevron 이미지 추가
+                        Image(.chevronDown)
                     }
                 }
                 
                 Spacer()
                 
                 Button(action: {}) {
-                    // TODO: 검색 이미지 추가
+                    Image(.search)
                 }
                 
                 Button(action: {}) {
-                    // TODO: 알림 이미지 추가
+                    Image(.notify)
                 }
             }
             
@@ -74,7 +74,7 @@ struct HomeView: View {
                     
                     Spacer()
                     
-                    Image(.rightShevron)
+                    Image(.chevronRight)
                 }
                 
                 HStack {
@@ -90,7 +90,7 @@ struct HomeView: View {
                     
                     Spacer()
                     
-                    Image(.rightShevron)
+                    Image(.chevronRight)
                 }
                 
                 HStack {

@@ -119,7 +119,7 @@ struct InitialView: View {
                             
                             Spacer()
                             
-                            Image(.rightShevron)
+                            Image(.chevronRight)
                         }
                         
                         HStack {
@@ -130,7 +130,7 @@ struct InitialView: View {
                             
                             Spacer()
                             
-                            Image(.rightShevron)
+                            Image(.chevronRight)
                         }
                         
                         HStack {
@@ -141,7 +141,7 @@ struct InitialView: View {
                             
                             Spacer()
                             
-                            Image(.rightShevron)
+                            Image(.chevronRight)
                         }
                         
                         HStack {
@@ -152,7 +152,7 @@ struct InitialView: View {
                             
                             Spacer()
                             
-                            Image(.rightShevron)
+                            Image(.chevronRight)
                         }
                     }
                     .padding(.horizontal, 34)

@@ -22,7 +22,7 @@ struct TabBarView: View {
             HomeView()
                 .tabItem {
                     VStack {
-                        Image(.checkCircle) // TODO: 홈이미지 추가
+                        Image(.home)
                             .renderingMode(/*@START_MENU_TOKEN@*/.template/*@END_MENU_TOKEN@*/)
                             .frame(width: 24)
                         
@@ -33,32 +33,32 @@ struct TabBarView: View {
             
             SearchView()
                 .tabItem {
-                    Image(.checkCircle) // TODO: 홈이미지 추가
+                    Image(.search)
                         .renderingMode(/*@START_MENU_TOKEN@*/.template/*@END_MENU_TOKEN@*/)
                         .frame(width: 24)
                     
-                    Text("홈")
+                    Text("검색")
                         .font(.pretendard(.number(400)))
                         .foregroundStyle(Color(hex: "#EFEEDF"))
                 }.tag(1)
             
             SubstractView()
                 .tabItem {
-                    Image(.checkCircle) // TODO: 홈이미지 추가
+                    Image(.substract)
                         .renderingMode(/*@START_MENU_TOKEN@*/.template/*@END_MENU_TOKEN@*/)
                         .frame(width: 24)
                     
-                    Text("홈")
+                    Text("뺴기")
                         .font(.pretendard(.number(400)))
                         .foregroundStyle(Color(hex: "#EFEEDF"))
                 }.tag(2)
             SubstractView()
                 .tabItem {
-                    Image(.checkCircle) // TODO: 홈이미지 추가
+                    Image(.my)
                         .renderingMode(/*@START_MENU_TOKEN@*/.template/*@END_MENU_TOKEN@*/)
                         .frame(width: 24)
                     
-                    Text("홈")
+                    Text("마이")
                         .font(.pretendard(.number(400)))
                         .foregroundStyle(Color(hex: "#EFEEDF"))
                 }.tag(3)

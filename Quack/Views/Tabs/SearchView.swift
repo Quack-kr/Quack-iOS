@@ -13,12 +13,12 @@ struct SearchView: View {
     var body: some View {
         VStack {
             HStack {
-                Image(.rightShevron) // TODO: left shevron 이미지 추가
+                Image(.chevronLeft)
                 
                 HStack {
                     TextField("장소, 가게 두드려보GO", text: $searchText)
                     
-                    Image(.checkCircle) // TODO: 검색 이미지 추가
+                    Image(.search)
                 }
             }
             
