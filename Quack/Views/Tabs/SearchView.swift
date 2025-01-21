@@ -12,21 +12,47 @@ struct SearchView: View {
     
     var body: some View {
         VStack {
+            /* Search Bar */
             HStack {
                 Image(.chevronLeft)
                 
                 HStack {
-                    TextField("장소, 가게 두드려보GO", text: $searchText)
+                    TextField(
+                        "",
+                        text: $searchText,
+                        prompt: Text("장소, 가게 두드려보GO")
+                            .foregroundStyle(Color(hex:"#68675E"))
+                    )
+                        .foregroundStyle(Color(hex:"#EFEEDF"))
+                        .tint(.point)
                     
-                    Image(.search)
+                    Button(action: {}) {
+                        Image(.search)
+                            .frame(height: 18)
+                    }
                 }
+                .padding(.vertical, 10)
+                .padding(.horizontal, 16)
+                .background(
+                    RoundedRectangle(cornerRadius: 20)
+                        .foregroundStyle(Color(hex:"#323230"))
+                )
             }
             
+            /* Recently Searched Text*/
             
+            
+            /* Recently Searched Location */
+            
+            /* Live Search Ranking */
+            
+            Spacer()
         }
+        .padding(.horizontal, 16)
     }
 }
 
 #Preview {
     SearchView()
+        .background(Color.background)
 }
