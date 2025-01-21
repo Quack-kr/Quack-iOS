@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9344F2302D3F9738005A4FDB /* DummyThumbnail.png in Resources */ = {isa = PBXBuildFile; fileRef = 9344F22E2D3F9738005A4FDB /* DummyThumbnail.png */; };
+		9344F2312D3F9738005A4FDB /* DummyMenu.png in Resources */ = {isa = PBXBuildFile; fileRef = 9344F22F2D3F9738005A4FDB /* DummyMenu.png */; };
 		9389FC552D32ACE60092F336 /* InitialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9389FC542D32ACE60092F336 /* InitialView.swift */; };
 		9389FC572D32AD2D0092F336 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9389FC562D32AD2D0092F336 /* SignUpView.swift */; };
 		938B7B942D32C34C009B2CE8 /* PretendardVariable.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 938B7B932D32C34C009B2CE8 /* PretendardVariable.ttf */; };
@@ -51,6 +53,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9344F22E2D3F9738005A4FDB /* DummyThumbnail.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DummyThumbnail.png; sourceTree = "<group>"; };
+		9344F22F2D3F9738005A4FDB /* DummyMenu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DummyMenu.png; sourceTree = "<group>"; };
 		9389FC542D32ACE60092F336 /* InitialView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialView.swift; sourceTree = "<group>"; };
 		9389FC562D32AD2D0092F336 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		938B7B932D32C34C009B2CE8 /* PretendardVariable.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = PretendardVariable.ttf; sourceTree = "<group>"; };
@@ -106,9 +110,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9344F2272D3F9605005A4FDB /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				9344F22F2D3F9738005A4FDB /* DummyMenu.png */,
+				9344F22E2D3F9738005A4FDB /* DummyThumbnail.png */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
 		938B7B912D32C303009B2CE8 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				9344F2272D3F9605005A4FDB /* Images */,
 				938B7B922D32C31A009B2CE8 /* Fonts */,
 			);
 			path = Resources;
@@ -349,6 +363,8 @@
 				938B7B9D2D32C48C009B2CE8 /* TheJamsilThin.otf in Resources */,
 				938B7B942D32C34C009B2CE8 /* PretendardVariable.ttf in Resources */,
 				938B7BA22D32C48C009B2CE8 /* TheJamsilExtraBold.otf in Resources */,
+				9344F2312D3F9738005A4FDB /* DummyMenu.png in Resources */,
+				9344F2302D3F9738005A4FDB /* DummyThumbnail.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
