@@ -266,13 +266,11 @@ struct SubstractView: View {
                 
                 VStack {
                     HStack {
-                        Image("Resources/Images/DummyThumbnail")
-                            .frame(height: 100)
-                            .border(.blue, width: 10)
+                        Image(.dummyThumbnail)
                         
                         VStack {
-                            Image("Resources/Images/DummyMenu")
-                            Image("Resources/Images/DummyMenu")
+                            Image(.dummyMenu)
+                            Image(.dummyMenu)
                         }
                         
                     }
