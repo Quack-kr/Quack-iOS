@@ -16,133 +16,63 @@ struct TabBarView: View {
     }
     
     var body: some View {
-        ZStack {
-            Color.background
-                .ignoresSafeArea()
-            
             TabView(selection: $selection,
                     content:  {
-                HomeView()
-                    .tabItem {
-                        VStack {
-                            Image(.home)
+                
+                Group {
+                    HomeView()
+                        .tabItem {
+                            VStack {
+                                Image(.home)
+                                    .renderingMode(/*@START_MENU_TOKEN@*/.template/*@END_MENU_TOKEN@*/)
+                                    .frame(width: 24)
+                                
+                                Text("홈")
+                                    .font(.pretendard(.number(400)))
+                                    .foregroundStyle(Color(hex: "#EFEEDF"))
+                            } }.tag(0)
+                        .background(Color.background)
+                    
+                    SearchView()
+                        .tabItem {
+                            Image(.search)
                                 .renderingMode(/*@START_MENU_TOKEN@*/.template/*@END_MENU_TOKEN@*/)
                                 .frame(width: 24)
                             
-                            Text("홈")
+                            Text("검색")
                                 .font(.pretendard(.number(400)))
                                 .foregroundStyle(Color(hex: "#EFEEDF"))
-                        } }.tag(0)
-                
-                SearchView()
-                    .tabItem {
-                        Image(.search)
-                            .renderingMode(/*@START_MENU_TOKEN@*/.template/*@END_MENU_TOKEN@*/)
-                            .frame(width: 24)
-                        
-                        Text("검색")
-                            .font(.pretendard(.number(400)))
-                            .foregroundStyle(Color(hex: "#EFEEDF"))
-                    }.tag(1)
-                
-                SubstractView()
-                    .tabItem {
-                        Image(.substract)
-                            .renderingMode(/*@START_MENU_TOKEN@*/.template/*@END_MENU_TOKEN@*/)
-                            .frame(width: 24)
-                        
-                        Text("뺴기")
-                            .font(.pretendard(.number(400)))
-                            .foregroundStyle(Color(hex: "#EFEEDF"))
-                    }.tag(2)
-                SubstractView()
-                    .tabItem {
-                        Image(.my)
-                            .renderingMode(/*@START_MENU_TOKEN@*/.template/*@END_MENU_TOKEN@*/)
-                            .frame(width: 24)
-                        
-                        Text("마이")
-                            .font(.pretendard(.number(400)))
-                            .foregroundStyle(Color(hex: "#EFEEDF"))
-                    }.tag(3)
+                        }.tag(1)
+                        .background(Color.background)
+
+                    
+                    SubstractView()
+                        .tabItem {
+                            Image(.substract)
+                                .renderingMode(/*@START_MENU_TOKEN@*/.template/*@END_MENU_TOKEN@*/)
+                                .frame(width: 24)
+                            
+                            Text("뺴기")
+                                .font(.pretendard(.number(400)))
+                                .foregroundStyle(Color(hex: "#EFEEDF"))
+                        }.tag(2)
+                        .background(Color.background)
+
+                    MyView()
+                        .tabItem {
+                            Image(.my)
+                                .renderingMode(/*@START_MENU_TOKEN@*/.template/*@END_MENU_TOKEN@*/)
+                                .frame(width: 24)
+                            
+                            Text("마이")
+                                .font(.pretendard(.number(400)))
+                                .foregroundStyle(Color(hex: "#EFEEDF"))
+                        }.tag(3)
+                        .background(Color.background)
+                }
+                .toolbarBackground(.raisinBlack, for: .tabBar)
             })
             .accentColor(Color(hex:"#EFEEDF"))
-        }
-//        .background(Color.background)
-        
-//        ZStack {
-//            tabContent(type: tabType)
-//            
-//            VStack {
-//                Spacer()
-//                
-//                HStack {
-//                    Button (action: {
-//                        tabType = .home;
-//                    }) {
-//                        VStack {
-//                            Image(.checkCircle) // TODO: 홈이미지 추가
-//                                .frame(width: 24)
-//                            
-//                            Text("홈")
-//                                .font(.pretendard(.number(400)))
-//                                .foregroundStyle(Color(hex: "#EFEEDF"))
-//                        }
-//                    }
-//                    
-//                    Spacer()
-//                    
-//                    Button (action: {
-//                        tabType = .search;
-//                    }) {
-//                        VStack {
-//                            Image(.checkCircle) // TODO: 검색이미지 추가
-//                                .frame(width: 24)
-//                            
-//                            Text("검색")
-//                                .font(.pretendard(.number(400)))
-//                                .foregroundStyle(Color(hex: "#EFEEDF"))
-//                        }
-//                    }
-//                    
-//                    Spacer()
-//                    
-//                    Button (action: {
-//                        tabType = .substract;
-//                    }) {
-//                        VStack {
-//                            Image(.checkCircle) // TODO: 빼기 이미지 추가
-//                                .frame(width: 24)
-//                            
-//                            Text("빼기")
-//                                .font(.pretendard(.number(400)))
-//                                .foregroundStyle(Color(hex: "#EFEEDF"))
-//                        }
-//                    }
-//                    
-//                    Spacer()
-//                    
-//                    Button (action: {
-//                        tabType = .my;
-//                    }) {
-//                        VStack {
-//                            Image(.checkCircle) // TODO: 마이이미지 추가
-//                                .frame(width: 24)
-//                            
-//                            Text("마이")
-//                                .font(.pretendard(.number(400)))
-//                                .foregroundStyle(Color(hex: "#EFEEDF"))
-//                        }
-//                    }
-//                    
-//                }
-//                .padding(.top, 8)
-//                .padding(.horizontal, 43)
-//                .frame(maxWidth: .infinity)
-//                .ignoresSafeArea(edges: .bottom)
-//                .background(Color(hex:"#21211D"))
-//            }
-//        }
     }
     
     enum TabContentType {
