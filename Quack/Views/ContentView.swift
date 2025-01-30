@@ -10,41 +10,40 @@ import SwiftData
 
 struct ContentView: View {
     @ObservedObject private var coordinator = Coordinator<Destination>()
-    @Environment(\.modelContext) private var modelContext
-    @Query private var items: [Item]
-
+    
     var body: some View {
         ZStack {
-            Color.background
-                .ignoresSafeArea()
+            Color.background.ignoresSafeArea(.all)
             
-        NavigationStack(path: $coordinator.paths){
-            ZStack {
-                Color.background
-                    .ignoresSafeArea()
-                
-                InitialView()
-            }
-            .navigationDestination(for: Destination.self) { destination in
+            NavigationStack(path: $coordinator.paths){
                 ZStack {
-                    Color.background.ignoresSafeArea()
+                    Color.background.ignoresSafeArea(.all)
                     
-                    switch destination {
-                    case .signUpView: SignUpView()
-                            .navigationBarBackButtonHidden()
-                    case .tabBarView: TabBarView()
-                            .navigationBarBackButtonHidden()
-                    }
+                    InitialView()
+                        .background(Color.background.ignoresSafeArea(.all))
+                        .navigationDestination(for: Destination.self) { destination in
+                            ZStack {
+                                Color.background.ignoresSafeArea()
+                                
+                                switch destination {
+                                case .signUpView: SignUpView()
+                                        .navigationBarBackButtonHidden()
+                                case .tabBarView: TabBarView()
+                                        .navigationBarBackButtonHidden()
+                                case .alarmView: AlarmView()
+                                        .navigationBarBackButtonHidden()
+                                }
+                            }
+                        }
                 }
-
             }
+            .environmentObject(coordinator)
+            .background(Color.background)
         }
-        .environmentObject(coordinator)
-    }
     }
 }
 
 #Preview {
     ContentView()
-        .modelContainer(for: Item.self, inMemory: true)
+        .background(Color.background)
 }

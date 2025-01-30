@@ -8,7 +8,8 @@
 import SwiftUI
 
 struct HomeView: View {
-    @State private var isSheetPresented = true;
+    @EnvironmentObject private var coordinator: Coordinator<Destination>
+    @State private var isSheetPresented = false;
     @Binding var selection: Int;
     
     var body: some View {
@@ -45,13 +46,15 @@ struct HomeView: View {
                     
                     HStack(spacing: 16) {
                         Button(action: {
-                            selection = 1;
+                            selection = 1; // TODO: Button Tap Gesture 종료 전에 화면 전환이 됨.
                         }) {
                             Image(.search)
                                 .frame(height: 24)
                         }
                         
-                        Button(action: {}) {
+                        Button(action: {
+                            coordinator.push(.alarmView)
+                        }) {
                             Image(.notify)
                                 .frame(height: 24)
                         }
@@ -244,7 +247,7 @@ struct HomeView: View {
                             Image(.dummyThumbnail)
                                 .resizable()
                                 .scaledToFit()
-                                .frame(width: .infinity)
+                                .frame(maxWidth: .infinity)
                                 .overlay(
                                     LinearGradient(gradient: Gradient(colors: [Color(hex:"#171714").opacity(0), Color(hex:"#171714").opacity(1)]), startPoint: .top, endPoint: .bottom)
                                 )

@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct TabBarView: View {
+    @EnvironmentObject private var coordinator: Coordinator<Destination>
     @State private var selection = 0;
     
     init() {

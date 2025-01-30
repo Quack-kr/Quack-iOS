@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct MyView: View {
+    @EnvironmentObject private var coordinator: Coordinator<Destination>
     @State private var hackGongGam:Double = 0.2
     
     var body: some View {
@@ -23,21 +24,25 @@ struct MyView: View {
             }
             .padding(.bottom, 12)
             
-            HStack {
-                VStack(alignment: .leading, spacing: 8, content: {
-                    Text("로그인/회원가입")
-                        .font(.theJamsil(.number(700), size: 18))
-                        .foregroundStyle(Color(hex:"#EFEEDF"))
+            Button(action: {
+                coordinator.popToRoot()
+            }) {
+                HStack {
+                    VStack(alignment: .leading, spacing: 8, content: {
+                        Text("로그인/회원가입")
+                            .font(.theJamsil(.number(700), size: 18))
+                            .foregroundStyle(Color(hex:"#EFEEDF"))
+                        
+                        
+                        Text("5초만에 로그인하고 꽥을 누려보세요!")
+                            .font(.pretendard(.number(600), size: 14))
+                            .foregroundStyle(Color(hex:"#68675E"))
+                    })
                     
+                    Spacer()
                     
-                    Text("5초만에 로그인하고 꽥을 누려보세요!")
-                        .font(.pretendard(.number(600), size: 14))
-                        .foregroundStyle(Color(hex:"#68675E"))
-                })
-                
-                Spacer()
-                
-                Image(.chevronRight)
+                    Image(.chevronRight)
+                }
             }
             
             VStack(alignment: .leading, spacing: 8) {

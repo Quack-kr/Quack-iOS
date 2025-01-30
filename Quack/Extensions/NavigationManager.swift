@@ -11,17 +11,22 @@ import Combine
 enum Destination: Hashable {
     case signUpView
     case tabBarView
+    case alarmView
 }
 
 final class Coordinator<T: Hashable>: ObservableObject {
     @Published var paths: [T] = []
     
     func push(_ path: T) {
+        print("before push: ", paths)
         paths.append(path)
+        print("after push: ", paths)
     }
     
     func pop() {
+        print("before pop: ", paths)
         paths.removeLast()
+        print("after pop: ", paths)
     }
     
     func pop(to: T) {
@@ -31,6 +36,7 @@ final class Coordinator<T: Hashable>: ObservableObject {
         
         let numToPop = (found..<paths.endIndex).count - 1
         paths.removeLast(numToPop)
+        print(paths)
     }
     
     func popToRoot() {
