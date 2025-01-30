@@ -7,15 +7,16 @@
 
 import SwiftUI
 
-import SwiftUI
-
 struct InitialView: View {
     @State private var isSheetPresented = true;
     
     var body: some View {
         VStack {
-            // TODO: Logo 이미지 넣기
+            Spacer()
             
+            Image(.logoWithText)
+                .renderingMode(.template)
+                .foregroundStyle(Color(hex:"#EFEEDF"))
             
             Spacer()
             
@@ -23,12 +24,26 @@ struct InitialView: View {
                 Button(action: {
                 }){
                     // TODO: 카카오 로그인 이미지로 넣기
-                    ZStack {
-                        Rectangle()
-                            .cornerRadius(8)
-                            .frame(height: 50)
-                            .padding(.horizontal, 16)
+                    VStack {
+                        HStack {
+                            Image(systemName: "message.fill")
+                            
+                            Spacer()
+                            
+                            Text("카카오로 로그인")
+                            
+                            Spacer()
+                        }
+                        .foregroundStyle(Color(hex: "#171714"))
+                        .padding(.vertical, 16)
                     }
+                    .background(
+                        Rectangle()
+                            .cornerRadius(12)
+                            .foregroundStyle(.point)
+                    )
+                    .padding(.horizontal, 16)
+                    
                 }
                 
                 Button(action: {
@@ -54,48 +69,124 @@ struct InitialView: View {
                 }
                 
                 NavigationLink("둘러보기", destination: SignUpView())
-                    .foregroundStyle(.gray)
+                    .foregroundStyle(Color(hex:"#A8A7A1"))
             }
         }
         .frame(maxWidth: .infinity)
-        .padding(.top,200)
-        .padding(.bottom, 50)
-        .sheet(isPresented: $isSheetPresented, onDismiss: didDismiss, content: {
+        .padding(.bottom, 29)
+        .sheet(isPresented: $isSheetPresented, content: {
             VStack {
                 // TODO: sheet close 기능 구현하기? -> 현재 전체 화면에 다 적용되어 있음
                 Capsule()
-                    .foregroundStyle(.EFEEDF)
-                    .frame(height: 8)
+                    .foregroundStyle(Color(hex:"#EFEEDF"))
+                    .frame(width: 40, height: 4)
                     .padding(.top, 16)
-                    .padding(.horizontal, 168)
                 
                 Spacer()
                 
                 Text("약관동의")
                     .padding(.bottom, 16)
-                    .font(.pretendard(.number(700), size: 18))
-                    .foregroundStyle(.EFEEDF)
+                    .font(.pretendard(.number(800), size: 18))
+                    .foregroundStyle(Color(hex:"#EFEEDF"))
                 
-                VStack() {
+                VStack {
+                    VStack(spacing: 16) {
+                        Button(action: {}) {
+                            HStack {
+                                Image(.checkCircle)
+                                    .font(.system(size: 24))
+
+                                Text("이용약관 모두 동의")
+                                    .font(.pretendard(.number(500), size: 14))
+                                
+                                Spacer()
+                            }
+                            .foregroundStyle(Color(hex:"#EFEEDF"))
+                            .padding(.leading, 10)
+                            .padding(.vertical, 10)
+                            .overlay(
+                                RoundedRectangle(cornerRadius: 110)
+                                    .stroke(Color(hex:"#EFEEDF"), lineWidth: 1) //TODO: stroke 색상 변경
+                            )
+                            .onTapGesture {
+                                // TODO: 모두 동의 기능 추가하기
+                            }
+                        }
+                        
+                        VStack(spacing: 24) {
+                            HStack {
+                                Image(.checkCircle)
+                                
+                                Text("서비스 이용약관 동의 (필수)")
+                                    .font(.pretendard(.number(500), size: 14))
+                                    .foregroundStyle(Color(hex:"#EFEEDF"))
+                                
+                                Spacer()
+                                
+                                Image(.chevronRight)
+                            }
+                            
+                            HStack {
+                                Image(.checkCircle)
+                                
+                                Text("개인정보 수집 및 이용 동의 (필수)")
+                                    .font(.pretendard(.number(500), size: 14))
+                                    .foregroundStyle(Color(hex:"#EFEEDF"))
+                                
+                                Spacer()
+                                
+                                Image(.chevronRight)
+                            }
+                            
+                            HStack {
+                                Image(.checkCircle)
+                                
+                                Text("위치정보 서비스 이용약관 동의 (필수)")
+                                    .font(.pretendard(.number(500), size: 14))
+                                    .foregroundStyle(Color(hex:"#EFEEDF"))
+                                
+                                Spacer()
+                                
+                                Image(.chevronRight)
+                            }
+                            
+                            HStack {
+                                Image(.checkCircle)
+                                
+                                Text("마케팅 정보 활용 동의 (선택)")
+                                    .font(.pretendard(.number(500), size: 14))
+                                    .foregroundStyle(Color(hex:"#EFEEDF"))
+                                
+                                Spacer()
+                                
+                                Image(.chevronRight)
+                            }
+                        }
+                        .padding(.horizontal, 10)
+                        .padding(.bottom, 8)
+                        
+                    }
+                }
+                .padding(.horizontal, 24)
+                /*
+                VStack(spacing: 16) {
                     Button(action: {}) {
                         HStack {
-                            // TODO: 체크 이미지 넣기
-                            Image(systemName: "checkmark.circle")
+                            Image(.checkCircle)
                                 .font(.system(size: 24))
 
                             Text("이용약관 모두 동의")
                             
                             Spacer()
                         }
-                        .foregroundStyle(.EFEEDF)
+                        .foregroundStyle(Color(hex:"#EFEEDF"))
                         .padding(.leading, 10)
                         .padding(.vertical, 10)
                         .overlay(
                             RoundedRectangle(cornerRadius: 110)
-                                            .stroke(Color.EFEEDF, lineWidth: 1) //TODO: stroke 색상 변경
+                                .stroke(Color(hex:"#EFEEDF"), lineWidth: 1) //TODO: stroke 색상 변경
                         )
                         .padding(.horizontal, 24)
-                        .padding(.bottom, 16)
                         .onTapGesture {
                             // TODO: 모두 동의 기능 추가하기
                         }
@@ -103,51 +194,54 @@ struct InitialView: View {
                     
                     VStack(spacing: 24) {
                         HStack {
-                            // TODO: 체크이미지 추가
-                            Image(systemName: "checkmark.circle")
+                            Image(.checkCircle)
                             
                             Text("서비스 이용약관 동의 (필수)")
+                                .foregroundStyle(Color(hex:"#EFEEDF"))
                             
                             Spacer()
                             
-                            // TODO: 화살표 이미지 넣기
-                            Image(systemName: "chevron.right")
+                            Image(.chevronRight)
                         }
                         
                         HStack {
-                            Image(systemName: "checkmark.circle")
+                            Image(.checkCircle)
                             
                             Text("개인정보 수집 및 이용 동의 (필수)")
+                                .foregroundStyle(Color(hex:"#EFEEDF"))
                             
                             Spacer()
                             
-                            Image(systemName: "chevron.right")
+                            Image(.chevronRight)
                         }
                         
                         HStack {
-                            Image(systemName: "checkmark.circle")
+                            Image(.checkCircle)
                             
                             Text("위치정보 서비스 이용약관 동의 (필수)")
+                                .foregroundStyle(Color(hex:"#EFEEDF"))
                             
                             Spacer()
                             
-                            Image(systemName: "chevron.right")
+                            Image(.chevronRight)
                         }
                         
                         HStack {
-                            Image(systemName: "checkmark.circle")
+                            Image(.checkCircle)
                             
                             Text("마케팅 정보 활용 동의 (선택)")
+                                .foregroundStyle(Color(hex:"#EFEEDF"))
                             
                             Spacer()
                             
-                            Image(systemName: "chevron.right")
+                            Image(.chevronRight)
                         }
                     }
-                    .padding(.horizontal, 34)
+                    .padding(.horizontal, 10)
                     .padding(.bottom, 8)
                     
                 }
+                */
                 
                 Text(
                      """
@@ -157,34 +251,34 @@ struct InitialView: View {
                      """
                 )
                 .font(.pretendard(.number(400), size: 10))
+                .foregroundStyle(Color(hex:"#A8A7A1"))
                 .multilineTextAlignment(.center)
-                .padding(.horizontal, 72)
-                .padding(.bottom, 24)
-                .padding(.top, 36)
+//                .padding(.horizontal, 72)
                 
+                Spacer()
                 
                 Button(action: {
                     
                 }){
                         Text("다음으로")
                             .frame(maxWidth: .infinity)
-                            .foregroundStyle(.black)
+                            .font(.pretendard(.number(700), size: 16))
+                            .foregroundStyle(Color(hex:"#171714"))
                             .padding(.vertical, 16)
                             .background(
                                 Rectangle()
                                     .cornerRadius(8)
-                                    .foregroundStyle(.point)
+                                    .foregroundStyle(.point) // TODO: foregroundStyle로 색상 변경 시 disabled 적용되는 법
                             )
                 }
                 .padding(.horizontal, 16)
+                .disabled(true)
             }
             .frame(maxWidth: .infinity)
             .presentationDetents([.fraction(0.67)])
-            .presentationBackground(._323230)
+            .presentationBackground(Color(hex:"#323230"))
         })
     }
-    
-    func didDismiss() {}
 }
 
 #Preview {

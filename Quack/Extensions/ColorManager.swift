@@ -28,6 +28,8 @@ extension Color {
             self.init(.raisinBlack)
         case "#171714":
             self.init(.chineseBlack)
+        case "#9A9A9A":
+            self.init(.spanishGray)
         default:
             self.init(.clear)
         }
