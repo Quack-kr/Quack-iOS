@@ -8,16 +8,11 @@
 import SwiftUI
 
 struct InitialView: View {
-    private var policyTitle = [
-        "서비스 이용약관 동의 (필수)",
-        "개인정보 수집 및 이용 동의 (필수)",
-        "위치정보 서비스 이용약관 동의 (필수)",
-        "마케팅 정보 활용 동의 (선택)"
-    ];
     @State private var isSheetPresented = true;
     @State private var isAllPolicyButtonsSelected = false;
     @State private var policyButtonColor = [Color](repeating: Color(hex:"#EFEEDF"), count: 4)
     @EnvironmentObject private var coordinator: Coordinator<Destination>
+//    @State private var socialMedia: SocialMedia = SocialMedia()
     
     var body: some View {
         VStack {
@@ -31,6 +26,7 @@ struct InitialView: View {
             
             VStack(spacing: 10) {
                 Button(action: {
+//                    socialMedia = .kakao
                     isSheetPresented.toggle()
                 }){
                     // TODO: 카카오 로그인 이미지로 넣기
@@ -203,9 +199,8 @@ struct InitialView: View {
                         .foregroundStyle(Color(hex:"#171714"))
                         .padding(.vertical, 16)
                         .background(
-                            Rectangle()
-                                .cornerRadius(8)
-                                .foregroundStyle(isAllPolicyButtonsSelected ? .point : Color(hex:"#525250"))
+                            RoundedRectangle(cornerRadius: 8)
+                                .foregroundStyle(isAllPolicyButtonsSelected ? .point : Color(hex: "#525250"))
                         )
                 }
                 .disabled(isAllPolicyButtonsSelected ? false : true)

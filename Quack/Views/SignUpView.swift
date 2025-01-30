@@ -11,65 +11,88 @@ struct SignUpView: View {
     @EnvironmentObject private var coordinator: Coordinator<Destination>
     // TODO: 서버로부터 생성받은 닉네임으로 초기 설정
     @State private var nickname = "붉은 탕수육 0001";
-    @State private var nickname_len = 0;
+    @State private var isNicknameProper = true;
+    @State private var nicknameInstructionText = NicknameInstructionText()
     
     var body: some View {
-        VStack {
-            VStack {
-                HStack {
+        VStack(alignment: .leading) {
+            VStack(alignment: .leading, spacing: 8) {
                     Text("이것만 하면 회원가입 끝!")
-                        .font(.pretendard(.number(800)))
+                        .font(.pretendard(.number(800), size: 24))
                         .foregroundStyle(Color(hex:"#EFEEDF"))
 
-                    Spacer()
-                }
-                HStack {
                     Text("꽥을 이용할 마지막 단계!")
-                        .font(.pretendard(.number(400)))
+                        .font(.pretendard(.number(400), size: 16))
                         .foregroundStyle(Color(hex: "#A8A7A1"))
-                    Spacer()
-                }
             }
             .padding(.top, 80)
             
             Spacer()
             
             VStack(spacing: 24) { // content Stack
-                VStack(alignment: .leading){
+                VStack(alignment: .leading, spacing: 8){
                     HStack {
                         Text("닉네임")
-                            .font(.theJamsil(.number(700)))
+                            .font(.theJamsil(.number(700), size: 14))
                             .foregroundStyle(Color(hex:"#A8A7A1"))
                         
                         Spacer()
                         
-                        Text("\(nickname_len)/20")
-                            .font(.pretendard(.number(500)))
+                        Text("\(nickname.count)/20")
+                            .font(.pretendard(.number(500), size: 14))
                             .foregroundStyle(Color(hex:"#A8A7A1"))
                         
                     }
                     ZStack {
                         TextField("닉네임을 입력하세요.", text: $nickname)
                             .padding(.leading, 16)
-                            .font(.pretendard(.number(700)))
+                            .font(.pretendard(.number(700), size: 16))
                             .foregroundStyle(Color(hex:"#EFEEDF"))
+                            .onChange(of: nickname.count) {
+                                
+                                if (nickname.count < 3) {
+                                    if isNicknameProper {
+                                        nicknameInstructionText = .short
+                                        isNicknameProper.toggle()
+                                    }
+                                }
+                                else if  (nickname.count > 20) {
+                                    if isNicknameProper {
+                                        nicknameInstructionText = .long
+                                        isNicknameProper.toggle()
+                                    }
+                                }
+                                else {
+                                    if !isNicknameProper {
+                                        nicknameInstructionText = .normal
+                                        isNicknameProper.toggle()
+                                    }
+                                }
+                            }
 
                     }
-                    .frame(height: 53)
-                    .cornerRadius(8)
-                    .foregroundStyle(Color(hex:"#323230"))
+                    .padding(.vertical, 16)
+                    .background(
+                        RoundedRectangle(cornerRadius: 8)
+                            .foregroundStyle(Color(hex:"#323230"))
+                            .overlay(
+                                RoundedRectangle(cornerRadius: 8)
+                                    .stroke(.red, lineWidth: 1)
+                                    .opacity(isNicknameProper ? 0 : 1)
+                            )
+                    )
                     
-                    Text("꽥에서 사용하실 이름이에요.")
-                        .font(.pretendard(.number(400)))
-                        .foregroundStyle(.point)
+                    Text(nicknameInstructionText.rawValue)
+                        .font(.pretendard(.number(400), size: 12))
+                        .foregroundStyle(isNicknameProper ? .point : .red)
                         .padding(.leading, 16)
                 }
                 
                 
-                VStack(alignment: .leading) {
+                VStack(alignment: .leading, spacing: 8) {
                     HStack {
                         Text("이메일")
-                            .font(.theJamsil(.number(700)))
+                            .font(.theJamsil(.number(700),size: 14))
                             .foregroundStyle(Color(hex:"#A8A7A1"))
                         
                         Spacer()
@@ -79,23 +102,29 @@ struct SignUpView: View {
                             // TODO: 서버로부터 전송받은 이메일로 변경
                             Text("papa021326@naver.com")
                                 .padding(.leading, 16)
-                                .font(.pretendard(.number(700)))
-                                .foregroundStyle(Color(hex:"#525250"))
+                                .font(.pretendard(.number(700), size: 16))
+                                .tint(Color(hex:"#525250"))
                             
                             Spacer()
                         }
+                        .foregroundStyle(Color(hex:"#525250"))
+                        .background(
+                            RoundedRectangle(cornerRadius: 8)
+                                .foregroundStyle(Color(hex:"#323230"))
+                        )
                     }
-                    .frame(height: 53)
-                    .cornerRadius(8)
+                    .padding(.vertical, 16)
+                    .background(
+                        RoundedRectangle(cornerRadius: 8)
+                            .foregroundStyle(Color(hex:"#323230"))
+                    )
                     
-                    // TODO: InitialView로부터 소셜 로그인 방식 넘겨받기
-                    Text("카카오로 가입한 계정이에요.")
-                        .font(.theJamsil(.number(400)))
+                    Text("\(SocialMedia().rawValue)로 가입한 계정이에요.")
+                        .font(.theJamsil(.number(400), size: 12))
                         .foregroundStyle(Color(hex:"#A8A7A1"))
                         .padding(.leading, 16)
                 }
             }
-            .frame(width: 343)
             
             Spacer()
             Spacer()
@@ -103,19 +132,33 @@ struct SignUpView: View {
             Button(action: {
                 coordinator.push(.tabBarView)
             }){
-                ZStack {
-                    Rectangle()
-                        .frame(width: 343, height: 53)
-                        .cornerRadius(8)
-                    
                     Text("시작하기")
-                        .font(.pretendard(.number(700)))
-                        .foregroundStyle(Color(hex:"#171714"))
-                }
-                .foregroundStyle(.point)
+                    .frame(maxWidth: .infinity)
+                    .font(.pretendard(.number(700), size: 16))
+                    .foregroundStyle(Color(hex:"#171714"))
+                    .padding(.vertical, 16)
+                        .background(
+                            RoundedRectangle(cornerRadius: 8)
+                                .foregroundStyle(isNicknameProper ? .point : Color(hex: "#525250"))
+                        )
+
             }
+            .disabled(isNicknameProper ? false : true)
+
         }
         .padding(.horizontal, 16)
+    }
+    
+    func checkNickname() -> Bool {
+        if (nickname.count < 3 || nickname.count > 20) {
+            return false
+        }
+        //TODO: 닉네임 중복 확인
+//        else if (true) {
+//            return false
+//        }
+        
+        return true;
     }
 }
 

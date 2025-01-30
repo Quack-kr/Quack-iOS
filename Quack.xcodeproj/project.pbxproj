@@ -22,6 +22,8 @@
 		938B7BA22D32C48C009B2CE8 /* TheJamsilExtraBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 938B7B9B2D32C48C009B2CE8 /* TheJamsilExtraBold.otf */; };
 		938B7BA62D32C72C009B2CE8 /* FontManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 938B7BA52D32C72C009B2CE8 /* FontManager.swift */; };
 		93A9E3442D4BC5AC0000E349 /* AlarmContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A9E3432D4BC5AC0000E349 /* AlarmContentView.swift */; };
+		93A9E34B2D4C031B0000E349 /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A9E34A2D4C031B0000E349 /* Enums.swift */; };
+		93A9E34D2D4C03B90000E349 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A9E34C2D4C03B90000E349 /* Constants.swift */; };
 		93B434932D328ECC0087C3ED /* QuackApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B434922D328ECC0087C3ED /* QuackApp.swift */; };
 		93B434952D328ECC0087C3ED /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B434942D328ECC0087C3ED /* ContentView.swift */; };
 		93B434992D328ECD0087C3ED /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 93B434982D328ECD0087C3ED /* Assets.xcassets */; };
@@ -71,6 +73,8 @@
 		938B7B9B2D32C48C009B2CE8 /* TheJamsilExtraBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = TheJamsilExtraBold.otf; sourceTree = "<group>"; };
 		938B7BA52D32C72C009B2CE8 /* FontManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontManager.swift; sourceTree = "<group>"; };
 		93A9E3432D4BC5AC0000E349 /* AlarmContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmContentView.swift; sourceTree = "<group>"; };
+		93A9E34A2D4C031B0000E349 /* Enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
+		93A9E34C2D4C03B90000E349 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		93B4348F2D328ECC0087C3ED /* Quack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Quack.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		93B434922D328ECC0087C3ED /* QuackApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuackApp.swift; sourceTree = "<group>"; };
 		93B434942D328ECC0087C3ED /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -211,6 +215,8 @@
 				93B434922D328ECC0087C3ED /* QuackApp.swift */,
 				93B434982D328ECD0087C3ED /* Assets.xcassets */,
 				93B4349A2D328ECD0087C3ED /* Preview Content */,
+				93A9E34A2D4C031B0000E349 /* Enums.swift */,
+				93A9E34C2D4C03B90000E349 /* Constants.swift */,
 			);
 			path = Quack;
 			sourceTree = "<group>";
@@ -410,6 +416,8 @@
 				FE05A7512D3D329F0078E498 /* MyView.swift in Sources */,
 				93A9E3442D4BC5AC0000E349 /* AlarmContentView.swift in Sources */,
 				FE05A74D2D3D319D0078E498 /* SearchView.swift in Sources */,
+				93A9E34D2D4C03B90000E349 /* Constants.swift in Sources */,
+				93A9E34B2D4C031B0000E349 /* Enums.swift in Sources */,
 				938B7BA62D32C72C009B2CE8 /* FontManager.swift in Sources */,
 				FE05A7492D3D20EE0078E498 /* HomeView.swift in Sources */,
 				93B434932D328ECC0087C3ED /* QuackApp.swift in Sources */,
