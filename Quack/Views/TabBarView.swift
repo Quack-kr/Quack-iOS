@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct TabBarView: View {
-    @State private var tabType : TabContentType = .home;
     @State private var selection = 0;
     
     init() {
@@ -20,7 +19,7 @@ struct TabBarView: View {
                     content:  {
                 
                 Group {
-                    HomeView()
+                    HomeView(selection: $selection)
                         .tabItem {
                             VStack {
                                 Image(.home)
@@ -46,7 +45,7 @@ struct TabBarView: View {
                         .background(Color.background)
 
                     
-                    SubstractView()
+                    SubstractView(selection: $selection)
                         .tabItem {
                             Image(.substract)
                                 .renderingMode(/*@START_MENU_TOKEN@*/.template/*@END_MENU_TOKEN@*/)
@@ -73,24 +72,7 @@ struct TabBarView: View {
                 .toolbarBackground(.raisinBlack, for: .tabBar)
             })
             .accentColor(Color(hex:"#EFEEDF"))
-    }
-    
-    enum TabContentType {
-        case home, search, substract, my
-    }
-    
-    @ViewBuilder
-    func tabContent(type: TabContentType) -> some View {
-        switch type {
-        case .home:
-            HomeView()
-        case .search:
-            SearchView()
-        case .substract:
-            SubstractView()
-        case .my:
-            MyView()
-        }
+            .navigationBarBackButtonHidden()
     }
 }
 

@@ -9,6 +9,7 @@ import SwiftUI
 
 struct InitialView: View {
     @State private var isSheetPresented = true;
+    @EnvironmentObject private var coordinator: Coordinator<Destination>
     
     var body: some View {
         VStack {
@@ -68,8 +69,13 @@ struct InitialView: View {
                         .foregroundStyle(.white)
                 }
                 
-                NavigationLink("둘러보기", destination: SignUpView())
-                    .foregroundStyle(Color(hex:"#A8A7A1"))
+                
+                Button(action : {
+                    coordinator.push(.tabBarView)
+                }) {
+                    Text("둘러보기")
+                        .foregroundStyle(Color(hex:"#A8A7A1"))
+                }
             }
         }
         .frame(maxWidth: .infinity)
@@ -258,7 +264,7 @@ struct InitialView: View {
                 Spacer()
                 
                 Button(action: {
-                    
+                    coordinator.push(.signUpView)
                 }){
                         Text("다음으로")
                             .frame(maxWidth: .infinity)
@@ -272,7 +278,7 @@ struct InitialView: View {
                             )
                 }
                 .padding(.horizontal, 16)
-                .disabled(true)
+//                .disabled(true)
             }
             .frame(maxWidth: .infinity)
             .presentationDetents([.fraction(0.67)])

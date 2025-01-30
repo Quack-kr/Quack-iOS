@@ -9,6 +9,7 @@ import SwiftUI
 
 struct HomeView: View {
     @State private var isSheetPresented = true;
+    @Binding var selection: Int;
     
     var body: some View {
         ScrollView {
@@ -43,7 +44,9 @@ struct HomeView: View {
                     Spacer()
                     
                     HStack(spacing: 16) {
-                        Button(action: {}) {
+                        Button(action: {
+                            selection = 1;
+                        }) {
                             Image(.search)
                                 .frame(height: 24)
                         }
@@ -418,6 +421,6 @@ struct HomeView: View {
 }
 
 #Preview {
-    HomeView()
+    HomeView(selection: .constant(0))
         .background(Color.background)
 }

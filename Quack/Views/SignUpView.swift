@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct SignUpView: View {
+    @EnvironmentObject private var coordinator: Coordinator<Destination>
     // TODO: 서버로부터 생성받은 닉네임으로 초기 설정
     @State private var nickname = "붉은 탕수육 0001";
     @State private var nickname_len = 0;
@@ -100,7 +101,7 @@ struct SignUpView: View {
             Spacer()
             
             Button(action: {
-                
+                coordinator.push(.tabBarView)
             }){
                 ZStack {
                     Rectangle()

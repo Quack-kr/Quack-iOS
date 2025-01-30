@@ -9,6 +9,7 @@ import SwiftUI
 import SwiftData
 
 struct ContentView: View {
+    @ObservedObject private var coordinator = Coordinator<Destination>()
     @Environment(\.modelContext) private var modelContext
     @Query private var items: [Item]
 
@@ -17,10 +18,29 @@ struct ContentView: View {
             Color.background
                 .ignoresSafeArea()
             
-            InitialView()
-            
-//            TabBarView()
+        NavigationStack(path: $coordinator.paths){
+            ZStack {
+                Color.background
+                    .ignoresSafeArea()
+                
+                InitialView()
+            }
+            .navigationDestination(for: Destination.self) { destination in
+                ZStack {
+                    Color.background.ignoresSafeArea()
+                    
+                    switch destination {
+                    case .signUpView: SignUpView()
+                            .navigationBarBackButtonHidden()
+                    case .tabBarView: TabBarView()
+                            .navigationBarBackButtonHidden()
+                    }
+                }
+
+            }
         }
+        .environmentObject(coordinator)
+    }
     }
 }
 
