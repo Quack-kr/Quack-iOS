@@ -11,6 +11,8 @@ struct HomeView: View {
     @EnvironmentObject private var coordinator: Coordinator<Destination>
     @State private var isSheetPresented = false;
     @Binding var selection: Int;
+    @State private var currentLocation = "왕십리";
+    let locations = CurrentLocation.allCases;
     
     var body: some View {
         ScrollView {
@@ -332,7 +334,7 @@ struct HomeView: View {
                     
                     Spacer()
                     
-                    Text("현재위치로 설정: 왕십리")
+                    Text("현재위치로 설정: \(currentLocation)")
                         .font(.pretendard(.number(600), size: 14))
                         .foregroundStyle(.point)
                 }
@@ -341,63 +343,41 @@ struct HomeView: View {
                     .background(Color(hex: "#68675E"))
                     .padding(.bottom, 24)
                 
-                Grid(alignment: .leading, horizontalSpacing: 56, verticalSpacing: 32) {
-                    GridRow {
-                        Text("용산")
-                        
-                        Text("이태원")
-                        
-                        Text("한남")
-                    }
-                    
-                    GridRow {
-                        Text("홍대")
-                        
-                        Text("합정")
-                        
-                        Text("연남")
-                        
-                        Text("망원")
-                    }
-                    
-                    GridRow {
-                        Text("성수")
-                        
-                        Text("건대")
-                        
-                        Text("왕십리")
-                        
-                        Text("신당")
-                    }
-                    
-                    GridRow {
-                        Text("종로")
-                        
-                        Text("을지로")
-                        
-                        Text("안국")
-                        
-                        Text("명동")
-                    }
-                    
-                    GridRow {
-                        Text("깅님")
-                        
-                        Text("압구정")
-                        
-                        Text("잠실")
-                    }
-                    
-                    GridRow {
-                        Text("여의도")
-                        
-                        Text("영등포")
-                        
-                        Text("문래")
+                Grid(alignment: .leading, horizontalSpacing: 50, verticalSpacing: 32) {
+                    ForEach(0 ..< 6) { row in
+                        if (row > 0 && row < 4) {
+                            GridRow {
+                                ForEach(0  ..< 4) { col in
+                                    Button(action: {
+                                        currentLocation = locations[row * 3 + row - 1 + col].rawValue;
+                                    }) {
+                                        Text(locations[row * 3 + row - 1 + col].rawValue)
+                                            .font(currentLocation == locations[row * 3 + row - 1 + col].rawValue ? .pretendard(.number(700), size: 18) : .pretendard(.number(500), size: 15))
+                                            .foregroundStyle(currentLocation == locations[row * 3 + row - 1 + col].rawValue ? Color(hex:"#EFEEDF") : Color(hex:"#68675E"))
+                                    }
+                                }
+                            }
+                            
+                        }
+                        else {
+                            let rowNum = row == 0 ? 0 : 3;
+                            
+                            GridRow {
+                                ForEach(0 ..< 3) { col in
+                                    Button(action: {
+                                        currentLocation = locations[row * 3 + rowNum + col].rawValue;
+                                    } ) {
+                                        Text(locations[row * 3 + rowNum + col].rawValue)
+                                            .font(currentLocation == locations[row * 3 + rowNum + col].rawValue ? .pretendard(.number(700), size: 18) : .pretendard(.number(500), size: 15))
+                                            .foregroundStyle(currentLocation == locations[row * 3 + rowNum + col].rawValue ? Color(hex:"#EFEEDF") : Color(hex:"#68675E"))
+                                    }
+                                }
+                            }
+
+                        }
+
                     }
                 }
-                .font(.pretendard(.number(500), size: 15))
-                .foregroundStyle(Color(hex:"#68675E"))
                 
                 Spacer()
                 

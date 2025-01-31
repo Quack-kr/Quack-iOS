@@ -27,3 +27,29 @@ enum NicknameInstructionText: String {
     case long = "20자이하로 입력해주세요."
     case used = "사용중인 닉네임입니다."
 }
+
+/** Tab - HomeView */
+
+enum CurrentLocation: String, CaseIterable {
+    case yongsan = "용산"
+    case itaewon = "이태원"
+    case hannam = "한남"
+    case hongdae = "홍대"
+    case hapjung = "합정"
+    case yunnam = "연남"
+    case mangwon = "망원"
+    case sungsu = "성수"
+    case gundae = "건대"
+    case wangshipri = "왕십리"
+    case singdang = "신당"
+    case jongro = "종로"
+    case yuljiro = "을지로"
+    case anguk  = "안국"
+    case myungdong = "명동"
+    case gangnam = "강남"
+    case apgujung = "압구정"
+    case jamsil = "잠실"
+    case yeouido = "여의도"
+    case yungdeungpo = "영등포"
+    case munrae = "문래"
+}
