@@ -6,13 +6,15 @@
 //
 
 import SwiftUI
+import KakaoSDKUser
 
 struct InitialView: View {
-    @State private var isSheetPresented = true;
+    @State private var isSheetPresented = false;
     @State private var isAllPolicyButtonsSelected = false;
     @State private var policyButtonColor = [Color](repeating: Color(hex:"#EFEEDF"), count: 4)
     @EnvironmentObject private var coordinator: Coordinator<Destination>
-//    @State private var socialMedia: SocialMedia = SocialMedia()
+    @EnvironmentObject var user: User
+    
     
     var body: some View {
         VStack {
@@ -26,69 +28,83 @@ struct InitialView: View {
             
             VStack(spacing: 10) {
                 Button(action: {
-//                    socialMedia = .kakao
+                    user.socialLoginType = .kakao
                     isSheetPresented.toggle()
                 }){
-                    // TODO: 카카오 로그인 이미지로 넣기
-                    VStack {
-                        HStack {
-                            Image(systemName: "message.fill")
-                            
-                            Spacer()
-                            
-                            Text("카카오로 로그인")
-                            
-                            Spacer()
-                        }
-                        .foregroundStyle(Color(hex: "#171714"))
-                        .padding(.vertical, 16)
+                    // TODO: 카카오 로그인 디자인 가이드 확인
+                    HStack {
+                        Spacer()
+                        
+                        Image(systemName: "message.fill")
+                        
+                        Text("카카오로 계속하기")
+                            .font(.pretendard(.number(700), size: 14))
+                        
+                        Spacer()
                     }
+                    .padding(.vertical, 16)
+                    .padding(.horizontal, 16)
                     .background(
                         Rectangle()
                             .cornerRadius(12)
                             .foregroundStyle(.point)
                     )
-                    .padding(.horizontal, 16)
-                    
+                    .foregroundStyle(Color(hex: "#171714"))
                 }
                 
                 
                 Button(action: {
                     
                 }){
-                    Text("추후 업데이트 예정")
-                        .foregroundStyle(Color.white)
-                        .padding(.vertical, 16)
-                        .padding(.horizontal, 100)
-                        .background(
-                            RoundedRectangle(cornerRadius: 8)
-                                .foregroundStyle(.white.opacity(0.2))
+                    HStack {
+                        Spacer()
+                        
+                        Text("추후 업데이트 예정")
+                            .font(.theJamsil(.number(700), size: 14))
+                            .foregroundStyle(Color.white)
+                        
+                        Spacer()
+                    }
+                    .padding(.vertical, 16)
+                    .background(
+                        RoundedRectangle(cornerRadius: 12)
+                            .foregroundStyle(.white.opacity(0.2))
                     )
                 }
                 .disabled(true)
+                .opacity(0.5)
                 
                 Button(action: {
                     
                 }){
-                    Text("추후 업데이트 예정")
-                        .foregroundStyle(Color.white)
-                        .padding(.vertical, 16)
-                        .padding(.horizontal, 100)
-                        .background(
-                            RoundedRectangle(cornerRadius: 8)
-                                .foregroundStyle(.white.opacity(0.2))
+                    HStack {
+                        Spacer()
+                        
+                        Text("추후 업데이트 예정")
+                            .font(.theJamsil(.number(700), size: 14))
+                            .foregroundStyle(Color.white)
+                        
+                        Spacer()
+                    }
+                    .padding(.vertical, 16)
+                    .background(
+                        RoundedRectangle(cornerRadius: 12)
+                            .foregroundStyle(.white.opacity(0.2))
                     )
                 }
                 .disabled(true)
+                .opacity(0.5)
                 
                 
                 Button(action : {
                     coordinator.push(.tabBarView)
                 }) {
                     Text("둘러보기")
+                        .font(.pretendard(.number(500), size: 14))
                         .foregroundStyle(Color(hex:"#A8A7A1"))
                 }
             }
+            .padding(.horizontal, 16)
         }
         .frame(maxWidth: .infinity)
         .padding(.bottom, 29)
@@ -111,7 +127,7 @@ struct InitialView: View {
                     VStack(spacing: 16) {
                         Button(action: {
                             isAllPolicyButtonsSelected = true
-
+                            
                             for ind in policyButtonColor.indices {
                                 policyButtonColor[ind] = Color(.point)
                             }
@@ -190,6 +206,22 @@ struct InitialView: View {
                 Spacer()
                 
                 Button(action: {
+                    // 카카오톡 실행 가능 여부 확인 TODO: 소셜 로그인 별 로직 분리
+//                    if (UserApi.isKakaoTalkLoginAvailable()) {
+//                        UserApi.shared.loginWithKakaoTalk {(oauthToken, error) in
+//                            if let error = error {
+//                                print(error)
+//                            }
+//                            else {
+//                                print("loginWithKakaoTalk() success.")
+//                                _ = oauthToken
+//                                
+//                                isSheetPresented.toggle() //TODO: dismiss() 사용시 왜 error?
+//                                coordinator.push(.signUpView)
+//                            }
+//                        }
+//                    }
+                    
                     isSheetPresented.toggle() //TODO: dismiss() 사용시 왜 error?
                     coordinator.push(.signUpView)
                 }){

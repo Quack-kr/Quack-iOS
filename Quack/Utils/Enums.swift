@@ -8,7 +8,7 @@
 import Foundation
 
 /**SignUpView**/
-enum SocialMedia: String {
+enum SocialMediaType: String {
     init() {
         self = .kakao
     }
