@@ -9,6 +9,7 @@ import SwiftUI
 
 struct SubstractView: View {
     @State private var isSheetPresented = false;
+    @Binding var selection: Int;
     
     var body: some View {
         ScrollView {
@@ -22,7 +23,9 @@ struct SubstractView: View {
                         
                         Spacer()
                         
-                        Button(action:{}){
+                        Button(action:{
+                            selection = 1;
+                        }){
                             Image(.search)
                         }
                         
@@ -317,6 +320,6 @@ struct SubstractView: View {
 }
 
 #Preview {
-    SubstractView()
+    SubstractView(selection: .constant(2))
         .background(Color.background)
 }

@@ -8,7 +8,9 @@
 import SwiftUI
 
 struct SearchView: View {
-    @State private var searchText = "";
+    @State private var searchingText = "";
+    @State private var searchedTextArr = ["고기"];
+    @State private var searchedShopArr = [SearchedShop(shopName: "김밥천국")];
     
     var body: some View {
         ScrollView {
@@ -20,16 +22,28 @@ struct SearchView: View {
                     HStack {
                         TextField(
                             "",
-                            text: $searchText,
+                            text: $searchingText,
                             prompt: Text("장소, 가게 두드려보GO")
                                 .foregroundStyle(Color(hex:"#68675E"))
                         )
                         .foregroundStyle(Color(hex:"#EFEEDF"))
                         .tint(.point)
                         
-                        Button(action: {}) {
-                            Image(.search)
-                                .frame(height: 18)
+                        Button(action: {
+                            if searchingText.isEmpty {
+                                // TODO: 검색 기능
+                            } else {
+                                searchingText.removeAll()
+                            }
+                        }) {
+                            if searchingText.isEmpty {
+                                Image(.search)
+                                    .frame(height: 18)
+                            }
+                            else {
+                                Image(.eraseCircle)
+                                    .frame(height: 18)
+                            }
                         }
                     }
                     .padding(.vertical, 10)
@@ -40,7 +54,7 @@ struct SearchView: View {
                     )
                 }
                 
-                /* Recently Searched Text*/
+                /* Recently Searched Text */
                 VStack(spacing: 14) {
                     HStack {
                         Text("최근 검색어")
@@ -49,32 +63,43 @@ struct SearchView: View {
                         
                         Spacer()
                         
-                        Text("지우기")
-                            .font(.pretendard(.number(600), size: 12))
-                            .foregroundStyle(Color(hex:"#D7D5C1"))
-                            .onTapGesture {
-                                // TODO: 전체 지우기 기능 추가
+                        
+                        if !searchedTextArr.isEmpty {
+                            Button(action: {
+                                searchedTextArr.removeAll()
+                            }) {
+                                Text("지우기")
+                                    .font(.pretendard(.number(600), size: 12))
+                                    .foregroundStyle(Color(hex:"#D7D5C1"))
                             }
+                        }
                     }
                     
                     ScrollView(.horizontal) {
                         HStack(spacing: 4) {
-                            HStack {
-                                Text("고기")
-                                    .font(.theJamsil(.number(700), size: 14))
-                                    .foregroundStyle(Color(hex:"#D7D5C1"))
-                                
-                                Image(.erase)
-                                    .onTapGesture {
-                                        // TODO: 개별 지우기 기능 추가
+                            ForEach(searchedTextArr, id: \.self) { searchedText in
+                                HStack {
+                                    Button(action: {
+                                        searchingText = searchedText;
+                                    }) {
+                                        Text(searchedText)
+                                            .font(.theJamsil(.number(700), size: 14))
+                                            .foregroundStyle(Color(hex:"#D7D5C1"))
                                     }
+                                    
+                                    Button(action: {
+                                        searchedTextArr.remove(at: searchedTextArr.firstIndex(of: searchedText)!)
+                                    }) {
+                                        Image(.erase)
+                                    }
+                                }
+                                .padding(.horizontal, 12)
+                                .padding(.vertical, 8)
+                                .background(
+                                    RoundedRectangle(cornerRadius: 15)
+                                        .foregroundStyle(Color(hex:"#2A2925"))
+                                )
                             }
-                            .padding(.horizontal, 12)
-                            .padding(.vertical, 8)
-                            .background(
-                                RoundedRectangle(cornerRadius: 15)
-                                    .foregroundStyle(Color(hex:"#2A2925"))
-                            )
                         }
                     }
                 }
@@ -88,24 +113,34 @@ struct SearchView: View {
                         
                         Spacer()
                         
-                        Text("지우기")
-                            .font(.pretendard(.number(600), size: 12))
-                            .foregroundStyle(Color(hex:"#D7D5C1"))
-                            .onTapGesture {
-                                // TODO: 지우기 기능 추가
+                        if !searchedShopArr.isEmpty {
+                            Button(action: {
+                                searchedShopArr.removeAll()
+                            }) {
+                                Text("지우기")
+                                    .font(.pretendard(.number(600), size: 12))
+                                    .foregroundStyle(Color(hex:"#D7D5C1"))
                             }
+                        }
                     }
                     ScrollView(.horizontal) {
                         HStack(spacing: 14) {
-                            VStack(spacing: 8) {
-                                Image(.dummyMenu)
-                                    .resizable()
-                                    .scaledToFit()
-                                    .frame(width:64)
-                                
-                                Text("김밥천국")
-                                    .font(.pretendard(.number(600), size: 12))
-                                    .foregroundStyle(Color(hex:"#D7D5C1"))
+                            ForEach(searchedShopArr, id: \.self) { searchedShop in
+                                Button(action: {
+                                    searchingText = searchedShop.shopName;
+                                }) {
+                                    VStack(spacing: 8) {
+                                        // Image(searchedShop.img) TODO: 서버로부터 이미지 전송받기
+                                        Image(.dummyMenu)
+                                            .resizable()
+                                            .scaledToFit()
+                                            .frame(width:64)
+                                        
+                                        Text(searchedShop.shopName)
+                                            .font(.pretendard(.number(600), size: 12))
+                                            .foregroundStyle(Color(hex:"#D7D5C1"))
+                                    }
+                                }
                             }
                         }
                     }

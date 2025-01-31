@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		9344F2302D3F9738005A4FDB /* DummyThumbnail.png in Resources */ = {isa = PBXBuildFile; fileRef = 9344F22E2D3F9738005A4FDB /* DummyThumbnail.png */; };
 		9344F2312D3F9738005A4FDB /* DummyMenu.png in Resources */ = {isa = PBXBuildFile; fileRef = 9344F22F2D3F9738005A4FDB /* DummyMenu.png */; };
+		9385211C2D4BABA5009C9B71 /* NavigationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9385211B2D4BABA5009C9B71 /* NavigationManager.swift */; };
+		938521202D4BB566009C9B71 /* AlarmView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9385211F2D4BB566009C9B71 /* AlarmView.swift */; };
 		9389FC552D32ACE60092F336 /* InitialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9389FC542D32ACE60092F336 /* InitialView.swift */; };
 		9389FC572D32AD2D0092F336 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9389FC562D32AD2D0092F336 /* SignUpView.swift */; };
 		938B7B942D32C34C009B2CE8 /* PretendardVariable.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 938B7B932D32C34C009B2CE8 /* PretendardVariable.ttf */; };
@@ -19,9 +21,12 @@
 		938B7BA12D32C48C009B2CE8 /* TheJamsilBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 938B7B9A2D32C48C009B2CE8 /* TheJamsilBold.otf */; };
 		938B7BA22D32C48C009B2CE8 /* TheJamsilExtraBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 938B7B9B2D32C48C009B2CE8 /* TheJamsilExtraBold.otf */; };
 		938B7BA62D32C72C009B2CE8 /* FontManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 938B7BA52D32C72C009B2CE8 /* FontManager.swift */; };
+		93A9E3442D4BC5AC0000E349 /* AlarmContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A9E3432D4BC5AC0000E349 /* AlarmContentView.swift */; };
+		93A9E34B2D4C031B0000E349 /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A9E34A2D4C031B0000E349 /* Enums.swift */; };
+		93A9E34D2D4C03B90000E349 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A9E34C2D4C03B90000E349 /* Constants.swift */; };
+		93A9E34F2D4D0B270000E349 /* Structs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A9E34E2D4D0B270000E349 /* Structs.swift */; };
 		93B434932D328ECC0087C3ED /* QuackApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B434922D328ECC0087C3ED /* QuackApp.swift */; };
 		93B434952D328ECC0087C3ED /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B434942D328ECC0087C3ED /* ContentView.swift */; };
-		93B434972D328ECC0087C3ED /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B434962D328ECC0087C3ED /* Item.swift */; };
 		93B434992D328ECD0087C3ED /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 93B434982D328ECD0087C3ED /* Assets.xcassets */; };
 		93B4349C2D328ECD0087C3ED /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 93B4349B2D328ECD0087C3ED /* Preview Assets.xcassets */; };
 		93B434A62D328ECE0087C3ED /* QuackTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B434A52D328ECE0087C3ED /* QuackTests.swift */; };
@@ -55,6 +60,8 @@
 /* Begin PBXFileReference section */
 		9344F22E2D3F9738005A4FDB /* DummyThumbnail.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DummyThumbnail.png; sourceTree = "<group>"; };
 		9344F22F2D3F9738005A4FDB /* DummyMenu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DummyMenu.png; sourceTree = "<group>"; };
+		9385211B2D4BABA5009C9B71 /* NavigationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationManager.swift; sourceTree = "<group>"; };
+		9385211F2D4BB566009C9B71 /* AlarmView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmView.swift; sourceTree = "<group>"; };
 		9389FC542D32ACE60092F336 /* InitialView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialView.swift; sourceTree = "<group>"; };
 		9389FC562D32AD2D0092F336 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		938B7B932D32C34C009B2CE8 /* PretendardVariable.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = PretendardVariable.ttf; sourceTree = "<group>"; };
@@ -66,10 +73,13 @@
 		938B7B9A2D32C48C009B2CE8 /* TheJamsilBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = TheJamsilBold.otf; sourceTree = "<group>"; };
 		938B7B9B2D32C48C009B2CE8 /* TheJamsilExtraBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = TheJamsilExtraBold.otf; sourceTree = "<group>"; };
 		938B7BA52D32C72C009B2CE8 /* FontManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontManager.swift; sourceTree = "<group>"; };
+		93A9E3432D4BC5AC0000E349 /* AlarmContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmContentView.swift; sourceTree = "<group>"; };
+		93A9E34A2D4C031B0000E349 /* Enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
+		93A9E34C2D4C03B90000E349 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		93A9E34E2D4D0B270000E349 /* Structs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Structs.swift; sourceTree = "<group>"; };
 		93B4348F2D328ECC0087C3ED /* Quack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Quack.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		93B434922D328ECC0087C3ED /* QuackApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuackApp.swift; sourceTree = "<group>"; };
 		93B434942D328ECC0087C3ED /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		93B434962D328ECC0087C3ED /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		93B434982D328ECD0087C3ED /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		93B4349B2D328ECD0087C3ED /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		93B434A12D328ECE0087C3ED /* QuackTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QuackTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -163,8 +173,28 @@
 			children = (
 				938B7BA52D32C72C009B2CE8 /* FontManager.swift */,
 				93DD282B2D34D4C300C111E8 /* ColorManager.swift */,
+				9385211B2D4BABA5009C9B71 /* NavigationManager.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		93A9E3422D4BC5990000E349 /* Alarm */ = {
+			isa = PBXGroup;
+			children = (
+				9385211F2D4BB566009C9B71 /* AlarmView.swift */,
+				93A9E3432D4BC5AC0000E349 /* AlarmContentView.swift */,
+			);
+			path = Alarm;
+			sourceTree = "<group>";
+		};
+		93A9E3502D4D10740000E349 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				93A9E34A2D4C031B0000E349 /* Enums.swift */,
+				93A9E34C2D4C03B90000E349 /* Constants.swift */,
+				93A9E34E2D4D0B270000E349 /* Structs.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 		93B434862D328ECC0087C3ED = {
@@ -195,9 +225,9 @@
 				938B7B952D32C3BF009B2CE8 /* Info.plist */,
 				938B7B912D32C303009B2CE8 /* Resources */,
 				93B434922D328ECC0087C3ED /* QuackApp.swift */,
-				93B434962D328ECC0087C3ED /* Item.swift */,
 				93B434982D328ECD0087C3ED /* Assets.xcassets */,
 				93B4349A2D328ECD0087C3ED /* Preview Content */,
+				93A9E3502D4D10740000E349 /* Utils */,
 			);
 			path = Quack;
 			sourceTree = "<group>";
@@ -230,6 +260,7 @@
 		93F6C6822D32A92400009587 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				93A9E3422D4BC5990000E349 /* Alarm */,
 				93B434942D328ECC0087C3ED /* ContentView.swift */,
 				9389FC542D32ACE60092F336 /* InitialView.swift */,
 				9389FC562D32AD2D0092F336 /* SignUpView.swift */,
@@ -393,13 +424,18 @@
 				9389FC552D32ACE60092F336 /* InitialView.swift in Sources */,
 				FE05A74F2D3D32970078E498 /* SubstractView.swift in Sources */,
 				93DD282C2D34D4C300C111E8 /* ColorManager.swift in Sources */,
-				93B434972D328ECC0087C3ED /* Item.swift in Sources */,
 				FE05A7512D3D329F0078E498 /* MyView.swift in Sources */,
+				93A9E34F2D4D0B270000E349 /* Structs.swift in Sources */,
+				93A9E3442D4BC5AC0000E349 /* AlarmContentView.swift in Sources */,
 				FE05A74D2D3D319D0078E498 /* SearchView.swift in Sources */,
+				93A9E34D2D4C03B90000E349 /* Constants.swift in Sources */,
+				93A9E34B2D4C031B0000E349 /* Enums.swift in Sources */,
 				938B7BA62D32C72C009B2CE8 /* FontManager.swift in Sources */,
 				FE05A7492D3D20EE0078E498 /* HomeView.swift in Sources */,
 				93B434932D328ECC0087C3ED /* QuackApp.swift in Sources */,
 				FE05A74B2D3D2E400078E498 /* TabBarView.swift in Sources */,
+				9385211C2D4BABA5009C9B71 /* NavigationManager.swift in Sources */,
+				938521202D4BB566009C9B71 /* AlarmView.swift in Sources */,
 				9389FC572D32AD2D0092F336 /* SignUpView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
