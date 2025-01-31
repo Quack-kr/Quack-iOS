@@ -10,6 +10,7 @@ import SwiftData
 
 struct ContentView: View {
     @ObservedObject private var coordinator = Coordinator<Destination>()
+    var user = User()
     
     var body: some View {
         ZStack {
@@ -37,6 +38,7 @@ struct ContentView: View {
                         }
                 }
             }
+            .environmentObject(user)
             .environmentObject(coordinator)
             .background(Color.background)
         }
