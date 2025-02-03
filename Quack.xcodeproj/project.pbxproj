@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		930DD0F22D4D1ECA00BFA015 /* KakaoSDK in Frameworks */ = {isa = PBXBuildFile; productRef = 930DD0F12D4D1ECA00BFA015 /* KakaoSDK */; };
-		930DD0F42D4D1F4300BFA015 /* KakaoSDKFriendResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 930DD0F32D4D1F4300BFA015 /* KakaoSDKFriendResources.bundle */; };
 		930DD0F62D4D3E2800BFA015 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 930DD0F52D4D3E2800BFA015 /* Model.swift */; };
 		9344F2302D3F9738005A4FDB /* DummyThumbnail.png in Resources */ = {isa = PBXBuildFile; fileRef = 9344F22E2D3F9738005A4FDB /* DummyThumbnail.png */; };
 		9344F2312D3F9738005A4FDB /* DummyMenu.png in Resources */ = {isa = PBXBuildFile; fileRef = 9344F22F2D3F9738005A4FDB /* DummyMenu.png */; };
@@ -410,7 +409,6 @@
 				938B7BA22D32C48C009B2CE8 /* TheJamsilExtraBold.otf in Resources */,
 				9344F2312D3F9738005A4FDB /* DummyMenu.png in Resources */,
 				9344F2302D3F9738005A4FDB /* DummyThumbnail.png in Resources */,
-				930DD0F42D4D1F4300BFA015 /* KakaoSDKFriendResources.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -632,7 +630,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = Quack.Quack;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -669,7 +667,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = Quack.Quack;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
