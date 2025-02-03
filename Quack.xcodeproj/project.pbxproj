@@ -60,7 +60,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		930DD0F32D4D1F4300BFA015 /* KakaoSDKFriendResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = KakaoSDKFriendResources.bundle; sourceTree = "<group>"; };
 		930DD0F52D4D3E2800BFA015 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		9344F22E2D3F9738005A4FDB /* DummyThumbnail.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DummyThumbnail.png; sourceTree = "<group>"; };
 		9344F22F2D3F9738005A4FDB /* DummyMenu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DummyMenu.png; sourceTree = "<group>"; };
@@ -206,7 +205,6 @@
 			isa = PBXGroup;
 			children = (
 				930DD0F52D4D3E2800BFA015 /* Model.swift */,
-				930DD0F32D4D1F4300BFA015 /* KakaoSDKFriendResources.bundle */,
 				93B434912D328ECC0087C3ED /* Quack */,
 				93B434A42D328ECE0087C3ED /* QuackTests */,
 				93B434AE2D328ECE0087C3ED /* QuackUITests */,
@@ -372,11 +370,12 @@
 			};
 			buildConfigurationList = 93B4348A2D328ECC0087C3ED /* Build configuration list for PBXProject "Quack" */;
 			compatibilityVersion = "Xcode 14.0";
-			developmentRegion = en;
+			developmentRegion = ko;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 				Base,
+				ko,
 			);
 			mainGroup = 93B434862D328ECC0087C3ED;
 			packageReferences = (
@@ -625,6 +624,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -662,6 +662,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
