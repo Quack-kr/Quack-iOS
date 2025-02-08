@@ -18,37 +18,31 @@ struct SignUpView: View {
     var body: some View {
         VStack(alignment: .leading) {
             VStack(alignment: .leading, spacing: 8) {
-                    Text("이것만 하면 회원가입 끝!")
-                        .font(.pretendard(.number(800), size: 24))
-                        .foregroundStyle(Color(hex:"#EFEEDF"))
-
-                    Text("꽥을 이용할 마지막 단계!")
-                        .font(.pretendard(.number(400), size: 16))
-                        .foregroundStyle(Color(hex: "#A8A7A1"))
+                Text("이것만 하면 회원가입 끝!")
+                    .textModifier(.pretendard, 800, 24, "#EFEEDF")
+                
+                Text("꽥을 이용할 마지막 단계!")
+                    .textModifier(.pretendard, 400, 16, "#A8A7A1")
             }
             .padding(.top, 80)
             
             Spacer()
             
-            VStack(spacing: 24) { // content Stack
+            VStack(spacing: 24) {
                 VStack(alignment: .leading, spacing: 8){
                     HStack {
                         Text("닉네임")
-                            .font(.theJamsil(.number(700), size: 14))
-                            .foregroundStyle(Color(hex:"#A8A7A1"))
+                            .textModifier(.theJamsil, 700, 14, "#A8A7A1")
                         
                         Spacer()
                         
                         Text("\(nickname.count)/20")
-                            .font(.pretendard(.number(500), size: 14))
-                            .foregroundStyle(Color(hex:"#A8A7A1"))
-                        
+                            .textModifier(.pretendard, 500, 14, "#A8A7A1")
                     }
                     ZStack {
                         TextField("닉네임을 입력하세요.", text: $nickname)
                             .padding(.leading, 16)
-                            .font(.pretendard(.number(700), size: 16))
-                            .foregroundStyle(Color(hex:"#EFEEDF"))
+                            .textModifier(.pretendard, 700, 16, "#EFEEDF")
                             .onChange(of: nickname.count) {
                                 
                                 if (nickname.count < 3) {
@@ -70,7 +64,7 @@ struct SignUpView: View {
                                     }
                                 }
                             }
-
+                        
                     }
                     .padding(.vertical, 16)
                     .background(
@@ -84,8 +78,7 @@ struct SignUpView: View {
                     )
                     
                     Text(nicknameInstructionText.rawValue)
-                        .font(.pretendard(.number(400), size: 12))
-                        .foregroundStyle(isNicknameProper ? .point : .red)
+                        .textModifier(.pretendard, 400, 12, isNicknameProper ? .point : .red)
                         .padding(.leading, 16)
                 }
                 
@@ -93,8 +86,7 @@ struct SignUpView: View {
                 VStack(alignment: .leading, spacing: 8) {
                     HStack {
                         Text("이메일")
-                            .font(.theJamsil(.number(700),size: 14))
-                            .foregroundStyle(Color(hex:"#A8A7A1"))
+                            .textModifier(.theJamsil, 700, 14, "#A8A7A1")
                         
                         Spacer()
                     }
@@ -103,8 +95,7 @@ struct SignUpView: View {
                             // TODO: 서버로부터 전송받은 이메일로 변경
                             Text("papa021326@naver.com")
                                 .padding(.leading, 16)
-                                .font(.pretendard(.number(700), size: 16))
-                                .tint(Color(hex:"#525250"))
+                                .textModifier(.pretendard, 700, 16, "#525250")
                             
                             Spacer()
                         }
@@ -121,8 +112,7 @@ struct SignUpView: View {
                     )
                     
                     Text("\(user.socialLoginType.rawValue)로 가입한 계정이에요.")
-                        .font(.theJamsil(.number(400), size: 12))
-                        .foregroundStyle(Color(hex:"#A8A7A1"))
+                        .textModifier(.theJamsil, 400, 12, "#A8A7A1")
                         .padding(.leading, 16)
                 }
             }
@@ -144,19 +134,11 @@ struct SignUpView: View {
                 user.isLogIn = true
                 coordinator.push(.tabBarView)
             }){
-                    Text("시작하기")
-                    .frame(maxWidth: .infinity)
-                    .font(.pretendard(.number(700), size: 16))
-                    .foregroundStyle(Color(hex:"#171714"))
-                    .padding(.vertical, 16)
-                        .background(
-                            RoundedRectangle(cornerRadius: 8)
-                                .foregroundStyle(isNicknameProper ? .point : Color(hex: "#525250"))
-                        )
-
+                Text("시작하기")
+                    .blockableButtonTextModifier($isNicknameProper)                
             }
             .disabled(isNicknameProper ? false : true)
-
+            
         }
         .padding(.horizontal, 16)
     }
@@ -166,9 +148,9 @@ struct SignUpView: View {
             return false
         }
         //TODO: 닉네임 중복 확인
-//        else if (true) {
-//            return false
-//        }
+        //        else if (true) {
+        //            return false
+        //        }
         
         return true;
     }

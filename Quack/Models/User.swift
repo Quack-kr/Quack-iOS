@@ -1,5 +1,5 @@
 //
-//  Model.swift
+//  User.swift
 //  Quack
 //
 //  Created by 차차 on 2/1/25.

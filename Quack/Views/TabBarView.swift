@@ -58,7 +58,7 @@ struct TabBarView: View {
                         }.tag(2)
                         .background(Color.background)
 
-                    MyView()
+                    MyPageView()
                         .tabItem {
                             Image(.my)
                                 .renderingMode(/*@START_MENU_TOKEN@*/.template/*@END_MENU_TOKEN@*/)
