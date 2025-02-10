@@ -31,5 +31,7 @@
 	</array>
 	<key>NMFClientId</key>
 	<string>$(NaverClientId)</string>
+	<key>KakaoAppKey</key>
+	<string>$(KakaoAppKey)</string>
 </dict>
 </plist>
