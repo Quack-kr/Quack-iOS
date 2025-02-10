@@ -20,3 +20,5 @@ let POLICY_NOTICE = """
                      개인정보 수집 및 이용에 대한 동의를 거부할 권리가 있으며,
                      동의 거부시 서비스 이용이 제한됩니다.
                      """
+
+let KAKAO_APP_KEY = Bundle.main.infoDictionary?["KakaoAppKey"] as! String

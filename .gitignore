@@ -135,3 +135,6 @@ iOSInjectionProject/
 
 # Behaviors shell script files
 *.sh
+
+# Config file for API Key
+*.xcconfig

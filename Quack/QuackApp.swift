@@ -15,7 +15,7 @@ import KakaoSDKUser
 struct QuackApp: App {
     init() {
         // Kakao SDK 초기화
-        KakaoSDK.initSDK(appKey: "0a65923ee2966bb3bcdc7f81a4b9759b")
+        KakaoSDK.initSDK(appKey: KAKAO_APP_KEY)
     }
     var body: some Scene {
         WindowGroup {
