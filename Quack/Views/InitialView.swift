@@ -102,7 +102,7 @@ struct InitialView: View {
         }
         .frame(maxWidth: .infinity)
         .padding(.bottom, 29)
-        .sheet(isPresented: $isSheetPresented, content:{ InitialViewBottomSheet(isEveryRequiredSelected: $isEveryPolicySelected, isSheetPresented: $isSheetPresented, policyButtonColor: $policyButtonColor)})
+        .sheet(isPresented: $isSheetPresented, content:{ InitialBottomSheet(isEveryRequiredSelected: $isEveryPolicySelected, isSheetPresented: $isSheetPresented, policyButtonColor: $policyButtonColor)})
     }
 }
 

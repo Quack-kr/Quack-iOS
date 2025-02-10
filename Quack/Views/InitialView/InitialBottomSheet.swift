@@ -1,13 +1,14 @@
 //
-//  InitialViewBottomSheet.swift
+//  InitialBottomSheet.swift
 //  Quack
 //
 //  Created by 차차 on 2/8/25.
 //
 
 import SwiftUI
+import KakaoSDKUser
 
-struct InitialViewBottomSheet: View {
+struct InitialBottomSheet: View {
     @Binding var isEveryRequiredSelected:Bool
     @Binding var isSheetPresented:Bool
     @Binding  var policyButtonColor : [Color]
@@ -103,20 +104,21 @@ struct InitialViewBottomSheet: View {
             
             Button(action: {
                 // 카카오톡 실행 가능 여부 확인 TODO: 소셜 로그인 별 로직 분리
-//                    if (UserApi.isKakaoTalkLoginAvailable()) {
-//                        UserApi.shared.loginWithKakaoTalk {(oauthToken, error) in
-//                            if let error = error {
-//                                print(error)
-//                            }
-//                            else {
-//                                print("loginWithKakaoTalk() success.")
-//                                _ = oauthToken
-//
-//                                isSheetPresented.toggle() //TODO: dismiss() 사용시 왜 error?
-//                                coordinator.push(.signUpView)
-//                            }
-//                        }
-//                    }
+                    if (UserApi.isKakaoTalkLoginAvailable()) {
+                        UserApi.shared.loginWithKakaoTalk {(oauthToken, error) in
+                            if let error = error {
+                                print(error)
+                            }
+                            else {
+                                print("loginWithKakaoTalk() success.")
+                                _ = oauthToken
+                                print("토큰 : \(oauthToken?.accessToken)")
+
+                                isSheetPresented.toggle() //TODO: dismiss() 사용시 왜 error?
+                                coordinator.push(.signUpView)
+                            }
+                        }
+                    }
                 
                 isSheetPresented.toggle() //TODO: dismiss() 사용시 왜 error?
                 coordinator.push(.signUpView)
@@ -135,6 +137,6 @@ struct InitialViewBottomSheet: View {
 }
 
 #Preview {
-    InitialViewBottomSheet(isEveryRequiredSelected: .constant(false), isSheetPresented: .constant(false), policyButtonColor: .constant([Color](repeating: Color(hex:"#EFEEDF"), count: 4)))
+    InitialBottomSheet(isEveryRequiredSelected: .constant(false), isSheetPresented: .constant(false), policyButtonColor: .constant([Color](repeating: Color(hex:"#EFEEDF"), count: 4)))
         .background(Color.background)
 }

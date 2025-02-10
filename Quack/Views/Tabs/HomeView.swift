@@ -27,7 +27,7 @@ struct HomeView: View {
         .scrollIndicators(.hidden)
         .padding(.horizontal, 16)
         .sheet(isPresented: $isSheetPresented, content: {
-            HomeViewBottomSheet(currentLocation: $currentLocation, isSheetPresented: $isSheetPresented)
+            HomeBottomSheet(currentLocation: $currentLocation, isSheetPresented: $isSheetPresented)
         })
     }
 }

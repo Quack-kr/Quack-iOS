@@ -122,6 +122,7 @@ struct SignUpView: View {
             
             Button(action: {
                 // 디버깅용 카카오 로그인 unlink 코드
+                /*
                 UserApi.shared.unlink {(error) in
                     if let error = error {
                         print(error)
@@ -130,6 +131,7 @@ struct SignUpView: View {
                         print("unlink() success.")
                     }
                 }
+                 */
                 
                 user.isLogIn = true
                 coordinator.push(.tabBarView)
@@ -144,15 +146,8 @@ struct SignUpView: View {
     }
     
     func checkNickname() -> Bool {
-        if (nickname.count < 3 || nickname.count > 20) {
-            return false
-        }
-        //TODO: 닉네임 중복 확인
-        //        else if (true) {
-        //            return false
-        //        }
-        
-        return true;
+        if (nickname.count < 3 || nickname.count > 20) { return false; }
+        else { return true; }
     }
 }
 

@@ -16,20 +16,23 @@ struct SubstractView: View {
             VStack(spacing: 8) {
                 SubstractHeader(selection: $selection, isSheetPresented: $isSheetPresented)
                 
+                Spliter()
+                
                 SubstractBanner()
+                
+                Spliter()
                 
                 SubstractRestaurantList()
                 
-                Spacer()
+                Spliter()
             }
             
             Spacer()
         }
-        .ignoresSafeArea(edges: .top)
     }
 }
 
 #Preview {
     SubstractView(selection: .constant(2))
-        .background(Color.background)
+        .background(Color(hex:"#171714"))
 }

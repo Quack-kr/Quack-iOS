@@ -66,7 +66,6 @@ struct SubstractHeader: View {
                 .padding(.vertical, 9)
                 .padding(.leading, 16)
             }
-            .padding(.top, 70)
             .background(
                 Rectangle()
                     .foregroundStyle(Color(hex:"#171714"))

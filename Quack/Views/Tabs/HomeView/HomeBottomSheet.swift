@@ -1,5 +1,5 @@
 //
-//  HomeViewBottomSheet.swift
+//  HomeBottomSheet.swift
 //  Quack
 //
 //  Created by 차차 on 2/8/25.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct HomeViewBottomSheet: View {
+struct HomeBottomSheet: View {
     @Binding var currentLocation : String
     @Binding var isSheetPresented: Bool
     let locations = CurrentLocation.allCases;
@@ -80,5 +80,5 @@ struct HomeViewBottomSheet: View {
 }
 
 #Preview {
-    HomeViewBottomSheet(currentLocation: .constant("왕십리"), isSheetPresented: .constant(false))
+    HomeBottomSheet(currentLocation: .constant("왕십리"), isSheetPresented: .constant(false))
 }
