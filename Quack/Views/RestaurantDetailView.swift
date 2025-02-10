@@ -7,26 +7,30 @@
 
 import SwiftUI
 
-struct RestaurantDetail: View {
+struct RestaurantDetailView: View {
     @Binding var restaurant: Restaurant
     @Binding var currentLocation: String
     
     var body: some View {
         ScrollViewReader { reader in
             ScrollView {
-                VStack(spacing: 10) {
-                    RestaurantInfo(restaurant: restaurant, currentLocation: currentLocation)
+                VStack(spacing: 0) {
+                    RestaurantDetailHeader(restaurantName: restaurant.name)
                         .id("top")
                     
-                    Opinions()
-                    
-                    BestMenu()
-                    
-                    Menus(restaurant: restaurant)
-                    
-                    Reviews(reviews: restaurant.reviews)
-                    
-                    Report()
+                    VStack(spacing: 10) {
+                        RestaurantInfo(restaurant: restaurant, currentLocation: currentLocation)
+                        
+                        Opinions()
+                        
+                        BestMenu()
+                        
+                        Menus(restaurant: restaurant)
+                        
+                        Reviews(reviews: restaurant.reviews)
+                        
+                        Report()
+                    }
                     
                     Button(action: {
                         withAnimation {
@@ -69,11 +73,13 @@ struct RestaurantDetail: View {
                 
                 Spacer()
             }
+            .edgesIgnoringSafeArea(.top)
+            .scrollIndicators(.hidden)
         }
     }
 }
 
 #Preview {
-    RestaurantDetail(restaurant: .constant(Restaurant(name: "니카이 우동", address: "서울 성동구 성덕정17길 11 2층", category: "분식", now: "영업중", openTime: "10:00~22:00", menuList: [Menu(name: "자루우동", price: 10000)], reviews: [Review](repeating: Review(userName: "금손 언데드 001", date: "2024.04.10", thumbnail: "", content: "자루우동은 진짜 맛있는데 니꾸우동은 그냥 먹어줄만 했어요..."), count: 3), bookNum: 100000)), currentLocation: .constant("왕십리"))
+    RestaurantDetailView(restaurant: .constant(Restaurant(name: "니카이 우동", address: "서울 성동구 성덕정17길 11 2층", category: "분식", now: "영업중", openTime: "10:00~22:00", menuList: [Menu(name: "자루우동", price: 10000)], reviews: [Review](repeating: Review(userName: "금손 언데드 001", date: "2024.04.10", thumbnail: "", content: "자루우동은 진짜 맛있는데 니꾸우동은 그냥 먹어줄만 했어요..."), count: 3), bookNum: 100000)), currentLocation: .constant("왕십리"))
         .background(Color.background)
 }
