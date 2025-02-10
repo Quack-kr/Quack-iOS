@@ -35,7 +35,6 @@ struct RestaurantDetailHeader: View {
                 .padding(.horizontal, 16)
                 .padding(.bottom, 32)
             }
-            .padding(.top, 70)
             .background(
                 Rectangle()
                     .foregroundStyle(Color(hex:"#171714"))

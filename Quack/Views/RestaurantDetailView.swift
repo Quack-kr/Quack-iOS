@@ -7,6 +7,10 @@
 
 import SwiftUI
 
+enum RestaurantDetailComponentType {
+    case restaurantInfo, opinions, bestMenu, menus, reviews, report;
+}
+
 struct RestaurantDetailView: View {
     @Binding var restaurant: Restaurant
     @Binding var currentLocation: String
@@ -18,19 +22,51 @@ struct RestaurantDetailView: View {
                     RestaurantDetailHeader(restaurantName: restaurant.name)
                         .id("top")
                     
-                    VStack(spacing: 10) {
+                /* ForEach(0 ..< 5) { ind in
+                        switch RestaurantDetailComponentType {
+                        case .restaurantInfo:
+                            RestaurantInfo(restaurant: restaurant, currentLocation: currentLocation)
+                            break;
+                        case .opinions:
+                            Opinions()
+                            break;
+                        case .bestMenu:
+                            BestMenu()
+                            break;
+                        case .menus:
+                            Menus(restaurant: restaurant)
+                            break;
+                        case .reviews:
+                            Reviews(reviews: restaurant.reviews)
+                        case .report:
+                            Report()
+                            break;
+                        }
+                    }
+                 */
+                    
                         RestaurantInfo(restaurant: restaurant, currentLocation: currentLocation)
+                        
+                        Spliter()
                         
                         Opinions()
                         
+                        Spliter()
+                        
                         BestMenu()
+                        
+                        Spliter()
                         
                         Menus(restaurant: restaurant)
                         
+                        Spliter()
+                        
                         Reviews(reviews: restaurant.reviews)
                         
+                        Spliter()
+                        
                         Report()
-                    }
+                    
                     
                     Button(action: {
                         withAnimation {
@@ -73,7 +109,6 @@ struct RestaurantDetailView: View {
                 
                 Spacer()
             }
-            .edgesIgnoringSafeArea(.top)
             .scrollIndicators(.hidden)
         }
     }

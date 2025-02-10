@@ -28,9 +28,9 @@ struct RestaurantInfo: View {
             
             /** Map View */
             VStack {
-                RoundedRectangle(cornerRadius: 8)
+                NaverMapView()
+                    .cornerRadius(8)
                     .frame(height: 139)
-                    .foregroundStyle(.white)
             }
             .padding(.bottom, 12)
             
