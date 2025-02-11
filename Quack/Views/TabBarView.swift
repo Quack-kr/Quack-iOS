@@ -32,7 +32,7 @@ struct TabBarView: View {
                                     .foregroundStyle(Color(hex: "#EFEEDF"))
                             } }.tag(0)
                         .background(Color.background)
-                        .overlay(MVPoverlay(selection: 0))
+//                        .overlay(MVPoverlay(selection: 0))
                     
                     SearchView()
                         .tabItem {
@@ -45,7 +45,7 @@ struct TabBarView: View {
                                 .foregroundStyle(Color(hex: "#EFEEDF"))
                         }.tag(1)
                         .background(Color.background)
-                        .overlay(MVPoverlay(selection: 2))
+//                        .overlay(MVPoverlay(selection: 2))
 
                     
                     SubstractView(selection: $selection)
@@ -58,7 +58,7 @@ struct TabBarView: View {
                                 .font(.pretendard(.number(400)))
                                 .foregroundStyle(Color(hex: "#EFEEDF"))
                         }.tag(2)
-                        .background(Color.background)
+                        .background(Color(hex:"#171714"))
 
                     MyPageView()
                         .tabItem {
@@ -71,7 +71,7 @@ struct TabBarView: View {
                                 .foregroundStyle(Color(hex: "#EFEEDF"))
                         }.tag(3)
                         .background(Color.background)
-                        .overlay(MVPoverlay(selection: 3))
+//                        .overlay(MVPoverlay(selection: 3))
                 }
                 .toolbarBackground(.raisinBlack, for: .tabBar)
             })

@@ -57,3 +57,20 @@ enum FontStyle {
     case theJamsil
     case pretendard
 }
+
+/** SubstractView  */
+//enum FoodCategory: CaseIterable {
+//    case chicken
+//    case pizza
+//    case hamburger
+//    case chinese
+//    case asian
+//    case sushi
+//    case gukbap
+//    case bunsik
+//    case jokbal
+//    case meat
+//    case korean
+//    case japense
+//    case italian
+//}

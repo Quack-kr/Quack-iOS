@@ -22,3 +22,5 @@ let POLICY_NOTICE = """
                      """
 
 let KAKAO_APP_KEY = Bundle.main.infoDictionary?["KakaoAppKey"] as! String
+
+let FOOD_CATEGORY = ["치킨","피자","햄버거","중식","아시안","초밥","국밥","분식","족발","한식","일식","양식"];

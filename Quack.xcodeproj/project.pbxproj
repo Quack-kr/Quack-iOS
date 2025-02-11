@@ -444,9 +444,9 @@
 				9389FC542D32ACE60092F336 /* InitialView.swift */,
 				93DCC8FF2D59868700E86E21 /* InitialView */,
 				9389FC562D32AD2D0092F336 /* SignUpView.swift */,
-				FE05A74A2D3D2E400078E498 /* TabBarView.swift */,
 				935BF0042D578EFE00DAAA07 /* RestaurantDetailView.swift */,
 				935BF00C2D579ED900DAAA07 /* RestaurantDetail */,
+				FE05A74A2D3D2E400078E498 /* TabBarView.swift */,
 				FE05A7522D3D32A90078E498 /* Tabs */,
 				9338F2602D59AACA009B151B /* ReviewView.swift */,
 			);

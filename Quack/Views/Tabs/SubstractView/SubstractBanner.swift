@@ -38,19 +38,21 @@ struct SubstractBanner: View {
             
             ScrollView(.horizontal) {
                 HStack {
-                    Button(action: {}) {
-                        VStack {
-                            Image(.chicken)
-                                .frame(height: 36)
-                                .padding(9)
-                                .background(
-                                    Circle()
-                                        .foregroundStyle(Color(hex:"#2A2925"))
-                                    
-                                )
-                            
-                            Text("치킨")
-                                .textModifier(.pretendard,600,12,"#EFEEDF")
+                    ForEach(0 ..< 13) { ind in
+                        Button(action: {}) {
+                            VStack {
+                                Image(.chicken)
+                                    .frame(height: 36)
+                                    .padding(9)
+                                    .background(
+                                        Circle()
+                                            .foregroundStyle(Color(hex:"#2A2925"))
+                                        
+                                    )
+                                
+                                Text(FOOD_CATEGORY[ind])
+                                    .textModifier(.pretendard,600,12,"#EFEEDF")
+                            }
                         }
                     }
                 }

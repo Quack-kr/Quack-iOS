@@ -13,7 +13,7 @@ struct SubstractView: View {
     
     var body: some View {
         ScrollView {
-            VStack(spacing: 8) {
+            VStack(spacing:0) {
                 SubstractHeader(selection: $selection, isSheetPresented: $isSheetPresented)
                 
                 Spliter()
@@ -23,8 +23,6 @@ struct SubstractView: View {
                 Spliter()
                 
                 SubstractRestaurantList()
-                
-                Spliter()
             }
             
             Spacer()
