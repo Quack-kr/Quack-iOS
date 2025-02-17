@@ -7,10 +7,6 @@
 
 import SwiftUI
 
-enum RestaurantDetailComponentType {
-    case restaurantInfo, opinions, bestMenu, menus, reviews, report;
-}
-
 struct RestaurantDetailView: View {
     @Binding var restaurant: Restaurant
     @Binding var currentLocation: String
@@ -22,50 +18,27 @@ struct RestaurantDetailView: View {
                     RestaurantDetailHeader(restaurantName: restaurant.name)
                         .id("top")
                     
-                /* ForEach(0 ..< 5) { ind in
-                        switch RestaurantDetailComponentType {
-                        case .restaurantInfo:
-                            RestaurantInfo(restaurant: restaurant, currentLocation: currentLocation)
-                            break;
-                        case .opinions:
-                            Opinions()
-                            break;
-                        case .bestMenu:
-                            BestMenu()
-                            break;
-                        case .menus:
-                            Menus(restaurant: restaurant)
-                            break;
-                        case .reviews:
-                            Reviews(reviews: restaurant.reviews)
-                        case .report:
-                            Report()
-                            break;
-                        }
-                    }
-                 */
+                    RestaurantInfo(restaurant: restaurant, currentLocation: currentLocation)
                     
-                        RestaurantInfo(restaurant: restaurant, currentLocation: currentLocation)
-                        
-                        Spliter()
-                        
-                        Opinions()
-                        
-                        Spliter()
-                        
-                        BestMenu()
-                        
-                        Spliter()
-                        
-                        Menus(restaurant: restaurant)
-                        
-                        Spliter()
-                        
-                        Reviews(reviews: restaurant.reviews)
-                        
-                        Spliter()
-                        
-                        Report()
+                    Spliter()
+                    
+                    Opinions()
+                    
+                    Spliter()
+                    
+                    BestMenu()
+                    
+                    Spliter()
+                    
+                    Menus(restaurant: restaurant)
+                    
+                    Spliter()
+                    
+                    Reviews(reviews: restaurant.reviews)
+                    
+                    Spliter()
+                    
+                    Report()
                     
                     
                     Button(action: {
@@ -74,7 +47,7 @@ struct RestaurantDetailView: View {
                         }
                     }) {
                         VStack(spacing: 10) {
-                             Image(.arrowUp)
+                            Image(.arrowUp)
                             
                             Text("맨위로 슝")
                                 .textModifier(.theJamsil, 700, 14, "#EFEEDF")
@@ -116,5 +89,5 @@ struct RestaurantDetailView: View {
 
 #Preview {
     RestaurantDetailView(restaurant: .constant(Restaurant(name: "니카이 우동", address: "서울 성동구 성덕정17길 11 2층", category: "분식", now: "영업중", openTime: "10:00~22:00", menuList: [Menu(name: "자루우동", price: 10000)], reviews: [Review](repeating: Review(userName: "금손 언데드 001", date: "2024.04.10", thumbnail: "", content: "자루우동은 진짜 맛있는데 니꾸우동은 그냥 먹어줄만 했어요..."), count: 3), bookNum: 100000)), currentLocation: .constant("왕십리"))
-        .background(Color.background)
+        .background(Color(hex:"#171714"))
 }

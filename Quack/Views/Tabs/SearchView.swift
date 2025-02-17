@@ -9,8 +9,8 @@ import SwiftUI
 
 struct SearchView: View {
     @State private var searchingText = "";
-    @State private var searchedTextArr = ["고기"];
-    @State private var searchedShopArr = [SearchedShop(shopName: "김밥천국")];
+    @State private var searchedTextArr = [String]();
+    @State private var searchedShopArr = [SearchedShop]();
     
     var body: some View {
         ScrollView {

@@ -13,15 +13,17 @@ struct MyPageCSCenter: View {
             Text("고객센터")
                 .textModifier(.theJamsil, 700, 18, "#EFEEDF")
             
-            HStack {
-                Image(.inquiry)
-                
-                Text("1:1 문의하기")
-                    .textModifier(.pretendard, 400, 16, "#EFEEDF")
-                
-                Spacer()
-                
-                Image(.chevronRight)
+            Button(action: {}) {
+                HStack {
+                    Image(.inquiry)
+                    
+                    Text("1:1 문의하기")
+                        .textModifier(.pretendard, 400, 16, "#EFEEDF")
+                    
+                    Spacer()
+                    
+                    Image(.chevronRight)
+                }
             }
             
         }

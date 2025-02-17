@@ -13,25 +13,29 @@ struct MyPageEtc: View {
             Text("기타")
                 .textModifier(.theJamsil, 700, 18, "#EFEEDF")
             
-            HStack {
-                //TODO: 이미지 추가
-                Image(.policy)
-                
-                Text("약관 및 정책")
-                
-                Spacer()
-                
-                Image(.chevronRight)
+            Button(action: {}) {
+                HStack {
+                    //TODO: 이미지 추가
+                    Image(.policy)
+                    
+                    Text("약관 및 정책")
+                    
+                    Spacer()
+                    
+                    Image(.chevronRight)
+                }
             }
             
-            HStack {
-                Image(.notice)
-                
-                Text("공지사항")
-                
-                Spacer()
-                
-                Image(.chevronRight)
+            Button(action: {}) {
+                HStack {
+                    Image(.notice)
+                    
+                    Text("공지사항")
+                    
+                    Spacer()
+                    
+                    Image(.chevronRight)
+                }
             }
             
             HStack {

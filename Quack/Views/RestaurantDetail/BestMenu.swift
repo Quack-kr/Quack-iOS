@@ -27,7 +27,7 @@ struct BestMenu: View {
                             HStack(alignment: .bottom) {
                                 VStack(spacing: 0) {
                                     VStack {
-                                        Text("2위")
+                                        Text("\(ind + 1 == 1 ? 2 : ind == 2 ? ind + 1 : ind)위")
                                         Text("잠봉크림우동")
                                     }
                                     .textModifier(.theJamsil, 700, 14, "#EFEEDF")

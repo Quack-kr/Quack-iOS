@@ -38,7 +38,7 @@ struct SubstractBanner: View {
             
             ScrollView(.horizontal) {
                 HStack {
-                    ForEach(0 ..< 13) { ind in
+                    ForEach(0 ..< FOOD_CATEGORY.count) { ind in
                         Button(action: {}) {
                             VStack {
                                 Image(.chicken)
