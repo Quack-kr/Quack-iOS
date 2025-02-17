@@ -1,0 +1,12 @@
+//
+//  Config.xcconfig
+//  Quack
+//
+//  Created by 차차 on 2/10/25.
+//
+
+// Configuration settings file format documentation can be found at:
+// https://help.apple.com/xcode/#/dev745c5c974
+
+KakaoAppKey = 0a65923ee2966bb3bcdc7f81a4b9759b
+NaverClientId = jmwccev36s

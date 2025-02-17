@@ -1,5 +1,5 @@
 //
-//  Struct.swift
+//  SearchedShop.swift
 //  Quack
 //
 //  Created by 차차 on 1/31/25.

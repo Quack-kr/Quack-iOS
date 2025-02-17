@@ -19,7 +19,6 @@ enum SocialMediaType: String {
 
 enum NicknameInstructionText: String {
     init() {
-        // TODO: InitialView로부터 소셜 로그인 방식 넘겨받기
         self = .normal
     }
     case normal = "꽥에서 사용하실 이름이에요."
@@ -28,8 +27,7 @@ enum NicknameInstructionText: String {
     case used = "사용중인 닉네임입니다."
 }
 
-/** Tab - HomeView */
-
+/** HomeView */
 enum CurrentLocation: String, CaseIterable {
     case yongsan = "용산"
     case itaewon = "이태원"
@@ -53,3 +51,26 @@ enum CurrentLocation: String, CaseIterable {
     case yungdeungpo = "영등포"
     case munrae = "문래"
 }
+
+/** CustomModifier */
+enum FontStyle {
+    case theJamsil
+    case pretendard
+}
+
+/** SubstractView  */
+//enum FoodCategory: CaseIterable {
+//    case chicken
+//    case pizza
+//    case hamburger
+//    case chinese
+//    case asian
+//    case sushi
+//    case gukbap
+//    case bunsik
+//    case jokbal
+//    case meat
+//    case korean
+//    case japense
+//    case italian
+//}

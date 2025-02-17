@@ -9,7 +9,7 @@
 			<string>Editor</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>kakao0a65923ee2966bb3bcdc7f81a4b9759b</string>
+				<string>$(KakaoAppKey)</string>
 			</array>
 		</dict>
 	</array>
@@ -29,5 +29,9 @@
 		<string>TheJamsilBold.otf</string>
 		<string>TheJamsilExtraBold.otf</string>
 	</array>
+	<key>NMFClientId</key>
+	<string>$(NaverClientId)</string>
+	<key>KakaoAppKey</key>
+	<string>$(KakaoAppKey)</string>
 </dict>
 </plist>
