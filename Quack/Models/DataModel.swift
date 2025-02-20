@@ -45,6 +45,7 @@ struct Review: Hashable {
     let restaurantId: Int
     let userId: Int
     let reviewType: ReviewType // FIXME: 현재 ReviewType이라는 이름으로 리뷰 작성 페이지에서 사용중(식당 장점, 단점 확인을 위해)
+    var content: String
     let createdDate: Date = Date()
     var lastModifiedDate: Date = Date()
 }

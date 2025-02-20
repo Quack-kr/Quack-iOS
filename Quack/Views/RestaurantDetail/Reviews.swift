@@ -112,5 +112,5 @@ struct Reviews: View {
 }
 
 #Preview {
-    Reviews(reviews: [Review](repeating: Review(id: 1, restaurantId: 1, userId: 1, reviewType: .cons), count: 1))
+    Reviews(reviews: [Review](repeating: Review(id: 1, restaurantId: 1, userId: 1, reviewType: .cons, content: "리뷰 내용"), count: 1))
 }
