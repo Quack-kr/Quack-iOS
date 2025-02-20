@@ -13,7 +13,7 @@ struct InitialView: View {
     @State private var isEveryPolicySelected = false;
     @State private var policyButtonColor = [Color](repeating: Color(hex:"#EFEEDF"), count: 4)
     @EnvironmentObject private var coordinator: Coordinator<Destination>
-    @EnvironmentObject var user: User
+    @EnvironmentObject var user: CurrentUser
     
     var body: some View {
         VStack {

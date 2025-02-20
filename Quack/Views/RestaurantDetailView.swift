@@ -34,7 +34,7 @@ struct RestaurantDetailView: View {
                     
                     Spliter()
                     
-                    Reviews(reviews: restaurant.reviews)
+                    // Reviews(reviews: restaurant.reviews)
                     
                     Spliter()
                     
@@ -61,7 +61,8 @@ struct RestaurantDetailView: View {
                                 Image(.book)
                                     .renderingMode(/*@START_MENU_TOKEN@*/.template/*@END_MENU_TOKEN@*/)
                                 
-                                Text("\(restaurant.bookNum)")
+                                Text("10000")
+                                //Text("\(restaurant.bookNum)")
                             }
                             .textModifier(.pretendard, 700, 12, "#EFEEDF")
                             .padding(.vertical, 8)
@@ -88,6 +89,12 @@ struct RestaurantDetailView: View {
 }
 
 #Preview {
-    RestaurantDetailView(restaurant: .constant(Restaurant(name: "니카이 우동", address: "서울 성동구 성덕정17길 11 2층", category: "분식", now: "영업중", openTime: "10:00~22:00", menuList: [Menu(name: "자루우동", price: 10000)], reviews: [Review](repeating: Review(userName: "금손 언데드 001", date: "2024.04.10", thumbnail: "", content: "자루우동은 진짜 맛있는데 니꾸우동은 그냥 먹어줄만 했어요..."), count: 3), bookNum: 100000)), currentLocation: .constant("왕십리"))
+    RestaurantDetailView(restaurant: .constant(Restaurant(
+        id: 1,
+        userId: 1,
+        name: "니카이 우동",
+        address: "서울 성동구 성덕정17길 11 2층",
+        category: RestaurantCategory.korean)
+    ), currentLocation: .constant("왕십리"))
         .background(Color(hex:"#171714"))
 }

@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SwiftUI
 
 /**SignUpView**/
 enum SocialMediaType: String {
@@ -56,6 +57,11 @@ enum CurrentLocation: String, CaseIterable {
 enum FontStyle {
     case theJamsil
     case pretendard
+}
+
+/** Restaurant */
+enum RestaurantCategory {
+    case korean, japenese // TODO: Add Case
 }
 
 /** SubstractView  */

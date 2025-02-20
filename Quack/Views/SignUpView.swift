@@ -10,7 +10,7 @@ import KakaoSDKUser
 
 struct SignUpView: View {
     @EnvironmentObject private var coordinator: Coordinator<Destination>
-    @EnvironmentObject var user: User
+    @EnvironmentObject var user: CurrentUser
     @State private var nickname = "붉은 탕수육 0001"; // TODO: 서버로부터 생성받은 닉네임으로 초기 설정
     @State private var isNicknameProper = true;
     @State private var nicknameInstructionText = NicknameInstructionText()
@@ -154,5 +154,5 @@ struct SignUpView: View {
 #Preview {
     SignUpView()
         .background(Color.background)
-        .environmentObject(User())
+        .environmentObject(CurrentUser())
 }

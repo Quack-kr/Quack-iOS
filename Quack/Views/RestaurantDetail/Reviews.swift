@@ -37,10 +37,12 @@ struct Reviews: View {
                                         .foregroundStyle(Color(hex:"#323230"))
                                 )
                             
-                            Text(review.userName)
+                            Text("리뷰자 명")
+                            // Text("\(review.userId)")
                                 .textModifier(.pretendard, 700, 12, "#A8A7A1")
                             
-                            Text(review.date)
+                            Text("리뷰 일자")
+                            // Text(review.date)
                                 .textModifier(.pretendard, 500, 12, "#A8A7A1")
                             
                             Spacer()
@@ -50,7 +52,8 @@ struct Reviews: View {
                         HStack(spacing: 14) {
                             Image(.dummyMenu)
                             
-                            Text(review.content)
+                            Text("리뷰 내용")
+                            //Text(review.content)
                                 .textModifier(.pretendard, 400, 14, "#A8A7A1")
                                 .multilineTextAlignment(.leading)
                         }
@@ -109,5 +112,5 @@ struct Reviews: View {
 }
 
 #Preview {
-    Reviews(reviews: [Review](repeating: Review(userName: "금손 언데드 001", date: "2024.04.10", thumbnail: "", content: "자루우동은 진짜 맛있는데 니꾸우동은 그냥 먹어줄만 했어요..."), count: 10))
+    Reviews(reviews: [Review](repeating: Review(id: 1, restaurantId: 1, userId: 1, reviewType: .cons), count: 1))
 }

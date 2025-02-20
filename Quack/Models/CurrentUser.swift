@@ -7,7 +7,7 @@
 
 import Foundation
 
-class User: ObservableObject {
+class CurrentUser: ObservableObject {
     @Published var socialLoginType = SocialMediaType()
     @Published var isLogIn = false;
 }

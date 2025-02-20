@@ -92,7 +92,7 @@ struct AlarmView: View {
                                             .padding(.horizontal, 16)
                                             .padding(.vertical, 14)
                                             .background(alarm == "checked" ? Color(hex:"#21211D") : Color(hex:"#323230"))
-                                            // TODO: 색상 조건 변경하기
+                                            // FIXME: 색상 조건 변경하기
                                         }
                                         .labelsHidden()
                                     }

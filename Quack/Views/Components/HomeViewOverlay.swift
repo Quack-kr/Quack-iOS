@@ -21,7 +21,7 @@ struct HomeViewOverlay: View {
                 
                 HStack(spacing: 16) {
                     Button(action: {
-                        selection = 1; // TODO: Button Tap Gesture 종료 전에 화면 전환이 됨.
+                        selection = 1; // FIXME: Button Tap Gesture 종료 전에 화면 전환이 됨.
                     }) {
                         Image(.search)
                             .frame(height: 24)
