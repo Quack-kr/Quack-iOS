@@ -55,9 +55,11 @@ struct Menus: View {
 #Preview {
     Menus(restaurant: Restaurant(
         id: 1,
-        userId: 1,
         name: "니카이 우동",
         address: "서울 성동구 성덕정17길 11 2층",
-        category: RestaurantCategory.korean)
+        category: RestaurantCategory.korean,
+        reviewList:[],
+        menuList:[]
+    )
     )
 }

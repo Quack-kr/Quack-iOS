@@ -91,10 +91,12 @@ struct RestaurantDetailView: View {
 #Preview {
     RestaurantDetailView(restaurant: .constant(Restaurant(
         id: 1,
-        userId: 1,
         name: "니카이 우동",
         address: "서울 성동구 성덕정17길 11 2층",
-        category: RestaurantCategory.korean)
+        category: RestaurantCategory.korean,
+        reviewList:[],
+        menuList:[]
+    )
     ), currentLocation: .constant("왕십리"))
         .background(Color(hex:"#171714"))
 }

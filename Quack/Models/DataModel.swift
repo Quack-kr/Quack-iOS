@@ -20,13 +20,11 @@ struct User {
     let providerId: Int
     let email: String
     var nickname: String
-    // let rollType // MARK: 이거 뭐임?
     var profileImg: String
 }
 
 struct Restaurant {
     let id: Int
-    let userId: Int // MARK: 유저 id 왜 있는지? -> 가게 사장님?
     var name: String
     var address: String
     var category: RestaurantCategory = .korean
@@ -34,20 +32,21 @@ struct Restaurant {
     var detailIntroduction: String = ""
     var latitude: Decimal = 0
     var longitude: Decimal = 0
-    let registrationNum: String = ""
-    let reprensentativeName: String = ""
-    let representatitvePhoneNum: String = ""
-    let registrationImg: String = ""
+    var restaurantImg: [String] = []
+    var reviewList: [Review]
+    var menuList: [Menu]
 }
 
 struct Review: Hashable {
     let id: Int
-    let restaurantId: Int
+    let restaurantId: Int // MARK: 어차피 레스토랑에 맞는 리뷰들을 보내주지 않나?
     let userId: Int
     let reviewType: ReviewType // FIXME: 현재 ReviewType이라는 이름으로 리뷰 작성 페이지에서 사용중(식당 장점, 단점 확인을 위해)
     var content: String
     let createdDate: Date = Date()
     var lastModifiedDate: Date = Date()
+    var reviewImg: [String] = []
+    // 리뷰 메뉴 평가 배열
 }
 
 struct Menu {
