@@ -53,6 +53,12 @@
 		935E66192D62F65B002D2ACD /* ReviewRestaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 935E66182D62F65B002D2ACD /* ReviewRestaurant.swift */; };
 		935E661B2D62F675002D2ACD /* ReviewContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 935E661A2D62F675002D2ACD /* ReviewContent.swift */; };
 		935E661D2D62F6CC002D2ACD /* MenuBlock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 935E661C2D62F6CC002D2ACD /* MenuBlock.swift */; };
+		937A7A8B2D682B9300A2D45A /* PostService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 937A7A8A2D682B9300A2D45A /* PostService.swift */; };
+		937A7A8E2D682BEB00A2D45A /* CombineMoya in Frameworks */ = {isa = PBXBuildFile; productRef = 937A7A8D2D682BEB00A2D45A /* CombineMoya */; };
+		937A7A902D682BEB00A2D45A /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = 937A7A8F2D682BEB00A2D45A /* Moya */; };
+		937A7A922D682BEB00A2D45A /* ReactiveMoya in Frameworks */ = {isa = PBXBuildFile; productRef = 937A7A912D682BEB00A2D45A /* ReactiveMoya */; };
+		937A7A942D682BEB00A2D45A /* RxMoya in Frameworks */ = {isa = PBXBuildFile; productRef = 937A7A932D682BEB00A2D45A /* RxMoya */; };
+		937A7A972D682CCC00A2D45A /* PostViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 937A7A962D682CCC00A2D45A /* PostViewModel.swift */; };
 		9385211C2D4BABA5009C9B71 /* NavigationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9385211B2D4BABA5009C9B71 /* NavigationManager.swift */; };
 		938521202D4BB566009C9B71 /* AlarmView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9385211F2D4BB566009C9B71 /* AlarmView.swift */; };
 		93867C1D2D5739B100C5EA62 /* HomeBottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93867C1C2D5739B100C5EA62 /* HomeBottomSheet.swift */; };
@@ -151,6 +157,8 @@
 		935E66182D62F65B002D2ACD /* ReviewRestaurant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewRestaurant.swift; sourceTree = "<group>"; };
 		935E661A2D62F675002D2ACD /* ReviewContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewContent.swift; sourceTree = "<group>"; };
 		935E661C2D62F6CC002D2ACD /* MenuBlock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuBlock.swift; sourceTree = "<group>"; };
+		937A7A8A2D682B9300A2D45A /* PostService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostService.swift; sourceTree = "<group>"; };
+		937A7A962D682CCC00A2D45A /* PostViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewModel.swift; sourceTree = "<group>"; };
 		9385211B2D4BABA5009C9B71 /* NavigationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationManager.swift; sourceTree = "<group>"; };
 		9385211F2D4BB566009C9B71 /* AlarmView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmView.swift; sourceTree = "<group>"; };
 		93867C1C2D5739B100C5EA62 /* HomeBottomSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeBottomSheet.swift; sourceTree = "<group>"; };
@@ -195,8 +203,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				937A7A942D682BEB00A2D45A /* RxMoya in Frameworks */,
 				930DD0F22D4D1ECA00BFA015 /* KakaoSDK in Frameworks */,
 				9338F2642D59B197009B151B /* NMapsMap in Frameworks */,
+				937A7A902D682BEB00A2D45A /* Moya in Frameworks */,
+				937A7A922D682BEB00A2D45A /* ReactiveMoya in Frameworks */,
+				937A7A8E2D682BEB00A2D45A /* CombineMoya in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -324,6 +336,15 @@
 			path = Review;
 			sourceTree = "<group>";
 		};
+		937A7A952D682CB600A2D45A /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				937A7A8A2D682B9300A2D45A /* PostService.swift */,
+				937A7A962D682CCC00A2D45A /* PostViewModel.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
 		938B7B912D32C303009B2CE8 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -416,6 +437,7 @@
 		93B434912D328ECC0087C3ED /* Quack */ = {
 			isa = PBXGroup;
 			children = (
+				937A7A952D682CB600A2D45A /* Network */,
 				935BF0012D578E4400DAAA07 /* Models */,
 				93F6C6822D32A92400009587 /* Views */,
 				938B7BA42D32C6FA009B2CE8 /* Extensions */,
@@ -516,6 +538,10 @@
 			packageProductDependencies = (
 				930DD0F12D4D1ECA00BFA015 /* KakaoSDK */,
 				9338F2632D59B197009B151B /* NMapsMap */,
+				937A7A8D2D682BEB00A2D45A /* CombineMoya */,
+				937A7A8F2D682BEB00A2D45A /* Moya */,
+				937A7A912D682BEB00A2D45A /* ReactiveMoya */,
+				937A7A932D682BEB00A2D45A /* RxMoya */,
 			);
 			productName = Quack;
 			productReference = 93B4348F2D328ECC0087C3ED /* Quack.app */;
@@ -593,6 +619,7 @@
 			packageReferences = (
 				930DD0F02D4D1ECA00BFA015 /* XCRemoteSwiftPackageReference "kakao-ios-sdk" */,
 				9338F2622D59B197009B151B /* XCRemoteSwiftPackageReference "SPM-NMapsMap" */,
+				937A7A8C2D682BEB00A2D45A /* XCRemoteSwiftPackageReference "Moya" */,
 			);
 			productRefGroup = 93B434902D328ECC0087C3ED /* Products */;
 			projectDirPath = "";
@@ -692,6 +719,7 @@
 				935BF0002D5781E000DAAA07 /* MyPageEtc.swift in Sources */,
 				935BEFFA2D57810600DAAA07 /* MyPageDecibel.swift in Sources */,
 				FE05A7492D3D20EE0078E498 /* HomeView.swift in Sources */,
+				937A7A8B2D682B9300A2D45A /* PostService.swift in Sources */,
 				935E661B2D62F675002D2ACD /* ReviewContent.swift in Sources */,
 				935BF0122D57A12A00DAAA07 /* Menus.swift in Sources */,
 				93B434932D328ECC0087C3ED /* QuackApp.swift in Sources */,
@@ -701,6 +729,7 @@
 				9385211C2D4BABA5009C9B71 /* NavigationManager.swift in Sources */,
 				9338F2612D59AACA009B151B /* ReviewView.swift in Sources */,
 				93867C1D2D5739B100C5EA62 /* HomeBottomSheet.swift in Sources */,
+				937A7A972D682CCC00A2D45A /* PostViewModel.swift in Sources */,
 				935BEFDC2D5774F300DAAA07 /* HomeRestaurantList.swift in Sources */,
 				9338F25F2D59A976009B151B /* RestaurantDetailBottomSheet.swift in Sources */,
 				931297A12D55DE0F00E44AF3 /* DataModel.swift in Sources */,
@@ -1075,6 +1104,14 @@
 				minimumVersion = 3.20.0;
 			};
 		};
+		937A7A8C2D682BEB00A2D45A /* XCRemoteSwiftPackageReference "Moya" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Moya/Moya.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 15.0.3;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -1087,6 +1124,26 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 9338F2622D59B197009B151B /* XCRemoteSwiftPackageReference "SPM-NMapsMap" */;
 			productName = NMapsMap;
+		};
+		937A7A8D2D682BEB00A2D45A /* CombineMoya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 937A7A8C2D682BEB00A2D45A /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = CombineMoya;
+		};
+		937A7A8F2D682BEB00A2D45A /* Moya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 937A7A8C2D682BEB00A2D45A /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = Moya;
+		};
+		937A7A912D682BEB00A2D45A /* ReactiveMoya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 937A7A8C2D682BEB00A2D45A /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = ReactiveMoya;
+		};
+		937A7A932D682BEB00A2D45A /* RxMoya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 937A7A8C2D682BEB00A2D45A /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = RxMoya;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

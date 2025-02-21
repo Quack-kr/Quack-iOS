@@ -56,3 +56,11 @@ struct Menu {
     var price: Int
     var description: String
 }
+
+// MARK: - PostData
+struct GetPostData: Codable {
+    let id: Int
+    let userId: Int
+    let title: String
+    let body: String
+}
