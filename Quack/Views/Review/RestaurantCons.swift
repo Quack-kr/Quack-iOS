@@ -18,16 +18,16 @@ struct RestaurantCons: View {
             }
             
             
-            ForEach(0 ..< RESTAURANT_CONS.count / 2) { row in
+            ForEach(0 ..< RestaurantConsText.count / 2) { row in
                 HStack(spacing: 16) {
                     ForEach(0..<2) { col in
-                        RestaurantFeature(imgResource: RESTAURANT_CONS_IMG[row * 2 + col], feature: RESTAURANT_CONS[row * 2 + col])
+                        RestaurantFeature(imgResource: RestaurantConsImg[row * 2 + col], feature: RestaurantConsText[row * 2 + col])
                     }
                 }
                 
-                if (row == RESTAURANT_CONS.count / 2 - 1)
+                if (row == RestaurantConsText.count / 2 - 1)
                 {
-                    RestaurantFeature(imgResource: RESTAURANT_CONS_IMG[RESTAURANT_CONS.count - 1], feature: RESTAURANT_CONS[RESTAURANT_CONS.count - 1])
+                    RestaurantFeature(imgResource: RestaurantConsImg[RestaurantConsText.count - 1], feature: RestaurantConsText[RestaurantConsText.count - 1])
                 }
             }
         }

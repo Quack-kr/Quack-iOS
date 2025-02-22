@@ -9,16 +9,16 @@ import SwiftUI
 import NMapsMap
 
 struct NaverMapView: UIViewRepresentable {
-//    let height: CGFloat
-    
+    //    let height: CGFloat
+
     func makeUIView(context: Context) -> NMFNaverMapView {
         let mapView = NMFNaverMapView()
-        mapView.showZoomControls = false;
+        mapView.showZoomControls = false
         return mapView
     }
-    
+
     func updateUIView(_ uiView: NMFNaverMapView, context: Context) {
-        
+
     }
 }
 

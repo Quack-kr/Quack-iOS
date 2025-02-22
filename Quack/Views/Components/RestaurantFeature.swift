@@ -11,11 +11,11 @@ struct RestaurantFeature: View {
     @State var isSelected: Bool = false
     let imgResource: ImageResource
     let feature: String
-    
+
     var body: some View {
         HStack(spacing: 8) {
             Image(imgResource)
-            
+
             Text(feature)
                 .textModifier(.theJamsil, 700, 14, isSelected ? "#EFEEDF" : "#A8A7A1")
         }

@@ -9,25 +9,25 @@ import Foundation
 import SwiftUI
 
 /** InitialVIew */
-let POLICY_TITLE = [
+let PolicyTitle = [
     "서비스 이용약관 동의 (필수)",
     "개인정보 수집 및 이용 동의 (필수)",
     "위치정보 서비스 이용약관 동의 (필수)",
     "마케팅 정보 활용 동의 (선택)"
 ];
 
-let POLICY_NOTICE = """
+let PolicyNotice = """
                      \'선택\' 항목에 동의하지 않아도 서비스 이용이 가능합니다.
                      개인정보 수집 및 이용에 대한 동의를 거부할 권리가 있으며,
                      동의 거부시 서비스 이용이 제한됩니다.
                      """
 
-let KAKAO_APP_KEY = Bundle.main.infoDictionary?["KakaoAppKey"] as! String
+let KakaoAppKey = Bundle.main.infoDictionary?["KakaoAppKey"] as! String
 
-let FOOD_CATEGORY = ["치킨","피자","햄버거","중식","아시안","초밥","국밥","분식","족발","한식","일식","양식"];
+let FoodCategory = ["치킨","피자","햄버거","중식","아시안","초밥","국밥","분식","족발","한식","일식","양식"];
 
 /** Restaurant Feature */
-let RESTAURANT_CONS = [
+let RestaurantConsText = [
     "맛이 평범해요",
     "사이드메뉴가 평범해요",
     "재료가 신선하지 않아요",
@@ -45,7 +45,7 @@ let RESTAURANT_CONS = [
     "고기 안구워줘요"
 ]
 
-let RESTAURANT_CONS_IMG:[ImageResource] = [.clock, .clock, .clock, .clock, .clock, .clock, .clock, .clock, .clock, .clock, .clock, .clock, .clock, .clock, .clock];
+let RestaurantConsImg:[ImageResource] = [.clock, .clock, .clock, .clock, .clock, .clock, .clock, .clock, .clock, .clock, .clock, .clock, .clock, .clock, .clock];
 
 let RESTAURANT_PROS = [
     "맛이 특별해요",
@@ -60,6 +60,6 @@ let RESTAURANT_PROS = [
     "가성비가 진짜 좋아요"
 ]
 
-let RESTAURANT_PROS_IMG:[ImageResource] = [.clock, .clock, .clock, .clock, .clock, .clock, .clock, .clock, .clock, .clock]
+let RESTAURANT_PROS_IMG: [ImageResource] = [.clock, .clock, .clock, .clock, .clock, .clock, .clock, .clock, .clock, .clock]
 
 let TASTE = ["미친 맛", "맛있어요", "평범해요", "아쉬워요", "핵노맛"]

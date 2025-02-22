@@ -10,24 +10,24 @@ import SwiftUI
 struct MenuBlock: View {
     let menuName: String
     let menuPrice: String
-    
+
     @State private var isMenuSelected: Bool = false
     @State private var selected = ""
-    
+
     var body: some View {
         HStack(alignment: .center, spacing: 12) {
             Image(.dummyMenu)
-            
+
             VStack(spacing: 8) {
                 Text(menuName)
                     .textModifier(.pretendard, 700, 14, "#EFEEDF")
-                
+
                 Text(menuPrice)
                     .textModifier(.pretendard, 500, 14, "#EFEEDF")
             }
-            
+
             Spacer()
-            
+
             Button(action: {
                 isMenuSelected.toggle()
             }) {
@@ -35,7 +35,7 @@ struct MenuBlock: View {
                     .renderingMode(/*@START_MENU_TOKEN@*/.template/*@END_MENU_TOKEN@*/)
                     .foregroundStyle(isMenuSelected ? .point : Color(hex:"#EFEEDF"))
             }
-            
+
         }
     }
 }

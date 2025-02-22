@@ -9,9 +9,9 @@ import SwiftUI
 import KakaoSDKUser
 
 struct InitialBottomSheet: View {
-    @Binding var isEveryRequiredSelected:Bool
-    @Binding var isSheetPresented:Bool
-    @Binding  var policyButtonColor : [Color]
+    @Binding var isAllSelected: Bool
+    @Binding var isSheetPresented: Bool
+    @Binding  var policyButtonColor: [Color]
     @EnvironmentObject private var coordinator: Coordinator<Destination>
     
     var body: some View {
@@ -31,7 +31,7 @@ struct InitialBottomSheet: View {
             VStack {
                 VStack(spacing: 16) {
                     Button(action: {
-                        isEveryRequiredSelected = true
+                        isAllSelected = true
                         
                         for ind in policyButtonColor.indices {
                             policyButtonColor[ind] = Color(.point)
@@ -51,10 +51,10 @@ struct InitialBottomSheet: View {
                         .padding(.vertical, 10)
                         .overlay(
                             RoundedRectangle(cornerRadius: 110)
-                                .stroke(isEveryRequiredSelected ? Color.point : Color(hex:"#EFEEDF"), lineWidth: 1)
+                                .stroke(isAllSelected ? Color.point : Color(hex:"#EFEEDF"), lineWidth: 1)
                         )
                     }
-                    .foregroundStyle(isEveryRequiredSelected ? Color.point : Color(hex:"#EFEEDF"))
+                    .foregroundStyle(isAllSelected ? Color.point : Color(hex:"#EFEEDF"))
                     
                     VStack(spacing: 24) {
                         ForEach(policyButtonColor.indices, id: \.self) { index in
@@ -66,10 +66,10 @@ struct InitialBottomSheet: View {
                                     policyButtonColor[index] = Color(hex:"#EFEEDF")
                                 }
                                 if policyButtonColor.allSatisfy({ $0 == Color.point }) {
-                                    isEveryRequiredSelected.toggle()
+                                    isAllSelected.toggle()
                                 } else {
-                                    if isEveryRequiredSelected {
-                                        isEveryRequiredSelected.toggle()
+                                    if isAllSelected {
+                                        isAllSelected.toggle()
                                     }
                                 }
                             }) {
@@ -77,7 +77,7 @@ struct InitialBottomSheet: View {
                                     Image(.checkCircle)
                                         .renderingMode(.template)
                                     
-                                    Text(POLICY_TITLE[index])
+                                    Text(PolicyTitle[index])
                                         .font(.pretendard(.number(500), size: 14))
                                     
                                     Spacer()
@@ -96,7 +96,7 @@ struct InitialBottomSheet: View {
             }
             .padding(.horizontal, 24)
             
-            Text(POLICY_NOTICE)
+            Text(PolicyNotice)
                 .textModifier(.pretendard, 400, 10, "#A8A7A1")
                 .multilineTextAlignment(.center)
             
@@ -124,10 +124,10 @@ struct InitialBottomSheet: View {
                 coordinator.push(.signUpView)
             }){
                 Text("다음으로")
-                    .blockableButtonTextModifier($isEveryRequiredSelected)
+                    .blockableButtonTextModifier($isAllSelected)
             }
-            .disabled(isEveryRequiredSelected ? false : true)
-            .tint(isEveryRequiredSelected ? .clear : Color(hex:"#525250"))
+            .disabled(isAllSelected ? false : true)
+            .tint(isAllSelected ? .clear : Color(hex:"#525250"))
             .padding(.horizontal, 16)
         }
         .frame(maxWidth: .infinity)
@@ -137,6 +137,6 @@ struct InitialBottomSheet: View {
 }
 
 #Preview {
-    InitialBottomSheet(isEveryRequiredSelected: .constant(false), isSheetPresented: .constant(false), policyButtonColor: .constant([Color](repeating: Color(hex:"#EFEEDF"), count: 4)))
+    InitialBottomSheet(isAllSelected: .constant(false), isSheetPresented: .constant(false), policyButtonColor: .constant([Color](repeating: Color(hex:"#EFEEDF"), count: 4)))
         .background(Color.background)
 }

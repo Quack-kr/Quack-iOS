@@ -10,7 +10,7 @@ import Moya
 
 class PostViewModel: ObservableObject {
     @Published var getPostData: GetPostData?
-    
+
     func requestPost() {
         let provider = MoyaProvider<PostService>()
         provider.request(.getPost) { result in
@@ -25,7 +25,7 @@ class PostViewModel: ObservableObject {
             case .failure(let error):
                 print(error)
             }
-            
+
         }
     }
 }

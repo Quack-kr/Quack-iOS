@@ -9,5 +9,5 @@ import Foundation
 
 class CurrentUser: ObservableObject {
     @Published var socialLoginType = SocialMediaType()
-    @Published var isLogIn = false;
+    @Published var isLogIn = false
 }

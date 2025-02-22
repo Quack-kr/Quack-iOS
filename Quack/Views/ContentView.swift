@@ -11,27 +11,27 @@ import SwiftData
 struct ContentView: View {
     @ObservedObject private var coordinator = Coordinator<Destination>()
     var user = CurrentUser()
-    
+
     var body: some View {
         ZStack {
             Color.background.ignoresSafeArea(.all)
-            
-            NavigationStack(path: $coordinator.paths){
+
+            NavigationStack(path: $coordinator.paths) {
                 ZStack {
                     Color.background.ignoresSafeArea(.all)
-                    
+
                     InitialView()
                         .background(Color.background.ignoresSafeArea(.all))
                         .navigationDestination(for: Destination.self) { destination in
                             ZStack {
                                 Color.background.ignoresSafeArea()
-                                
+
                                 switch destination {
-                                case .signUpView: 
+                                case .signUpView:
                                     SignUpView()
-                                case .tabBarView: 
+                                case .tabBarView:
                                     TabBarView()
-                                case .alarmView: 
+                                case .alarmView:
                                     AlarmView()
                                 }
                             }
