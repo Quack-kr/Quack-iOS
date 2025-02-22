@@ -9,7 +9,7 @@ import Foundation
 
 struct SearchedShop: Hashable {
     let shopName: String
-    let img: String = ".dummyMenu"
+    let img: String = ".dummyMenu" // TODO: - 이미지 추가
     
     init(shopName: String) {
         self.shopName = shopName

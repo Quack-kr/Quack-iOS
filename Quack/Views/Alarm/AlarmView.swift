@@ -9,7 +9,6 @@ import SwiftUI
 
 struct AlarmView: View {
     @EnvironmentObject private var coordinator: Coordinator<Destination>
-    @State private var isNoticeRemained = true;
     @State private var alarms = ["", "checked", ""];
     @State private var isRoot = true;
 //    @State private var alarmPath = NavigationPath()
@@ -44,7 +43,7 @@ struct AlarmView: View {
                         
                         Spacer()
                         
-                        if isNoticeRemained && isRoot {
+                        if !alarms.isEmpty && isRoot {
                             Button(action: {
                                 alarms.removeAll()
                             }) {
@@ -62,7 +61,7 @@ struct AlarmView: View {
                     }
                     .padding(.horizontal, 16)
                     
-                    if isNoticeRemained {
+                    if !alarms.isEmpty {
                         //NavigationStack(path: $alarmPath) {
                             
                             ZStack {
@@ -117,7 +116,7 @@ struct AlarmView: View {
                     Spacer()
                 }
                 
-                if !isNoticeRemained {
+                if alarms.isEmpty {
                     VStack {
                         Spacer()
                         

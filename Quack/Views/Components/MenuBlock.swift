@@ -14,8 +14,6 @@ struct MenuBlock: View {
     @State private var isMenuSelected: Bool = false
     @State private var selected = ""
     
-    var taste = ["미친 맛", "맛있어요", "평범해요", "아쉬워요", "핵노맛"]
-    
     var body: some View {
         HStack(alignment: .center, spacing: 12) {
             Image(.dummyMenu)

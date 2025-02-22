@@ -61,3 +61,5 @@ let RESTAURANT_PROS = [
 ];
 
 let RESTAURANT_PROS_IMG:[ImageResource] = [.clock, .clock, .clock, .clock, .clock, .clock, .clock, .clock, .clock, .clock];
+
+let TASTE = ["미친 맛", "맛있어요", "평범해요", "아쉬워요", "핵노맛"]
