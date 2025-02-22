@@ -38,9 +38,9 @@ struct RestaurantOfToday: View {
                                     .foregroundStyle(.point)
                                 
                                 Text("평균 28,000원")
-                                    .foregroundStyle(Color(hex:"#A8A7A1"))
+                                    .foregroundStyle(Color(hex: "#A8A7A1"))
                             }
-                                .font(.pretendard(.number(600), size: 12))
+                            .font(.pretendard(.number(600), size: 12))
                         }
                     }
                 }

@@ -22,22 +22,26 @@ struct RestaurantDetailHeader: View {
                     
                     Spacer()
                     
-                    Button(action:{ }){
+                    Button(action: {
+                        
+                    }, label: {
                         Image(.share)
-                    }
-                    
-                    Button(action:{}){
+                    })
+
+                    Button(action: {
+                        
+                    }, label: {
                         Image(.book)
                             .renderingMode(/*@START_MENU_TOKEN@*/.template/*@END_MENU_TOKEN@*/)
-                            .foregroundStyle(Color(hex:"#EFEEDF"))
-                    }
+                            .foregroundStyle(Color(hex: "#EFEEDF"))
+                    })
                 }
                 .padding(.horizontal, 16)
                 .padding(.bottom, 32)
             }
             .background(
                 Rectangle()
-                    .foregroundStyle(Color(hex:"#171714"))
+                    .foregroundStyle(Color(hex: "#171714"))
             )
         }
     }

@@ -18,9 +18,9 @@ struct SearchBar: View {
                     "",
                     text: $searchingText,
                     prompt: Text("장소, 가게 두드려보GO")
-                        .foregroundStyle(Color(hex:"#68675E"))
+                        .foregroundStyle(Color(hex: "#68675E"))
                 )
-                .foregroundStyle(Color(hex:"#EFEEDF"))
+                .foregroundStyle(Color(hex: "#EFEEDF"))
                 .tint(.point)
                 
                 Button(action: {
@@ -29,22 +29,21 @@ struct SearchBar: View {
                     } else {
                         searchingText.removeAll()
                     }
-                }) {
+                }, label: {
                     if searchingText.isEmpty {
                         Image(.search)
                             .frame(height: 18)
-                    }
-                    else {
+                    } else {
                         Image(.eraseCircle)
                             .frame(height: 18)
                     }
-                }
+                })
             }
             .padding(.vertical, 10)
             .padding(.horizontal, 16)
             .background(
                 RoundedRectangle(cornerRadius: 20)
-                    .foregroundStyle(Color(hex:"#323230"))
+                    .foregroundStyle(Color(hex: "#323230"))
             )
         }
     }

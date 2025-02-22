@@ -9,41 +9,43 @@ import SwiftUI
 
 struct MyPageReview: View {
     let buttonLabel = ["리뷰 관리", "저장함"]
-    
+
     var body: some View {
         VStack(spacing: 16) {
             HStack(spacing: 16) {
-                ForEach(buttonLabel, id:\.self) { label in
-                    Button(action:{
-                        
-                    }) {
+                ForEach(buttonLabel, id: \.self) { label in
+                    Button(action: {
+
+                    }, label: {
                         VStack(alignment: .leading, spacing: 22) {
                             Text(label)
                                 .textModifier(.theJamsil, 700, 16, "#EFEEDF")
-                            
+
                             HStack {
                                 Text("0")
                                     .textModifier(.pretendard, 700, 20, "#EFEEDF")
-                                
+
                                 Spacer()
-                                
+
                                 Image(.chevronRight)
                             }
                         }
                         .padding(16)
                         .background(
                             RoundedRectangle(cornerRadius: 8)
-                                .foregroundStyle(Color(hex:"#21211D"))
+                                .foregroundStyle(Color(hex: "#21211D"))
                         )
-                    }
+                    })
                 }
             }
-            
-            Button(action:{}){
+
+            Button(action: {
+
+            }, label: {
                 HStack {
                     Image(.review)
                         .frame(width: 16)
-                    
+
                     Text("리뷰쓰고 데시벨 올리기")
                 }
                 .textModifier(.pretendard, 700, 16, "#EFEEDF")
@@ -52,9 +54,9 @@ struct MyPageReview: View {
                 .padding(.vertical, 16)
                 .background(
                     RoundedRectangle(cornerRadius: 8)
-                        .foregroundStyle(Color(hex:"#323230"))
+                        .foregroundStyle(Color(hex: "#323230"))
                 )
-            }
+            })
         }
     }
 }

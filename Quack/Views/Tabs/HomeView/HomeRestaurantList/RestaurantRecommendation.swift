@@ -19,13 +19,13 @@ struct RestaurantRecommendation: View {
             
             /* Thumbnail Image Area */
             ZStack(alignment: .bottom) {
-                    Image(.dummyThumbnail)
-                        .resizable()
-                        .scaledToFit()
-                        .frame(maxWidth: .infinity)
-                        .overlay(
-                            LinearGradient(gradient: Gradient(colors: [Color(hex:"#171714").opacity(0), Color(hex:"#171714").opacity(1)]), startPoint: .top, endPoint: .bottom)
-                        )
+                Image(.dummyThumbnail)
+                    .resizable()
+                    .scaledToFit()
+                    .frame(maxWidth: .infinity)
+                    .overlay(
+                        LinearGradient(gradient: Gradient(colors: [Color(hex: "#171714").opacity(0), Color(hex: "#171714").opacity(1)]), startPoint: .top, endPoint: .bottom)
+                    )
                 
                 HStack(alignment: .bottom) {
                     VStack(alignment: .leading) {
@@ -51,28 +51,28 @@ struct RestaurantRecommendation: View {
                     
                     VStack(alignment: .leading) {
                         Text("자루우동")
-                            .textModifier(.theJamsil,700,16, "#EFEEDF")
+                            .textModifier(.theJamsil, 700, 16, "#EFEEDF")
                         
                         Text("우동사리와 함꼐 바삭은 추가하면 딱이지")
-                            .textModifier(.pretendard,500,12,"#A8A7A1")
+                            .textModifier(.pretendard, 500, 12, "#A8A7A1")
                         
                         Text("10,000원")
-                            .textModifier(.pretendard,600,12,"#A8A7A1")
+                            .textModifier(.pretendard, 600, 12, "#A8A7A1")
                     }
                     
                     Spacer()
                     
                     VStack {
                         Text("999+")
-                            .textModifier(.pretendard,800,14,.point)
+                            .textModifier(.pretendard, 800, 14, .point)
                         
                         Text("미친맛")
-                            .textModifier(.pretendard,600, 12, "#EFEEDF")
+                            .textModifier(.pretendard, 600, 12, "#EFEEDF")
                             .padding(.horizontal, 8)
                             .padding(.vertical, 4)
                             .background(
                                 RoundedRectangle(cornerRadius: 8)
-                                    .foregroundStyle(Color(hex:"#323230"))
+                                    .foregroundStyle(Color(hex: "#323230"))
                             )
                     }
                 }

@@ -13,13 +13,13 @@ struct BestMenu: View {
             HStack(alignment: .bottom, spacing: 8) {
                 Text("최고의 메뉴")
                     .textModifier(.theJamsil, 700, 18, "#EFEEDF")
-                
+
                 Text("최근 3개월간의 의견이에요")
                     .textModifier(.pretendard, 500, 12, "#A8A7A1")
-                
+
                 Spacer()
             }
-            
+
             HStack(alignment: .bottom, spacing: 16) {
                 ForEach(0 ..< 3) { ind in
                     VStack {
@@ -32,32 +32,32 @@ struct BestMenu: View {
                                     }
                                     .textModifier(.theJamsil, 700, 14, "#EFEEDF")
                                     .padding(.bottom, 16)
-                                    
-                                    VStack(spacing: 4){
+
+                                    VStack(spacing: 4) {
                                         Circle()
                                             .frame(width: 16)
-                                        
+
                                         Text("맛있어요999+")
                                             .textModifier(.theJamsil, 700, 12, "#D7D5C1")
                                             .padding(.bottom, 16)
                                     }
-                                    
+
                                 }
                                 .padding(.top, 24)
                                 .padding(.horizontal, 16)
                                 .background(
                                     RoundedRectangle(cornerRadius: 8)
-                                        .foregroundStyle(Color(hex:"#323230"))
+                                        .foregroundStyle(Color(hex: "#323230"))
                                 )
                                 .padding(.top, 20)
                             }
-                            
+
                             HStack(alignment: .top) {
                                 Circle()
                                     .frame(width: 40)
-                                    .foregroundStyle(Color(hex:"#323230"))
+                                    .foregroundStyle(Color(hex: "#323230"))
                                     .overlay(
-                                        
+
                                         Image(ind == 1 ? .goldCrown : .crown)
                                             .renderingMode(.template)
                                             .foregroundStyle(ind == 1 ? .point : ind == 0 ? .silver : .bronze)
@@ -77,5 +77,5 @@ struct BestMenu: View {
 }
 
 #Preview {
-        BestMenu()
+    BestMenu()
 }

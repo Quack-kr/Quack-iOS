@@ -16,13 +16,17 @@ struct SubstractRestaurantList: View {
                 
                 Spacer()
                 HStack(spacing: 8) {
-                    Button(action: {}) {
+                    Button(action: {
+                        
+                    }, label: {
                         Text("영업중")
                             .textModifier(.theJamsil, 700, 12, "#A8A7A1")
                             .substractViewButtonModifier(15)
-                    }
-                    
-                    Button(action: {}) {
+                    })
+
+                    Button(action: {
+                        
+                    }, label: {
                         HStack {
                             Text("거리순")
                             
@@ -30,7 +34,7 @@ struct SubstractRestaurantList: View {
                         }
                         .textModifier(.theJamsil, 700, 12, "#EFEEDF")
                         .substractViewButtonModifier(15)
-                    }
+                    })
                 }
             }
             .padding(.top, 24)
@@ -70,7 +74,7 @@ struct SubstractRestaurantList: View {
         .padding(.horizontal, 16)
         .background(
             Rectangle()
-                .foregroundStyle(Color(hex:"#171714"))
+                .foregroundStyle(Color(hex: "#171714"))
                 .ignoresSafeArea(edges: .top)
         )
     }

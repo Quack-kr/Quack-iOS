@@ -11,14 +11,14 @@ struct MyPageDecibel: View {
     @Binding var hackGongGam: Double
     var body: some View {
         VStack(alignment: .leading, spacing: 8) {
-            //TODO: 숫자 부분 weight 변경
+            // TODO: 숫자 부분 weight 변경
             Text("핵공감 데시벨 0dB")
                 .textModifier(.pretendard, 400, 14, .point)
-            
+
             // TODO: Progress Bar
-                ProgressView(value: hackGongGam)
-                    .accentColor(.point)
-                    .controlSize(.regular)
+            ProgressView(value: hackGongGam)
+                .accentColor(.point)
+                .controlSize(.regular)
         }
     }
 }

@@ -15,13 +15,13 @@ import KakaoSDKUser
 struct QuackApp: App {
     init() {
         // Kakao SDK 초기화
-        KakaoSDK.initSDK(appKey: KAKAO_APP_KEY)
+        KakaoSDK.initSDK(appKey: KakaoAppKey)
 
     }
     var body: some Scene {
         WindowGroup {
-            ContentView().onOpenURL(perform: { url in
-                if (AuthApi.isKakaoTalkLoginUrl(url)) {
+            ContentView().onOpenURL(perform: { url in // MARK: - onOpenURL()에 대해 학습하기
+                if AuthApi.isKakaoTalkLoginUrl(url) {
                    _ = AuthController.handleOpenUrl(url: url)
                 }
             })

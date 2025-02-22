@@ -12,12 +12,14 @@ struct MyPageHeader: View {
         HStack {
             Text("마이페이지")
                 .textModifier(.theJamsil, 700, 20, "#EFEEDF")
-            
+
             Spacer()
-            
-            Button(action: {}) {
+
+            Button(action: {
+
+            }, label: {
                 Image(.setting)
-            }
+            })
         }
         .padding(.bottom, 12)
     }

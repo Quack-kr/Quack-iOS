@@ -11,7 +11,7 @@ struct Spliter: View {
     var body: some View {
         Rectangle()
             .frame(height: 10)
-            .foregroundStyle(Color(hex:"#070706"))
+            .foregroundStyle(Color(hex: "#070706"))
     }
 }
 

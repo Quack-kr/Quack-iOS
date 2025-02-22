@@ -41,23 +41,22 @@ struct RestaurantListRanking: View {
                             }
                         }
                         .frame(width: 143, height: 155) // TODO: fix hard coding
-
                         
                         VStack(alignment: .leading) {
                             Text("김밥천국")
                                 .textModifier(.pretendard, 600, 14, "#EFEEDF")
                             
                             Text("분식 | 왕십리")
-                                .textModifier(.pretendard, 600, 12 ,"#A8A7A1")
+                                .textModifier(.pretendard, 600, 12, "#A8A7A1")
                             
                             HStack {
                                 Text("816m")
                                     .foregroundStyle(.point)
                                 
                                 Text("평균 28,000원")
-                                    .foregroundStyle(Color(hex:"#A8A7A1"))
+                                    .foregroundStyle(Color(hex: "#A8A7A1"))
                             }
-                                .font(.pretendard(.number(600), size: 12))
+                            .font(.pretendard(.number(600), size: 12))
                         }
                         .padding(.leading, 3)
                     }

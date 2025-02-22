@@ -16,7 +16,7 @@ extension Font {
         case bold
         case extrabold
         case number(Int)
-        
+
         var value: String {
             switch self {
             case .thin:
@@ -42,7 +42,7 @@ extension Font {
                 default:
                     return "TheJamsilOTF3Regular"
                 }
-                
+
             }
         }
     }
@@ -50,7 +50,7 @@ extension Font {
     static func theJamsil(_ type: TheJamsil, size: CGFloat = 17) -> Font {
         return .custom(type.value, size: size)
     }
-    
+
     enum Pretendard {
         case regular
         case thin
@@ -62,7 +62,7 @@ extension Font {
         case extrabold
         case black
         case number(Int)
-        
+
         var value: String {
             switch self {
             case .regular:
@@ -101,7 +101,7 @@ extension Font {
             }
         }
     }
-    
+
     static func pretendard(_ type: Pretendard, size: CGFloat = 17) -> Font {
         return .custom(type.value, size: size)
     }

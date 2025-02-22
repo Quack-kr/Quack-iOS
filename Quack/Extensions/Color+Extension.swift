@@ -35,5 +35,5 @@ extension Color {
         default:
             self.init(.clear)
         }
-      }
+    }
 }

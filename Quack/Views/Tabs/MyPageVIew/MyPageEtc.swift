@@ -12,38 +12,40 @@ struct MyPageEtc: View {
         VStack(alignment: .leading, spacing: 24) {
             Text("기타")
                 .textModifier(.theJamsil, 700, 18, "#EFEEDF")
-            
-            Button(action: {}) {
+
+            Button(action: {
+
+            }, label: {
                 HStack {
-                    //TODO: 이미지 추가
+                    // TODO: 이미지 추가
                     Image(.policy)
-                    
+
                     Text("약관 및 정책")
-                    
+
                     Spacer()
-                    
+
                     Image(.chevronRight)
                 }
-            }
-            
-            Button(action: {}) {
+            })
+
+            Button(action: {}, label: {
                 HStack {
                     Image(.notice)
-                    
+
                     Text("공지사항")
-                    
+
                     Spacer()
-                    
+
                     Image(.chevronRight)
                 }
-            }
-            
+            })
+
             HStack {
                 Image(.notice)
-                
-                //TODO: 버전 동적으로 변경
+
+                // TODO: 버전 동적으로 변경
                 Text("버전 정보 1.0.0")
-                
+
                 Spacer()
             }
         }

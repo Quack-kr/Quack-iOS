@@ -30,7 +30,7 @@ struct HomeBanner: View {
                                 .padding(.vertical, 2)
                                 .background(
                                     RoundedRectangle(cornerRadius: 4)
-                                        .foregroundStyle(Color(hex:"#171714"))
+                                        .foregroundStyle(Color(hex: "#171714"))
                                 )
                         }
                         .padding(.trailing, 12)
@@ -42,7 +42,7 @@ struct HomeBanner: View {
                     // padding 적용이 제대로 되지 않는 현상 -> Image width 제거로 해결
                     // TODO: why?
                     RoundedRectangle(cornerRadius: 8)
-                        .stroke(Color(hex:"#68675E"), lineWidth: 2)
+                        .stroke(Color(hex: "#68675E"), lineWidth: 2)
                     
                 )
             }
@@ -61,7 +61,7 @@ struct HomeBanner: View {
                 
                 Spacer()
             }
-            .background(Color(hex:"#2A2925"))
+            .background(Color(hex: "#2A2925"))
             .cornerRadius(8)
             
         }
