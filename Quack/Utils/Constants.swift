@@ -43,7 +43,7 @@ let RESTAURANT_CONS = [
     "비위생적이에요",
     "웨이팅이 길어요",
     "고기 안구워줘요"
-];
+]
 
 let RESTAURANT_CONS_IMG:[ImageResource] = [.clock, .clock, .clock, .clock, .clock, .clock, .clock, .clock, .clock, .clock, .clock, .clock, .clock, .clock, .clock];
 
@@ -58,8 +58,8 @@ let RESTAURANT_PROS = [
     "주차하기 좋아요",
     "서비스가 좋아요",
     "가성비가 진짜 좋아요"
-];
+]
 
-let RESTAURANT_PROS_IMG:[ImageResource] = [.clock, .clock, .clock, .clock, .clock, .clock, .clock, .clock, .clock, .clock];
+let RESTAURANT_PROS_IMG:[ImageResource] = [.clock, .clock, .clock, .clock, .clock, .clock, .clock, .clock, .clock, .clock]
 
 let TASTE = ["미친 맛", "맛있어요", "평범해요", "아쉬워요", "핵노맛"]

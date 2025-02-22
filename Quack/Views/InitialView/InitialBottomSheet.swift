@@ -112,7 +112,7 @@ struct InitialBottomSheet: View {
                             else {
                                 print("loginWithKakaoTalk() success.")
                                 _ = oauthToken
-                                print("토큰 : \(oauthToken?.accessToken)")
+                                print("토큰 : \(String(describing: oauthToken?.accessToken))")
 
                                 isSheetPresented.toggle() //TODO: dismiss() 사용시 왜 error?
                                 coordinator.push(.signUpView)

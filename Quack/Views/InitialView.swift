@@ -9,8 +9,8 @@ import SwiftUI
 import KakaoSDKUser
 
 struct InitialView: View {
-    @State private var isSheetPresented = true;
-    @State private var isEveryPolicySelected = false;
+    @State private var isSheetPresented = true
+    @State private var isEveryPolicySelected = false
     @State private var policyButtonColor = [Color](repeating: Color(hex:"#EFEEDF"), count: 4)
     @EnvironmentObject private var coordinator: Coordinator<Destination>
     @EnvironmentObject var user: CurrentUser
@@ -89,9 +89,8 @@ struct InitialView: View {
                 }
                 .disabled(true)
                 .opacity(0.5)
-                
-                
-                Button(action : {
+
+                Button(action: {
                     coordinator.push(.tabBarView)
                 }) {
                     Text("둘러보기")
