@@ -69,6 +69,17 @@ struct Alarm: Hashable {
     }
 }
 
+struct LiveRankingRestaurant {
+    let ranking: Int
+    let name: String
+    let category: String // TODO: Change to enum
+    let description: String
+    let img: String
+    let distance: Int
+    let avgPrice: Int // TODO: Add function to adjusting comma
+    let isOpen: Bool // TODO: Add function to return proper string
+}
+
 // MARK: - PostData
 struct GetPostData: Codable {
     let id: Int

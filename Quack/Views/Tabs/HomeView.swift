@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct HomeView: View {
+struct HomeView: View { // TODO: 1차 출시 시에 HomeView 제거하기 - Branch로 분기
     @EnvironmentObject private var coordinator: Coordinator<Destination>
     @State private var isSheetPresented = false
     @Binding var selection: Int

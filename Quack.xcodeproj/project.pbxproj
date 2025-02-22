@@ -83,6 +83,7 @@
 		93B434A62D328ECE0087C3ED /* QuackTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B434A52D328ECE0087C3ED /* QuackTests.swift */; };
 		93B434B02D328ECE0087C3ED /* QuackUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B434AF2D328ECE0087C3ED /* QuackUITests.swift */; };
 		93B434B22D328ECE0087C3ED /* QuackUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B434B12D328ECE0087C3ED /* QuackUITestsLaunchTests.swift */; };
+		93BB077C2D69C19300C7EE8B /* LiveRankingBlock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93BB077B2D69C19300C7EE8B /* LiveRankingBlock.swift */; };
 		93DD282C2D34D4C300C111E8 /* Color+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93DD282B2D34D4C300C111E8 /* Color+Extension.swift */; };
 		93DD58B32D64687400C1EF5B /* RestaurantFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93DD58B22D64687400C1EF5B /* RestaurantFeature.swift */; };
 		93DD58B52D647E7D00C1EF5B /* RestaurantCons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93DD58B42D647E7D00C1EF5B /* RestaurantCons.swift */; };
@@ -188,6 +189,7 @@
 		93B434AF2D328ECE0087C3ED /* QuackUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuackUITests.swift; sourceTree = "<group>"; };
 		93B434B12D328ECE0087C3ED /* QuackUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuackUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		93BB077A2D69A66400C7EE8B /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
+		93BB077B2D69C19300C7EE8B /* LiveRankingBlock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveRankingBlock.swift; sourceTree = "<group>"; };
 		93DD282B2D34D4C300C111E8 /* Color+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extension.swift"; sourceTree = "<group>"; };
 		93DD58B22D64687400C1EF5B /* RestaurantFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantFeature.swift; sourceTree = "<group>"; };
 		93DD58B42D647E7D00C1EF5B /* RestaurantCons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantCons.swift; sourceTree = "<group>"; };
@@ -238,6 +240,7 @@
 				9338F2682D59CC42009B151B /* HomeViewOverlay.swift */,
 				935E661C2D62F6CC002D2ACD /* MenuBlock.swift */,
 				93DD58B22D64687400C1EF5B /* RestaurantFeature.swift */,
+				93BB077B2D69C19300C7EE8B /* LiveRankingBlock.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -740,6 +743,7 @@
 				935BEFE62D5776BB00DAAA07 /* SearchBar.swift in Sources */,
 				93A9E34B2D4C031B0000E349 /* Enums.swift in Sources */,
 				938B7BA62D32C72C009B2CE8 /* Font+Extension.swift in Sources */,
+				93BB077C2D69C19300C7EE8B /* LiveRankingBlock.swift in Sources */,
 				935BF0002D5781E000DAAA07 /* MyPageEtc.swift in Sources */,
 				935BEFFA2D57810600DAAA07 /* MyPageDecibel.swift in Sources */,
 				FE05A7492D3D20EE0078E498 /* HomeView.swift in Sources */,

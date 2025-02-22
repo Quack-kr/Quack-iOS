@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct RestaurantFeature: View {
-    @State var isSelected: Bool = false
+    @State var isSelected: Bool = false // MARK: State variable이 여기 있는게 맞나?
     let imgResource: ImageResource
     let feature: String
 
