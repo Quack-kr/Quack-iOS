@@ -89,7 +89,7 @@ struct PointColorButtonTextModifier: ViewModifier {
     }
 }
 
-struct RestaurantDetailComponentBackgroundModifier: ViewModifier {
+struct RestaurantDetailComponentBGModifier: ViewModifier {
     func body(content: Content) -> some View {
         content
             .padding(.top, 32)

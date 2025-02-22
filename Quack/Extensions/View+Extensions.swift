@@ -29,6 +29,6 @@ extension View {
     }
 
     func restaurantDetailComponentBackgroundModifier() -> some View {
-        modifier(RestaurantDetailComponentBackgroundModifier())
+        modifier(RestaurantDetailComponentBGModifier())
     }
 }

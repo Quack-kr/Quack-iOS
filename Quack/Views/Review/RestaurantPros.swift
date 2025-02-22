@@ -16,11 +16,11 @@ struct RestaurantPros: View {
 
                 Spacer()
             }
-
-            ForEach(0 ..< RESTAURANT_PROS.count / 2) { row in
+            
+            ForEach(RestaurantProsEnum.allCases, id: \.self) { pros in
                 HStack(spacing: 16) {
-                    ForEach(0..<2) { col in
-                        RestaurantFeature(imgResource: RESTAURANT_PROS_IMG[row * 2 + col], feature: RESTAURANT_PROS[row * 2 + col])
+                    ForEach(0..<2) { _ in
+                        RestaurantFeature(imgResource: .chicken, feature: pros.text)
                     }
                 }
             }
