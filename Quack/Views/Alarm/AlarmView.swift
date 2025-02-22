@@ -9,9 +9,8 @@ import SwiftUI
 
 struct AlarmView: View {
     @EnvironmentObject private var coordinator: Coordinator<Destination>
-    @State private var alarms = ["", "checked", ""]
+    @State private var alarms: [Alarm] = [Alarm(title: "[이벤트] 꽥이 소개하는 찐 맛집!!", date: Date(), content: "", img: "", isChecked: true), Alarm(title: "", date: Date(), content: "", img: "")]
     @State private var isRoot = true
-    //    @State private var alarmPath = NavigationPath()
 
     var body: some View {
         ZStack {
@@ -20,12 +19,8 @@ struct AlarmView: View {
                     HStack {
                         Button(action: {
                             if true {
-                                //                                if alarmPath.isEmpty {
-                                // TODO: TabBarView로 이동
                                 coordinator.pop()
                             } else {
-                                // alarmPath.removeLast()
-
                                 withAnimation {
                                     isRoot.toggle()
                                 }
@@ -62,8 +57,6 @@ struct AlarmView: View {
                 .padding(.horizontal, 16)
 
                 if !alarms.isEmpty {
-                    // NavigationStack(path: $alarmPath) {
-
                     ZStack {
                         Color.background
 
@@ -72,16 +65,14 @@ struct AlarmView: View {
 
                                 Button(action: {
                                     isRoot.toggle()
-
-                                    //                                            alarmPath.append(alarm)
                                 }, label: {
                                     HStack {
                                         VStack(alignment: .leading, spacing: 8) {
-                                            Text("[이벤트] 꽥이 소개하는 찐 맛집!!")
+                                            Text(alarm.title)
                                                 .font(.pretendard(.number(800), size: 14))
                                                 .foregroundStyle(Color(hex: "#EFEEDF"))
 
-                                            Text("1시간 전")
+                                            Text(alarm.getTime())
                                                 .font(.pretendard(.number(500), size: 14))
                                                 .foregroundStyle(Color(hex: "#A8A7A1"))
                                         }
@@ -90,7 +81,7 @@ struct AlarmView: View {
                                     }
                                     .padding(.horizontal, 16)
                                     .padding(.vertical, 14)
-                                    .background(alarm == "checked" ? Color(hex: "#21211D") : Color(hex: "#323230"))
+                                    .background(alarm.isChecked ? Color(hex: "#21211D") : Color(hex: "#323230"))
                                     // FIXME: 색상 조건 변경하기
                                 })
                                 .labelsHidden()

@@ -11,25 +11,13 @@ struct SubstractBanner: View {
     var body: some View {
         VStack(spacing: 24) {
             HStack(alignment: .bottom) {
-                Text(
-                """
-                싫어하는 걸
-                싹 빼고
-                시작하자.
-                """
-                )
+                Text(SubstractBannerTitle)
                 .textModifier(.theJamsil, 700, 40, "#EFEEDF")
                 .multilineTextAlignment(/*@START_MENU_TOKEN@*/.leading/*@END_MENU_TOKEN@*/)
 
                 Spacer()
 
-                Text(
-                """
-                꽥은 당신이
-                뭘 먹고 싶은지
-                묻지 않아요
-                """
-                )
+                Text(SubstractBannerSubtitle)
                 .textModifier(.pretendard, 700, 22, "#323230")
                 .multilineTextAlignment(.trailing)
             }

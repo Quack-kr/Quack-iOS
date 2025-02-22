@@ -57,6 +57,18 @@ struct Menu {
     var description: String
 }
 
+struct Alarm: Hashable {
+    let title: String
+    let date: Date
+    let content: String
+    let img: String
+    var isChecked = false
+
+    func getTime() -> String {
+        return "1시간 전"
+    }
+}
+
 // MARK: - PostData
 struct GetPostData: Codable {
     let id: Int
