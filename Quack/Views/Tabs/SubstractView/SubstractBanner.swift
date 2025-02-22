@@ -20,9 +20,9 @@ struct SubstractBanner: View {
                 )
                 .textModifier(.theJamsil, 700, 40, "#EFEEDF")
                 .multilineTextAlignment(/*@START_MENU_TOKEN@*/.leading/*@END_MENU_TOKEN@*/)
-                
+
                 Spacer()
-                
+
                 Text(
                 """
                 꽥은 당신이
@@ -35,25 +35,25 @@ struct SubstractBanner: View {
             }
             .padding(.top, 24)
             .padding(.horizontal, 16)
-            
+
             ScrollView(.horizontal) {
                 HStack {
-                    ForEach(0 ..< FoodCategory.count) { ind in
-                        Button(action: {}) {
+                    ForEach(FoodCategory.allCases, id: \.self) { category in
+                        Button(action: {}, label: {
                             VStack {
                                 Image(.chicken)
+                                // Image(category)
                                     .frame(height: 36)
                                     .padding(9)
                                     .background(
                                         Circle()
-                                            .foregroundStyle(Color(hex:"#2A2925"))
-                                        
+                                            .foregroundStyle(Color(hex: "#2A2925"))
                                     )
-                                
-                                Text(FoodCategory[ind])
-                                    .textModifier(.pretendard,600,12,"#EFEEDF")
+
+                                Text("\(category.rawValue)")
+                                    .textModifier(.pretendard, 600, 12, "#EFEEDF")
                             }
-                        }
+                        })
                     }
                 }
                 .padding(.leading, 16)
@@ -63,7 +63,7 @@ struct SubstractBanner: View {
         }
         .background(
             Rectangle()
-                .foregroundStyle(Color(hex:"#171714"))
+                .foregroundStyle(Color(hex: "#171714"))
                 .ignoresSafeArea(edges: .top)
         )
     }

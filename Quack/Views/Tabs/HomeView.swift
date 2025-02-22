@@ -9,18 +9,18 @@ import SwiftUI
 
 struct HomeView: View {
     @EnvironmentObject private var coordinator: Coordinator<Destination>
-    @State private var isSheetPresented = false;
-    @Binding var selection: Int;
-    @State private var currentLocation = "왕십리";
-    let locations = CurrentLocation.allCases;
-    
+    @State private var isSheetPresented = false
+    @Binding var selection: Int
+    @State private var currentLocation = "왕십리"
+    let locations = CurrentLocation.allCases
+
     var body: some View {
         ScrollView {
             VStack(spacing: 16) {
                 HomeHeader(isSheetPresented: $isSheetPresented, selection: $selection)
-                
+
                 HomeBanner()
-                
+
                 HomeRestaurantList()
             }
         }

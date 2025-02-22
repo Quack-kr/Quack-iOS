@@ -24,7 +24,7 @@ struct RestaurantFeature: View {
         .padding(.trailing, 8)
         .background(
             RoundedRectangle(cornerRadius: 8)
-                .foregroundStyle(Color(hex:isSelected ? "#525250" : "#323230"))
+                .foregroundStyle(Color(hex: isSelected ? "#525250" : "#323230"))
         )
         .onTapGesture {
             // TODO: Add Review Manager

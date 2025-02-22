@@ -11,11 +11,11 @@ struct ReviewHeader: View {
     var body: some View {
         HStack(alignment: .center, spacing: 8) {
             Image(.chevronLeft)
-                .foregroundStyle(Color(hex:"#EFEEDF"))
-            
+                .foregroundStyle(Color(hex: "#EFEEDF"))
+
             Text("리뷰작성")
                 .textModifier(.theJamsil, 700, 20, "#EFEEDF")
-            
+
             Spacer()
         }
     }

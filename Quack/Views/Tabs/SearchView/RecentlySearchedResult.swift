@@ -21,10 +21,10 @@ struct RecentlySearchedResult: View {
                 Spacer()
                 
                 if !searchedTextArr.isEmpty {
-                    Button(action: { searchedTextArr.removeAll() }) {
+                    Button(action: { searchedTextArr.removeAll() }, label: {
                         Text("지우기")
                             .textModifier(.pretendard, 600, 12, "#D7D5C1")
-                    }
+                    })
                 }
             }
             
@@ -32,20 +32,20 @@ struct RecentlySearchedResult: View {
                 HStack(spacing: 4) {
                     ForEach(searchedTextArr, id: \.self) { searchedText in
                         HStack {
-                            Button(action: { searchingText = searchedText; }) {
+                            Button(action: { searchingText = searchedText; }, label: {
                                 Text(searchedText)
                                     .textModifier(.theJamsil, 700, 14, "#D7D5C1")
-                            }
-                            
-                            Button(action: { searchedTextArr.remove(at: searchedTextArr.firstIndex(of: searchedText)!) }) {
+                            })
+
+                            Button(action: { searchedTextArr.remove(at: searchedTextArr.firstIndex(of: searchedText)!) }, label: {
                                 Image(.erase)
-                            }
+                            })
                         }
                         .padding(.horizontal, 12)
                         .padding(.vertical, 8)
                         .background(
                             RoundedRectangle(cornerRadius: 15)
-                                .foregroundStyle(Color(hex:"#2A2925"))
+                                .foregroundStyle(Color(hex: "#2A2925"))
                         )
                     }
                 }
@@ -60,26 +60,26 @@ struct RecentlySearchedResult: View {
                 Spacer()
                 
                 if !searchedShopArr.isEmpty {
-                    Button(action: { searchedShopArr.removeAll() }) {
+                    Button(action: { searchedShopArr.removeAll() }, label: {
                         Text("지우기")
                             .textModifier(.pretendard, 600, 12, "#D7D5C1")
-                    }
+                    })
                 }
             }
             ScrollView(.horizontal) {
                 HStack(spacing: 14) {
                     ForEach(searchedShopArr, id: \.self) { searchedShop in
-                        Button(action: { searchingText = searchedShop.shopName; }) {
+                        Button(action: { searchingText = searchedShop.shopName }, label: {
                             VStack(spacing: 8) {
                                 Image(.dummyMenu) // TODO: 서버로부터 이미지 전송받기
                                     .resizable()
                                     .scaledToFit()
-                                    .frame(width:64)
+                                    .frame(width: 64)
                                 
                                 Text(searchedShop.shopName)
                                     .textModifier(.pretendard, 600, 12, "#D7D5C1")
                             }
-                        }
+                        })
                     }
                 }
             }

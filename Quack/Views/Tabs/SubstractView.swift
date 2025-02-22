@@ -8,23 +8,23 @@
 import SwiftUI
 
 struct SubstractView: View {
-    @State private var isSheetPresented = false;
-    @Binding var selection: Int;
-    
+    @State private var isSheetPresented = false
+    @Binding var selection: Int
+
     var body: some View {
         ScrollView {
-            VStack(spacing:0) {
+            VStack(spacing: 0) {
                 SubstractHeader(selection: $selection, isSheetPresented: $isSheetPresented)
-                
+
                 Spliter()
-                
+
                 SubstractBanner()
-                
+
                 Spliter()
-                
+
                 SubstractRestaurantList()
             }
-            
+
             Spacer()
         }
     }
@@ -32,5 +32,5 @@ struct SubstractView: View {
 
 #Preview {
     SubstractView(selection: .constant(2))
-        .background(Color(hex:"#171714"))
+        .background(Color(hex: "#171714"))
 }

@@ -12,14 +12,16 @@ struct ReviewWritingView: View {
         VStack {
             ReviewHeader()
                 .padding(.bottom, 32)
-            
+
             RestaurantDescription(restaurantName: "가게 이름", restaurantInfo: "가게 정보")
                 .padding(.bottom, 32)
 
             ReviewContent()
-            
+
             VStack {
-                Button(action: {}) {
+                Button(action: {
+
+                }, label: {
                     Text("다음")
                         .textModifier(.pretendard, 700, 18, "#171714")
                         .padding(.horizontal, 98)
@@ -28,7 +30,7 @@ struct ReviewWritingView: View {
                             RoundedRectangle(cornerRadius: 26)
                                 .foregroundStyle(.point)
                         )
-                }
+                })
             }
             .frame(maxWidth: .infinity)
             .padding(.top, 8)

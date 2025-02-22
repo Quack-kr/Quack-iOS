@@ -64,19 +64,19 @@ enum RestaurantCategory {
     case korean, japenese // TODO: Add Case
 }
 
-/** SubstractView  */
-//enum FoodCategory: CaseIterable {
-//    case chicken
-//    case pizza
-//    case hamburger
-//    case chinese
-//    case asian
-//    case sushi
-//    case gukbap
-//    case bunsik
-//    case jokbal
-//    case meat
-//    case korean
-//    case japense
-//    case italian
-//}
+/** SubstractView */
+ enum FoodCategory: String, CaseIterable {
+    case chicken = "치킨"
+    case pizza = "피자"
+    case hamburger = "햄버거"
+    case chinese = "중식"
+    case asian = "아시안"
+    case sushi = "초밥"
+    case gukbap = "국밥"
+    case bunsik = "분식"
+    case jokbal = "족발"
+    case meat = "고기"
+    case korean = "한식"
+    case japense = "일식"
+    case italian = "이탈리안"
+ }

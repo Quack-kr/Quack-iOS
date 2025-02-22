@@ -13,11 +13,10 @@ struct RestaurantPros: View {
             HStack {
                 Text("매장에서 좋았던 점은 없었나요?")
                     .textModifier(.theJamsil, 700, 18, "#EFEEDF")
-                
+
                 Spacer()
             }
-            
-            
+
             ForEach(0 ..< RESTAURANT_PROS.count / 2) { row in
                 HStack(spacing: 16) {
                     ForEach(0..<2) { col in

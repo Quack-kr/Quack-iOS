@@ -13,7 +13,7 @@ struct ReviewMenu: View {
             Text("어떤 메뉴를 도전하셨나요?")
                 .textModifier(.theJamsil, 700, 18, "#EFEEDF")
                 .padding(.bottom, 16)
-            
+
             ForEach(0..<10) { _ in
                 MenuBlock(menuName: "지루우동", menuPrice: "10,000")
             }

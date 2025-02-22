@@ -21,18 +21,18 @@ struct HomeViewOverlay: View {
 
                 HStack(spacing: 16) {
                     Button(action: {
-                        selection = 1; // FIXME: Button Tap Gesture 종료 전에 화면 전환이 됨.
-                    }) {
+                        selection = 1 // FIXME: Button Tap Gesture 종료 전에 화면 전환이 됨.
+                    }, label: {
                         Image(.search)
                             .frame(height: 24)
-                    }
+                    })
 
                     Button(action: {
                         coordinator.push(.alarmView)
-                    }) {
+                    }, label: {
                         Image(.notify)
                             .frame(height: 24)
-                    }
+                    })
                 }
             }
             .padding(.leading, 8)

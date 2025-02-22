@@ -21,13 +21,15 @@ struct SubstractHeader: View {
                     
                     Spacer()
                     
-                    Button(action:{ selection = 1; }){
+                    Button(action: { selection = 1 }, label: {
                         Image(.search)
-                    }
-                    
-                    Button(action:{}){
+                    })
+
+                    Button(action: {
+                        
+                    }, label: {
                         Image(.notify)
-                    }
+                    })
                 }
                 .padding(.horizontal, 16)
                 
@@ -36,7 +38,7 @@ struct SubstractHeader: View {
                     HStack(spacing: 16) {
                         Button(action: {
                             isSheetPresented.toggle()
-                        }) {
+                        }, label: {
                             HStack {
                                 Text("동네설정")
                                     .textModifier(.theJamsil, 700, 14, "#EFEEDF")
@@ -45,20 +47,24 @@ struct SubstractHeader: View {
                                     .frame(height: 12)
                             }
                             .substractViewButtonModifier(10)
-                        }
-                        
+                        })
+
                         HStack(spacing: 8) {
-                            Button(action: {}) {
+                            Button(action: {
+                                
+                            }, label: {
                                 Image(.menu)
                                     .frame(height: 19)
                                     .substractViewButtonModifier(10)
-                            }
-                            
-                            Button(action: {}) {
+                            })
+
+                            Button(action: {
+                                
+                            }, label: {
                                 Text("메뉴")
                                     .textModifier(.theJamsil, 700, 14, "#EFEEDF")
                                     .substractViewButtonModifier(10)
-                            }
+                            })
                         }
                     }
                 }
@@ -68,7 +74,7 @@ struct SubstractHeader: View {
             }
             .background(
                 Rectangle()
-                    .foregroundStyle(Color(hex:"#171714"))
+                    .foregroundStyle(Color(hex: "#171714"))
             )
         }
     }

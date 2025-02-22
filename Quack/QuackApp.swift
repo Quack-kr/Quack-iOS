@@ -21,7 +21,7 @@ struct QuackApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView().onOpenURL(perform: { url in // MARK: - onOpenURL()에 대해 학습하기
-                if (AuthApi.isKakaoTalkLoginUrl(url)) {
+                if AuthApi.isKakaoTalkLoginUrl(url) {
                    _ = AuthController.handleOpenUrl(url: url)
                 }
             })

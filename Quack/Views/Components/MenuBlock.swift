@@ -30,11 +30,11 @@ struct MenuBlock: View {
 
             Button(action: {
                 isMenuSelected.toggle()
-            }) {
+            }, label: {
                 Image(.checkCircle)
                     .renderingMode(/*@START_MENU_TOKEN@*/.template/*@END_MENU_TOKEN@*/)
-                    .foregroundStyle(isMenuSelected ? .point : Color(hex:"#EFEEDF"))
-            }
+                    .foregroundStyle(isMenuSelected ? .point : Color(hex: "#EFEEDF"))
+            })
 
         }
     }

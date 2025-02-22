@@ -9,17 +9,16 @@ import SwiftUI
 
 struct ReviewContent: View {
     var body: some View {
-            
-            NavigationStack {
-                ScrollView {
-                    VStack {
-                        ReviewRestaurant()
-//                        ReviewMenu()
-                    }
+        NavigationStack {
+            ScrollView {
+                VStack {
+                    ReviewRestaurant()
+                    //                        ReviewMenu()
                 }
-                .scrollIndicators(.hidden)
-                .background(Color.background)
-            }        
+            }
+            .scrollIndicators(.hidden)
+            .background(Color.background)
+        }        
     }
 }
 
