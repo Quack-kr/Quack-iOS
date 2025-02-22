@@ -90,7 +90,7 @@ struct SignUpView: View {
                     ZStack {
                         HStack {
                             // TODO: 서버로부터 전송받은 이메일로 변경
-                            Text("papa021326@naver.com")
+                            Text(user.email)
                                 .padding(.leading, 16)
                                 .textModifier(.pretendard, 700, 16, "#525250")
 
@@ -118,18 +118,6 @@ struct SignUpView: View {
             Spacer()
 
             Button(action: {
-                // 디버깅용 카카오 로그인 unlink 코드
-                /*
-                 UserApi.shared.unlink {(error) in
-                 if let error = error {
-                 print(error)
-                 }
-                 else {
-                 print("unlink() success.")
-                 }
-                 }
-                 */
-
                 user.isLogIn = true
                 coordinator.push(.tabBarView)
             }, label: {
@@ -145,7 +133,7 @@ struct SignUpView: View {
     func checkNickname() -> Bool {
         if nickname.count < 3 || nickname.count > 20 {
             return false
-        } else { return true; }
+        } else { return true }
     }
 }
 
