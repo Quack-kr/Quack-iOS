@@ -38,7 +38,7 @@ struct LiveRankingBlock: View {
                         .font(.pretendard(.number(600), size: 16))
                         .foregroundStyle(Color(hex: "#D7D5C1"))
 
-                    Text(restaurant.category)
+                    Text(restaurant.category.rawValue)
 
                 }
                 Text(restaurant.description)
@@ -53,5 +53,5 @@ struct LiveRankingBlock: View {
 }
 
 #Preview {
-    LiveRankingBlock(restaurant: LiveRankingRestaurant(ranking: 1, name: "고기천국", category: "분식", description: "1인 오너 쉐프가 운영하는 합리적인 가격의 가게", img: "", distance: 816, avgPrice: 8000, isOpen: true))
+    LiveRankingBlock(restaurant: LiveRankingRestaurant(ranking: 1, name: "고기천국", category: .bunsik, description: "1인 오너 쉐프가 운영하는 합리적인 가격의 가게", img: "", distance: 816, avgPrice: 8000, isOpen: true))
 }

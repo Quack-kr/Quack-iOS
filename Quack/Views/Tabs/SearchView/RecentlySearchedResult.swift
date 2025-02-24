@@ -13,7 +13,8 @@ struct RecentlySearchedResult: View {
     @Binding var searchedShopArr: [SearchedShop]
     
     var body: some View {
-        VStack(spacing: 14) { // Recently Searched Text
+        // TODO: RecentlySearchedText와 RecentlySearchedLocation 통합하는 방법 고민 해보기 -> protocol로 추상화해서?
+        VStack(spacing: 14) { // MARK: Recently Searched Text
             HStack {
                 Text("최근 검색어")
                     .textModifier(.theJamsil, 700, 14, "#EFEEDF")
@@ -52,7 +53,7 @@ struct RecentlySearchedResult: View {
             }
         }
         
-        VStack(spacing: 14) { // Recently Searched Location
+        VStack(spacing: 14) { // MARK: Recently Searched Location
             HStack {
                 Text("최근 검색 장소")
                     .textModifier(.theJamsil, 700, 14, "#EFEEDF")
@@ -89,4 +90,5 @@ struct RecentlySearchedResult: View {
 
 #Preview {
     RecentlySearchedResult(searchedTextArr: .constant([]), searchingText: .constant(""), searchedShopArr: .constant([]))
+        .background(Color.background)
 }

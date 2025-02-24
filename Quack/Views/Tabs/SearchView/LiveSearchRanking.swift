@@ -15,9 +15,9 @@ struct LiveSearchRanking: View {
                 .foregroundStyle(Color(hex: "#EFEEDF"))
             
             VStack(spacing: 16) {
-//                LiveRankingBlock()
-//
-//                LiveRankingBlock()
+                ForEach(0 ..< 5) { ind in
+                    LiveRankingBlock(restaurant: LiveRankingRestaurant(ranking: ind, name: "이름", category: .bunsik, description: "설명", img: "", distance: 0, avgPrice: 0, isOpen: false))
+                }
             }
         }
     }

@@ -69,15 +69,25 @@ struct Alarm: Hashable {
     }
 }
 
+// TODO: Make Restaurant Protocol
 struct LiveRankingRestaurant {
     let ranking: Int
     let name: String
-    let category: String // TODO: Change to enum
+    let category: FoodCategory // TODO: Change to enum
     let description: String
     let img: String
     let distance: Int
     let avgPrice: Int // TODO: Add function to adjusting comma
     let isOpen: Bool // TODO: Add function to return proper string
+}
+
+struct SearchedRestaurant {
+    let name: String
+    let category: FoodCategory // TODO: Change to enum
+    let img: String
+    let distance: Int
+    let avgPrice: Int
+    let isOpen: Bool
 }
 
 // MARK: - PostData
