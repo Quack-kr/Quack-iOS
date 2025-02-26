@@ -12,7 +12,7 @@ struct InitialView: View {
     @State private var isSheetPresented = true
     // TODO: BottomSheet에서 사용되는 변수인데 이것을 어떻게 분리하면 좋을지 생각해보기
     @State private var isAllSelected = false
-    @State private var policyButtonColor = [Color](repeating: Color(hex: "#EFEEDF"), count: 4)
+    @State private var buttonCheckList = [Bool](repeating: false, count: 4)
     @EnvironmentObject private var coordinator: Coordinator<Destination>
     @EnvironmentObject var user: CurrentUser
 
@@ -102,9 +102,8 @@ struct InitialView: View {
         .padding(.bottom, 29)
         .sheet(isPresented: $isSheetPresented, content: {
             InitialBottomSheet(
-                isAllSelected: $isAllSelected,
                 isSheetPresented: $isSheetPresented,
-                policyButtonColor: $policyButtonColor
+                buttonCheckList: $buttonCheckList
             )
         })
     }

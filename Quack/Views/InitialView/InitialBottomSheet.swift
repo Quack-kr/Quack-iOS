@@ -9,9 +9,10 @@ import SwiftUI
 import KakaoSDKUser
 
 struct InitialBottomSheet: View {
-    @Binding var isAllSelected: Bool
+    @State private var isAllSelected = false
     @Binding var isSheetPresented: Bool
-    @Binding  var policyButtonColor: [Color]
+    @Binding var buttonCheckList: [Bool]
+
     @EnvironmentObject private var coordinator: Coordinator<Destination>
 
     var body: some View {
@@ -31,11 +32,11 @@ struct InitialBottomSheet: View {
             VStack {
                 VStack(spacing: 16) {
                     Button(action: {
-                        isAllSelected = true
-
-                        for ind in policyButtonColor.indices {
-                            policyButtonColor[ind] = Color(.point)
+                        for ind in buttonCheckList.indices {
+                            buttonCheckList[ind] = true
                         }
+
+                        isAllSelected = true
                     }, label: {
                         HStack {
                             Image(.checkCircle)
@@ -57,15 +58,17 @@ struct InitialBottomSheet: View {
                     .foregroundStyle(isAllSelected ? Color.point : Color(hex: "#EFEEDF"))
 
                     VStack(spacing: 24) {
-                        ForEach(policyButtonColor.indices, id: \.self) { index in
+                        ForEach(buttonCheckList.indices, id: \.self) { index in
                             Button(action: {
-                                if policyButtonColor[index] == Color(hex: "#EFEEDF") {
-                                    policyButtonColor[index] = Color(.point)
-                                } else {
-                                    policyButtonColor[index] = Color(hex: "#EFEEDF")
-                                }
-                                if policyButtonColor.allSatisfy({ $0 == Color.point }) {
-                                    isAllSelected.toggle()
+                                print(buttonCheckList)
+                                buttonCheckList[index].toggle()
+                                print(index)
+
+                                 let primaryPolices = buttonCheckList.dropLast()
+                                print(primaryPolices)
+                                 if primaryPolices.allSatisfy({ $0 == true }) {
+                                     print("!")
+                                    isAllSelected = true
                                 } else {
                                     if isAllSelected {
                                         isAllSelected.toggle()
@@ -84,7 +87,7 @@ struct InitialBottomSheet: View {
                                     Image(.chevronRight)
                                         .renderingMode(.template)
                                 }
-                                .foregroundStyle(policyButtonColor[index])
+                                .foregroundStyle(buttonCheckList[index] ? Color(.point) : Color(hex: "#EFEEDF"))
                             })
                         }
                     }
@@ -136,9 +139,8 @@ struct InitialBottomSheet: View {
 
 #Preview {
     InitialBottomSheet(
-        isAllSelected: .constant(false),
         isSheetPresented: .constant(false),
-        policyButtonColor: .constant([Color](repeating: Color(hex: "#EFEEDF"), count: 4))
+        buttonCheckList: .constant([Bool](repeating: false, count: 4))
     )
     .background(Color.background)
 }
