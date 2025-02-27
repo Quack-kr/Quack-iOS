@@ -10,8 +10,10 @@ import KakaoSDKUser
 
 struct InitialBottomSheet: View {
     @State private var isAllSelected = false
+    @State private var policyButtons  = (0..<4).map { index in
+        PolicyButton(title: PolicyTitle[index], isChecked: false)
+    }
     @Binding var isSheetPresented: Bool
-    @Binding var buttonCheckList: [Bool]
 
     @EnvironmentObject private var coordinator: Coordinator<Destination>
 
@@ -32,8 +34,8 @@ struct InitialBottomSheet: View {
             VStack {
                 VStack(spacing: 16) {
                     Button(action: {
-                        for ind in buttonCheckList.indices {
-                            buttonCheckList[ind] = true
+                        for ind in policyButtons.indices {
+                            policyButtons[ind].isChecked = true
                         }
 
                         isAllSelected = true
@@ -58,16 +60,12 @@ struct InitialBottomSheet: View {
                     .foregroundStyle(isAllSelected ? Color.point : Color(hex: "#EFEEDF"))
 
                     VStack(spacing: 24) {
-                        ForEach(buttonCheckList.indices, id: \.self) { index in
+                        ForEach(policyButtons.indices, id: \.self) { index in
                             Button(action: {
-                                print(buttonCheckList)
-                                buttonCheckList[index].toggle()
-                                print(index)
+                                policyButtons[index].isChecked.toggle()
 
-                                 let primaryPolices = buttonCheckList.dropLast()
-                                print(primaryPolices)
-                                 if primaryPolices.allSatisfy({ $0 == true }) {
-                                     print("!")
+                                let primaryPolicyButtons = policyButtons.dropLast()
+                                if primaryPolicyButtons.allSatisfy({ $0.isChecked == true }) {
                                     isAllSelected = true
                                 } else {
                                     if isAllSelected {
@@ -79,7 +77,7 @@ struct InitialBottomSheet: View {
                                     Image(.checkCircle)
                                         .renderingMode(.template)
 
-                                    Text(PolicyTitle[index])
+                                    Text(policyButtons[index].title)
                                         .font(.pretendard(.number(500), size: 14))
 
                                     Spacer()
@@ -87,7 +85,7 @@ struct InitialBottomSheet: View {
                                     Image(.chevronRight)
                                         .renderingMode(.template)
                                 }
-                                .foregroundStyle(buttonCheckList[index] ? Color(.point) : Color(hex: "#EFEEDF"))
+                                .foregroundStyle(policyButtons[index].isChecked ? Color(.point) : Color(hex: "#EFEEDF"))
                             })
                         }
                     }
@@ -138,9 +136,6 @@ struct InitialBottomSheet: View {
 }
 
 #Preview {
-    InitialBottomSheet(
-        isSheetPresented: .constant(false),
-        buttonCheckList: .constant([Bool](repeating: false, count: 4))
-    )
+    InitialBottomSheet(isSheetPresented: .constant(false))
     .background(Color.background)
 }
