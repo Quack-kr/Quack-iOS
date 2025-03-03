@@ -11,16 +11,16 @@ struct RecentlySearchedResult: View {
     @Binding var searchedTextArr: [String]
     @Binding var searchingText: String
     @Binding var searchedShopArr: [SearchedShop]
-    
+
     var body: some View {
         // TODO: RecentlySearchedText와 RecentlySearchedLocation 통합하는 방법 고민 해보기 -> protocol로 추상화해서?
         VStack(spacing: 14) { // MARK: Recently Searched Text
             HStack {
                 Text("최근 검색어")
                     .textModifier(.theJamsil, 700, 14, "#EFEEDF")
-                
+
                 Spacer()
-                
+
                 if !searchedTextArr.isEmpty {
                     Button(action: { searchedTextArr.removeAll() }, label: {
                         Text("지우기")
@@ -28,7 +28,7 @@ struct RecentlySearchedResult: View {
                     })
                 }
             }
-            
+
             ScrollView(.horizontal) {
                 HStack(spacing: 4) {
                     ForEach(searchedTextArr, id: \.self) { searchedText in
@@ -52,14 +52,14 @@ struct RecentlySearchedResult: View {
                 }
             }
         }
-        
+
         VStack(spacing: 14) { // MARK: Recently Searched Location
             HStack {
                 Text("최근 검색 장소")
                     .textModifier(.theJamsil, 700, 14, "#EFEEDF")
-                
+
                 Spacer()
-                
+
                 if !searchedShopArr.isEmpty {
                     Button(action: { searchedShopArr.removeAll() }, label: {
                         Text("지우기")
@@ -76,7 +76,7 @@ struct RecentlySearchedResult: View {
                                     .resizable()
                                     .scaledToFit()
                                     .frame(width: 64)
-                                
+
                                 Text(searchedShop.shopName)
                                     .textModifier(.pretendard, 600, 12, "#D7D5C1")
                             }

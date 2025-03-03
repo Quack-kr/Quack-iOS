@@ -89,6 +89,7 @@ struct InitialView: View {
                 .opacity(0.5)
 
                 Button(action: {
+                    user.isLogIn = false
                     coordinator.push(.tabBarView)
                 }, label: {
                     Text("둘러보기")

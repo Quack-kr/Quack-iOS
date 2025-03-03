@@ -112,7 +112,7 @@ struct Reviews: View {
 }
 
 #Preview {
-    Reviews(reviews: [Review](repeating: 
+    Reviews(reviews: [Review](repeating:
                                 Review(
                                     id: 1,
                                     restaurantId: 1,

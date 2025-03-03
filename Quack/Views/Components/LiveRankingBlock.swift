@@ -49,6 +49,7 @@ struct LiveRankingBlock: View {
             .foregroundStyle(Color(hex: "#A8A7A1"))
             .font(.pretendard(.number(500), size: 12))
         }
+        .frame(maxWidth: .infinity, alignment: .leading)
     }
 }
 

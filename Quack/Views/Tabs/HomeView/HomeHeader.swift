@@ -11,19 +11,19 @@ struct HomeHeader: View {
     @Binding var isSheetPresented: Bool
     @Binding var selection: Int
     @EnvironmentObject private var coordinator: Coordinator<Destination>
-    
+
     var body: some View {
         HStack {
             Image(.logo)
                 .frame(height: 35)
-            
+
             Button(action: {
                 isSheetPresented.toggle()
             }, label: {
                 HStack {
                     Text("동네설정")
                         .textModifier(.theJamsil, 700, 14, "#EFEEDF")
-                    
+
                     Image(.chevronDown)
                         .frame(height: 12)
                 }
@@ -34,12 +34,12 @@ struct HomeHeader: View {
                     Rectangle()
                         .cornerRadius(10)
                         .foregroundStyle(Color(hex: "#2A2925"))
-                    
+
                 )
             })
 
             Spacer()
-            
+
             HStack(spacing: 16) {
                 Button(action: {
                     selection = 1 // TODO: Button Tap Gesture 종료 전에 화면 전환이 됨.

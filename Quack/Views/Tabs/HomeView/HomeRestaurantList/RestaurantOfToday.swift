@@ -13,9 +13,9 @@ struct RestaurantOfToday: View {
             HStack {
                 Text("엄선한 오늘의 가게") // TODO: Check Font Size
                     .textModifier(.theJamsil, 700, 18, "#EFEEDF")
-                
+
                 Spacer()
-                
+
                 Image(.chevronRight)
             }
             ScrollView(.horizontal) {
@@ -25,18 +25,18 @@ struct RestaurantOfToday: View {
                             .resizable()
                             .scaledToFit()
                             .frame(width: 140)
-                        
+
                         VStack(alignment: .leading) {
                             Text("김밥천국")
                                 .textModifier(.pretendard, 600, 14, "#EFEEDF")
-                            
+
                             Text("분식 | 왕십리")
                                 .textModifier(.pretendard, 600, 12, "#A8A7A1")
-                            
+
                             HStack {
                                 Text("816m")
                                     .foregroundStyle(.point)
-                                
+
                                 Text("평균 28,000원")
                                     .foregroundStyle(Color(hex: "#A8A7A1"))
                             }

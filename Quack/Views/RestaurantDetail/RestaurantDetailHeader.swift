@@ -9,27 +9,27 @@ import SwiftUI
 
 struct RestaurantDetailHeader: View {
     let restaurantName: String
-    
+
     var body: some View {
         VStack(spacing: 8) {
             VStack(spacing: 24) {
                 /** Substract Header */
                 HStack(spacing: 16) {
                     Image(.chevronLeft)
-                    
+
                     Text("\(restaurantName)")
                         .textModifier(.theJamsil, 700, 20, "#EFEEDF")
-                    
+
                     Spacer()
-                    
+
                     Button(action: {
-                        
+
                     }, label: {
                         Image(.share)
                     })
 
                     Button(action: {
-                        
+
                     }, label: {
                         Image(.book)
                             .renderingMode(/*@START_MENU_TOKEN@*/.template/*@END_MENU_TOKEN@*/)

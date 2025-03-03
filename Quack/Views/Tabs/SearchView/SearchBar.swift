@@ -12,7 +12,7 @@ struct SearchBar: View {
     var body: some View {
         HStack {
             Image(.chevronLeft)
-            
+
             HStack {
                 TextField(
                     "",
@@ -22,7 +22,7 @@ struct SearchBar: View {
                 )
                 .foregroundStyle(Color(hex: "#EFEEDF"))
                 .tint(.point)
-                
+
                 Button(action: {
                     if searchingText.isEmpty {
                         // TODO: 검색 기능
