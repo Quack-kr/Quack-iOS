@@ -47,7 +47,9 @@ extension PostService: TargetType {
 
     var task: Task {
         switch self {
-        case .login(let param), .signIn(let param):
+        case .login(let param):
+            return .requestJSONEncodable(param)
+        case .signIn(let param):
             return .requestJSONEncodable(param)
         case .logout, .initSignIn:
             return .requestPlain
