@@ -13,6 +13,8 @@ import KakaoSDKUser
 
 @main
 struct QuackApp: App {
+    @StateObject private var appState = AppState()
+    
     init() {
         // Kakao SDK 초기화
         KakaoSDK.initSDK(appKey: KakaoAppKey)
@@ -20,7 +22,9 @@ struct QuackApp: App {
     }
     var body: some Scene {
         WindowGroup {
-            ContentView().onOpenURL(perform: { url in // MARK: - onOpenURL()에 대해 학습하기
+            ContentView()
+                .environmentObject(appState)
+                .onOpenURL(perform: { url in // MARK: - onOpenURL()에 대해 학습하기
                 if AuthApi.isKakaoTalkLoginUrl(url) {
                    _ = AuthController.handleOpenUrl(url: url)
                 }

@@ -11,7 +11,7 @@ import Combine
 class APIClient {
     static let shared = APIClient()
     
-    private let baseURL = "https://api.quackapp.com/v1" // 실제 API 엔드포인트로 대체
+    private let baseURL = "https://localhost:3000" // TODO: 실제 API 엔드포인트로 대체
     private let session: URLSession
     
     init(session: URLSession = .shared) {

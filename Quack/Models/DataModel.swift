@@ -14,15 +14,6 @@ struct Like {
     var likeType: String // FIXME: Change to enum
 }
 
-struct User {
-    let id: Int
-    let providerType: SocialMediaType
-    let providerId: Int
-    let email: String
-    var nickname: String
-    var profileImg: String
-}
-
 struct Restaurant {
     let id: Int
     var name: String

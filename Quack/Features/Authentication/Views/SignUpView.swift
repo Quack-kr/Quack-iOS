@@ -10,7 +10,7 @@ import KakaoSDKUser
 
 struct SignUpView: View {
     @EnvironmentObject private var coordinator: Coordinator<Destination>
-    @EnvironmentObject var user: CurrentUser
+
     @State private var nickname = "붉은 탕수육 0001" // TODO: 서버로부터 생성받은 닉네임으로 초기 설정
     @State private var isNicknameProper = true
     @State private var nicknameInstructionText = NicknameInstructionText()
@@ -90,7 +90,7 @@ struct SignUpView: View {
                     ZStack {
                         HStack {
                             // TODO: 서버로부터 전송받은 이메일로 변경
-                            Text(user.email)
+                            Text("email")
                                 .padding(.leading, 16)
                                 .textModifier(.pretendard, 700, 16, "#525250")
 
@@ -108,7 +108,7 @@ struct SignUpView: View {
                             .foregroundStyle(Color(hex: "#323230"))
                     )
 
-                    Text("\(user.socialLoginType.rawValue)로 가입한 계정이에요.")
+                    Text("소셜 로그인 방식으로 가입한 계정이에요.") // TODO: 
                         .textModifier(.theJamsil, 400, 12, "#A8A7A1")
                         .padding(.leading, 16)
                 }
@@ -118,7 +118,6 @@ struct SignUpView: View {
             Spacer()
 
             Button(action: {
-                user.isLogIn = true
                 coordinator.push(.tabBarView)
             }, label: {
                 Text("시작하기")
@@ -140,5 +139,5 @@ struct SignUpView: View {
 #Preview {
     SignUpView()
         .background(Color.background)
-        .environmentObject(CurrentUser())
+
 }

@@ -10,9 +10,6 @@ import SwiftData
 
 struct ContentView: View {
     @ObservedObject private var coordinator = Coordinator<Destination>()
-    @StateObject var user = CurrentUser() // TODO: 현재 유저에 대한 정보를 어떻게 하위 뷰에게 전달 할 지
-    @StateObject var moyaProvider = PostViewModel()
-    
 
     var body: some View {
         ZStack {
@@ -41,9 +38,7 @@ struct ContentView: View {
                         }
                 }
             }
-            .environmentObject(user)
             .environmentObject(coordinator)
-            .environmentObject(moyaProvider)
             .background(Color.background)
         }
     }

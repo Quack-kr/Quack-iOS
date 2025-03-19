@@ -9,7 +9,7 @@ import Foundation
 import SwiftUI
 
 /**SignUpView**/
-enum SocialMediaType: String {
+enum SocialMediaType: String, Codable {
     init() {
         self = .kakao
     }
