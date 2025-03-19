@@ -16,6 +16,7 @@ struct InitialBottomSheet: View {
     @Binding var isSheetPresented: Bool
 
     @EnvironmentObject private var coordinator: Coordinator<Destination>
+    let socialLoginController = SocialLoginController()
 
     var body: some View {
         VStack {
@@ -103,24 +104,8 @@ struct InitialBottomSheet: View {
             Spacer()
 
             Button(action: {
-                // 카카오톡 실행 가능 여부 확인 TODO: 소셜 로그인 별 로직 분리 -> SocialLoginController 생성
-                if UserApi.isKakaoTalkLoginAvailable() {
-                    UserApi.shared.loginWithKakaoTalk {(oauthToken, error) in
-                        if let error = error {
-                            print(error)
-                        } else {
-                            print("loginWithKakaoTalk() success.")
-                            _ = oauthToken
-                            print("토큰 : \(String(describing: oauthToken?.accessToken))")
-
-                            isSheetPresented.toggle() // TODO: dismiss() 사용시 왜 error?
-                            coordinator.push(.signUpView)
-                        }
-                    }
-                }
-
-                isSheetPresented.toggle() // TODO: dismiss() 사용시 왜 error?
-                coordinator.push(.signUpView)
+                    isSheetPresented.toggle() // TODO: dismiss() 사용시 왜 error?
+                    coordinator.push(.signUpView)
             }, label: {
                 Text("다음으로")
                     .blockableButtonTextModifier($isAllSelected)

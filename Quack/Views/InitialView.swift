@@ -9,11 +9,13 @@ import SwiftUI
 import KakaoSDKUser
 
 struct InitialView: View {
-    @State private var isSheetPresented = true
+    @State private var isSheetPresented = false
     // TODO: BottomSheet에서 사용되는 변수인데 이것을 어떻게 분리하면 좋을지 생각해보기
     @State private var isAllSelected = false
     @EnvironmentObject private var coordinator: Coordinator<Destination>
     @EnvironmentObject var user: CurrentUser
+    @EnvironmentObject var moyaProvider: PostViewModel
+    let socialLoginController = SocialLoginController()
 
     var body: some View {
         VStack {
@@ -27,8 +29,23 @@ struct InitialView: View {
 
             VStack(spacing: 10) {
                 Button(action: {
-                    user.socialLoginType = .kakao
-                    isSheetPresented.toggle()
+                    Task {
+                        user.socialLoginType = .kakao
+
+                        if let accessToken = await socialLoginController.login(), !accessToken.isEmpty {
+                            if let loginResponse = await moyaProvider.requestLogin(LoginRequestParam(kakaoAccessToken: accessToken)) {
+                                if loginResponse.isNewUser {
+                                    isSheetPresented.toggle()
+                                } else {
+                                    coordinator.push(.tabBarView)
+                                }
+                            } else {
+                                print("Login failed or response is nil")
+                            }
+                        } else {
+                            print("Failed to get valid access token")
+                        }
+                    }
                 }, label: {
                     // TODO: 카카오 로그인 디자인 가이드 확인
                     HStack {
