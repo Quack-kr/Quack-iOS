@@ -12,34 +12,35 @@ class AuthState: ObservableObject {
     @Published var isLoading = false
     @Published var errorMessage: String?
     @Published var isLoggedIn: Bool = false
-    @Published var user: User?
-    
+    @Published var oAuthAccessToken: String?
+    @Published var socialLoginType: SocialLoginType?
+    @Published var isNewUser: Bool?
+    @Published var isOAuthCompleted: Bool = false
+
     private let authService: AuthServiceProtocol
-    private var cancellables = Set<AnyCancellable>()
-    
+
     init(authService: AuthServiceProtocol = AuthService()) {
         self.authService = authService
-        
-        // AuthManager 상태 감시
-        AuthManager.shared.$isLoggedIn
+
+        LoginManager.shared.$isLoggedIn
+            .receive(on: RunLoop.main) // UI 업데이트는 메인 스레드에서 수행
             .assign(to: &$isLoggedIn)
-        
-        AuthManager.shared.$currentUser
-            .assign(to: &$user)
     }
-    
-    func loginWithKakao() async {
+
+    func socialLogin(_ socialLoginType: SocialLoginType) async {
         await MainActor.run {
             isLoading = true
             errorMessage = nil
         }
-        
         do {
-            let user = try await authService.loginWithKakao()
-            
+//            let oAuthAccessToken = try await authService.socialLogin(socialLoginType)
+            let loginResponse = try await authService.login(socialLoginType)
             await MainActor.run {
-                self.user = user
+                self.oAuthAccessToken = loginResponse.jwtAccessToken
+                self.socialLoginType = socialLoginType
+                self.isOAuthCompleted = true
                 self.isLoading = false
+                self.isNewUser = loginResponse.isNewUser
             }
         } catch {
             await MainActor.run {
@@ -48,18 +49,20 @@ class AuthState: ObservableObject {
             }
         }
     }
-    
+
     func logout() async {
         await MainActor.run {
             isLoading = true
             errorMessage = nil
         }
-        
+
         do {
-            _ = try await authService.logout()
-            
+            try await authService.logout(socialLoginType!)
+
             await MainActor.run {
-                self.user = nil
+                self.oAuthAccessToken = nil
+                self.socialLoginType = nil
+                self.isOAuthCompleted = false
                 self.isLoading = false
             }
         } catch {

@@ -9,12 +9,15 @@ import Foundation
 import KakaoSDKUser
 import KakaoSDKAuth
 
-@MainActor
+ @MainActor
 class SocialLoginController: ObservableObject {
-    var socialLoginType: SocialMediaType = .kakao
     var oauthToken: OAuthToken?
 
-    func login() async -> String? {
+    nonisolated init() {
+
+    }
+
+    func socialLogin(_ socialLoginType: SocialLoginType) async -> String? {
         return await withCheckedContinuation { continuation in
             switch socialLoginType {
             case .kakao:
@@ -24,13 +27,16 @@ class SocialLoginController: ObservableObject {
                             print(error)
                             continuation.resume(returning: "")
                         } else {
-                            let token = oauthToken?.accessToken ?? ""
-                            continuation.resume(returning: token) 
+                            let oAuthAccessToken = oauthToken?.accessToken ?? ""
+                            continuation.resume(returning: oAuthAccessToken) 
                         }
                     }
                 } else {
                     continuation.resume(returning: "")
                 }
+            case .apple:
+                break
+
             default:
                 continuation.resume(returning: "")
             }

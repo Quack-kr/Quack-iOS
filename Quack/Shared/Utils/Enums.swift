@@ -9,13 +9,13 @@ import Foundation
 import SwiftUI
 
 /**SignUpView**/
-enum SocialMediaType: String, Codable {
+enum SocialLoginType: String, Codable, CaseIterable {
     init() {
         self = .kakao
     }
-    case kakao = "카카오"
-    case apple = "애플"
-    case naver = "네이버"
+    case kakao = "kakao"
+    case apple = "apple"
+    case naver = "naver"
 }
 
 enum NicknameInstructionText: String {

@@ -16,7 +16,7 @@ struct MyPageHeader: View {
             Spacer()
 
             Button(action: {
-
+                // TODO: Go to Setting View
             }, label: {
                 Image(.setting)
             })

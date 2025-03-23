@@ -10,129 +10,124 @@ import KakaoSDKUser
 
 struct SignUpView: View {
     @EnvironmentObject private var coordinator: Coordinator<Destination>
-
-    @State private var nickname = "붉은 탕수육 0001" // TODO: 서버로부터 생성받은 닉네임으로 초기 설정
-    @State private var isNicknameProper = true
-    @State private var nicknameInstructionText = NicknameInstructionText()
+    @StateObject private var signUpState: SignUpState = SignUpState()
+    @State private var showAlert = false
 
     var body: some View {
-        VStack(alignment: .leading) {
-            VStack(alignment: .leading, spacing: 8) {
-                Text("이것만 하면 회원가입 끝!")
-                    .textModifier(.pretendard, 800, 24, "#EFEEDF")
+                VStack(alignment: .leading) {
+                    VStack(alignment: .leading, spacing: 8) {
+                        Text("이것만 하면 회원가입 끝!")
+                            .textModifier(.pretendard, 800, 24, "#EFEEDF")
 
-                Text("꽥을 이용할 마지막 단계!")
-                    .textModifier(.pretendard, 400, 16, "#A8A7A1")
-            }
-            .padding(.top, 80)
-
-            Spacer()
-
-            VStack(spacing: 24) {
-                VStack(alignment: .leading, spacing: 8) {
-                    HStack {
-                        Text("닉네임")
-                            .textModifier(.theJamsil, 700, 14, "#A8A7A1")
-
-                        Spacer()
-
-                        Text("\(nickname.count)/20")
-                            .textModifier(.pretendard, 500, 14, "#A8A7A1")
+                        Text("꽥을 이용할 마지막 단계!")
+                            .textModifier(.pretendard, 400, 16, "#A8A7A1")
                     }
-                    ZStack {
-                        TextField("닉네임을 입력하세요.", text: $nickname)
-                            .padding(.leading, 16)
-                            .textModifier(.pretendard, 700, 16, "#EFEEDF")
-                            .onChange(of: nickname.count) {
+                    .padding(.top, 80)
 
-                                if nickname.count < 3 {
-                                    if isNicknameProper {
-                                        nicknameInstructionText = .short
-                                        isNicknameProper.toggle()
-                                    }
-                                } else if nickname.count > 20 {
-                                    if isNicknameProper {
-                                        nicknameInstructionText = .long
-                                        isNicknameProper.toggle()
-                                    }
-                                } else {
-                                    if !isNicknameProper {
-                                        nicknameInstructionText = .normal
-                                        isNicknameProper.toggle()
-                                    }
-                                }
+                    Spacer()
+
+                    VStack(spacing: 24) {
+                        VStack(alignment: .leading, spacing: 8) {
+                            HStack {
+                                Text("닉네임")
+                                    .textModifier(.theJamsil, 700, 14, "#A8A7A1")
+
+                                Spacer()
+
+                                Text("\(signUpState.nickname.count)/20")
+                                    .textModifier(.pretendard, 500, 14, "#A8A7A1")
                             }
+                            ZStack {
+                                TextField("닉네임을 입력하세요.", text: $signUpState.nickname)
+                                    .padding(.leading, 16)
+                                    .textModifier(.pretendard, 700, 16, "#EFEEDF")
+                                    .onChange(of: signUpState.nickname.count) {
+                                        signUpState.setInstructionByNicknameLength()
+                                    }
 
-                    }
-                    .padding(.vertical, 16)
-                    .background(
-                        RoundedRectangle(cornerRadius: 8)
-                            .foregroundStyle(Color(hex: "#323230"))
-                            .overlay(
+                            }
+                            .padding(.vertical, 16)
+                            .background(
                                 RoundedRectangle(cornerRadius: 8)
-                                    .stroke(.red, lineWidth: 1)
-                                    .opacity(isNicknameProper ? 0 : 1)
+                                    .foregroundStyle(Color(hex: "#323230"))
+                                    .overlay(
+                                        RoundedRectangle(cornerRadius: 8)
+                                            .stroke(.red, lineWidth: 1)
+                                            .opacity(signUpState.isNicknameProper ? 0 : 1)
+                                    )
                             )
-                    )
 
-                    Text(nicknameInstructionText.rawValue)
-                        .textModifier(.pretendard, 400, 12, isNicknameProper ? .point : .red)
-                        .padding(.leading, 16)
-                }
-
-                VStack(alignment: .leading, spacing: 8) {
-                    HStack {
-                        Text("이메일")
-                            .textModifier(.theJamsil, 700, 14, "#A8A7A1")
-
-                        Spacer()
-                    }
-                    ZStack {
-                        HStack {
-                            // TODO: 서버로부터 전송받은 이메일로 변경
-                            Text("email")
+                            Text(signUpState.nicknameInstructionText.rawValue)
+                                .textModifier(.pretendard, 400, 12, signUpState.isNicknameProper ? .point : .red)
                                 .padding(.leading, 16)
-                                .textModifier(.pretendard, 700, 16, "#525250")
-
-                            Spacer()
                         }
-                        .foregroundStyle(Color(hex: "#525250"))
-                        .background(
-                            RoundedRectangle(cornerRadius: 8)
-                                .foregroundStyle(Color(hex: "#323230"))
-                        )
+
+                        VStack(alignment: .leading, spacing: 8) {
+                            HStack {
+                                Text("이메일")
+                                    .textModifier(.theJamsil, 700, 14, "#A8A7A1")
+
+                                Spacer()
+                            }
+                            ZStack {
+                                HStack {
+                                    // TODO: 서버로부터 전송받은 이메일로 변경
+                                    Text(signUpState.email ?? "")
+                                        .padding(.leading, 16)
+                                        .textModifier(.pretendard, 700, 16, "#525250")
+
+                                    Spacer()
+                                }
+                                .foregroundStyle(Color(hex: "#525250"))
+                                .background(
+                                    RoundedRectangle(cornerRadius: 8)
+                                        .foregroundStyle(Color(hex: "#323230"))
+                                )
+                            }
+                            .padding(.vertical, 16)
+                            .background(
+                                RoundedRectangle(cornerRadius: 8)
+                                    .foregroundStyle(Color(hex: "#323230"))
+                            )
+
+                            Text("\(signUpState.getSocialLoginTypeName())으로 가입한 계정이에요.")
+                                .textModifier(.theJamsil, 400, 12, "#A8A7A1")
+                                .padding(.leading, 16)
+                        }
                     }
-                    .padding(.vertical, 16)
-                    .background(
-                        RoundedRectangle(cornerRadius: 8)
-                            .foregroundStyle(Color(hex: "#323230"))
-                    )
 
-                    Text("소셜 로그인 방식으로 가입한 계정이에요.") // TODO: 
-                        .textModifier(.theJamsil, 400, 12, "#A8A7A1")
-                        .padding(.leading, 16)
+                    Spacer()
+                    Spacer()
+
+                    Button(action: {
+                        Task {
+                            await signUpState.signup(nickname: signUpState.nickname)
+
+                            if signUpState.isRegister {
+                                coordinator.push(.tabBarView)
+                            } else {
+                                showAlert = true
+                            }
+                        }
+
+                    }, label: {
+                        Text("시작하기")
+                            .blockableButtonTextModifier($signUpState.isNicknameProper)
+                    })
+                    .disabled(signUpState.isNicknameProper ? false : true)
+
                 }
-            }
-
-            Spacer()
-            Spacer()
-
-            Button(action: {
-                coordinator.push(.tabBarView)
-            }, label: {
-                Text("시작하기")
-                    .blockableButtonTextModifier($isNicknameProper)
-            })
-            .disabled(isNicknameProper ? false : true)
-
-        }
-        .padding(.horizontal, 16)
-    }
-
-    func checkNickname() -> Bool {
-        if nickname.count < 3 || nickname.count > 20 {
-            return false
-        } else { return true }
+                .padding(.horizontal, 16)
+                .onAppear {
+                    Task {
+                        await signUpState.getInitialSignUpInfo()
+                    }
+                }
+                .alert("회원가입 실패", isPresented: $showAlert) {
+                    Button("확인", role: .cancel) { }
+                } message: {
+                    Text(signUpState.errorMessage ?? "중복된 닉네임입니다. 다시 설정해주세요.")
+                }
     }
 }
 

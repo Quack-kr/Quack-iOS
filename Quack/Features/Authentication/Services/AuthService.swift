@@ -1,69 +1,119 @@
-// AuthService.swift
+//
+//  AuthServiceImpl.swift
+//  Quack
+//
+//  Created by 차차 on 3/23/25.
+//
+
 import Foundation
 import Moya
+import Combine
 
-enum AuthService {
-    case kakaoLogin(accessToken: String)
-    case appleLogin(idToken: String)
-    case naverLogin(accessToken: String)
-    case logout
-}
+class AuthService: AuthServiceProtocol {
+    private let provider: MoyaProvider<AuthEndpoint>
+    private let socialLoginController: SocialLoginController
 
-extension AuthService: TargetType {
-    var baseURL: URL {
-        return URL(string: "https://localhost:3000/")! // 실제 서버 URL로 변경 필요
+    init(provider: MoyaProvider<AuthEndpoint> = MoyaProvider<AuthEndpoint>(plugins: [NetworkLoggerPlugin()]),
+         socialLoginController: SocialLoginController = SocialLoginController()) {
+        self.provider = provider
+        self.socialLoginController = socialLoginController
     }
-    
-    var path: String { // TODO: 소셜 로그인 타입 변수로 전달받아서 return값 설정
-        switch self {
-        case .kakaoLogin:
-            return "/auth/login/kakao"
-        case .appleLogin:
-            return "/auth/login/apple"
-        case .naverLogin:
-            return "/auth/login/naver"
-        case .logout:
-            return "/auth/logout/"
+
+    func login(_ socialLoginType: SocialLoginType) async throws -> LoginResponse {
+        do {
+
+            guard let oAuthAccessToken = await socialLoginController.socialLogin(socialLoginType) else {
+                throw APIError.unauthorized
+            }
+
+            return try await loginToQuack(.login(oAuthAccessToken: oAuthAccessToken, socialLoginType: socialLoginType.rawValue), socialLoginType)
+        } catch {
+            throw error
         }
     }
-    
-    var method: Moya.Method {
-        switch self {
-        case .kakaoLogin, .appleLogin, .naverLogin:
-            return .post
-        case .logout: // TODO: DELETE
-            return .delete
+
+    // ✅
+    func logout(_ socialLoginType: SocialLoginType) async throws {
+        return try await withCheckedThrowingContinuation { continuation in
+            provider.request(.logout(socialLoginType: socialLoginType.rawValue)) { result in
+                switch result {
+                case .success:
+                    LoginManager.shared.clearJWTToken()
+                    continuation.resume(returning: ())
+                case .failure(let error):
+                    continuation.resume(throwing: APIError.networkError(error))
+                }
+            }
         }
     }
-    
-    var task: Task {
-        switch self {
-        case .kakaoLogin(let accessToken):
-            return .requestParameters(
-                parameters: ["Kakao-Access-token": accessToken],
-                encoding: JSONEncoding.default
-            )
-        case .appleLogin(let idToken):
-            return .requestParameters(
-                parameters: ["idToken": idToken], // TODO: Need to Change
-                encoding: JSONEncoding.default
-            )
-        case .naverLogin(let accessToken):
-            return .requestParameters(
-                parameters: ["accessToken": accessToken], // TODO: Need to Change
-                encoding: JSONEncoding.default
-            )
-        case .logout:
-            return .requestPlain
+
+    // ✅
+    func getInitialSignUpInfo() async throws -> SignUpInfo {
+        return try await withCheckedThrowingContinuation { continuation in
+            provider.request(.getInitialSignUpInfo) { result in
+                switch result {
+                case .success(let response):
+                    do {
+                        let signUpInfo = try JSONDecoder().decode(SignUpInfo.self, from: response.data)
+
+                        continuation.resume(returning: signUpInfo)
+                    } catch {
+                        continuation.resume(throwing: APIError.decodingFailure(error))
+                    }
+                case .failure(let error):
+                    continuation.resume(throwing: APIError.networkError(error))
+                }
+            }
         }
     }
-    
-    var headers: [String: String]? {
-        return ["Content-type": "application/json"]
+
+    // ✅
+    func signup(nickname: String) async throws -> Bool {
+        return try await withCheckedThrowingContinuation { continuation in
+            provider.request(.signup(nickname: nickname)) { result in
+                switch result {
+                case .success(let response):
+                    do {
+                        let signUpResponse = try JSONDecoder().decode(SignUpResponse.self, from: response.data)
+
+                        continuation.resume(returning: signUpResponse.isRegister)
+                    } catch {
+                        continuation.resume(throwing: APIError.decodingFailure(error))
+                    }
+                case .failure(let error):
+                    continuation.resume(throwing: APIError.networkError(error))
+                }
+            }
+        }
     }
-    
-    var sampleData: Data {
-        // 테스트용 샘플 데이터
-        return Data()
+
+    // ✅
+    private func loginToQuack(_ endpoint: AuthEndpoint, _ socialLoginType: SocialLoginType) async throws -> LoginResponse {
+        return try await withCheckedThrowingContinuation { continuation in
+            provider.request(endpoint) { result in
+                switch result {
+                case .success(let response):
+                    do {
+                        let loginResponse = try JSONDecoder().decode(LoginResponse.self, from: response.data)
+
+                        LoginManager.shared.saveJWTToken(
+                            loginResponse.jwtAccessToken,
+                            loginResponse.jwtRefreshToken,
+                            socialLoginType
+                        )
+
+                        LoginManager.shared.saveLoginResponse(loginResponse, socialLoginType)
+
+//                        continuation.resume(returning: LoginManager.shared.loginResponse)
+                        continuation.resume(returning: loginResponse)
+//                        continuation.resume(returning: LoginManager.shared.jwtAccessToken!)
+                    } catch {
+                        continuation.resume(throwing: APIError.decodingFailure(error))
+                    }
+                case .failure(let error):
+                    continuation.resume(throwing: APIError.networkError(error))
+                }
+            }
+        }
     }
 }

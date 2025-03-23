@@ -8,6 +8,8 @@
 import Foundation
 
 class AppState: ObservableObject {
+    static let shared = AppState()
+    
     // 1. 사용자 인증 관련 상태
     @Published var currentUser: User?
     @Published var isLoggedIn: Bool = false

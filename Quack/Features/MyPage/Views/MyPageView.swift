@@ -10,6 +10,7 @@ import SwiftUI
 struct MyPageView: View {
     @EnvironmentObject private var coordinator: Coordinator<Destination>
     @State private var hackGongGam: Double = 0.2
+    @StateObject var mypageState = MyPageState()
 
     var body: some View {
         VStack(spacing: 24) {

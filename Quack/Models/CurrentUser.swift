@@ -8,7 +8,7 @@
 import Foundation
 
 class CurrentUser: ObservableObject {
-    @Published var socialLoginType = SocialMediaType()
+    @Published var socialLoginType = SocialLoginType()
     @Published var isLogIn = false
     @Published var email = "papa021326@naver.com"
 }

@@ -4,3 +4,4 @@ disabled_rules:
 - line_length
 - identifier_name
 - force_cast
+- type_body_length

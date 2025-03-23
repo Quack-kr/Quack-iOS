@@ -14,8 +14,6 @@ struct LoginResponse: Codable {
 }
 
 struct SignInInitResponse: Codable {
-    // let socialType: SocialMediaType
     let email: String
     let nickname: String
 }
-

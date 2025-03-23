@@ -10,3 +10,4 @@
 
 KakaoAppKey = 0a65923ee2966bb3bcdc7f81a4b9759b
 NaverClientId = jmwccev36s
+ServerURI = http://192.168.35.163:3000
