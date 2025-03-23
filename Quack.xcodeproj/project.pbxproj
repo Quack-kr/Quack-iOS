@@ -107,11 +107,9 @@
 		FE65ABCE2D8B282D0029BA19 /* NetworkMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE65ABCD2D8B282D0029BA19 /* NetworkMonitor.swift */; };
 		FE65ABD62D8B28A80029BA19 /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE65ABD52D8B28A80029BA19 /* AuthManager.swift */; };
 		FE65ABDA2D8B2F100029BA19 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE65ABD92D8B2F100029BA19 /* AuthService.swift */; };
-		FE65ABDC2D8B2FA70029BA19 /* AuthEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE65ABDB2D8B2FA70029BA19 /* AuthEndpoint.swift */; };
 		FE65ABDE2D8B2FCA0029BA19 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE65ABDD2D8B2FCA0029BA19 /* User.swift */; };
-		FE65ABE02D8B2FF10029BA19 /* UserDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE65ABDF2D8B2FF10029BA19 /* UserDTO.swift */; };
 		FE65ABE22D8B30230029BA19 /* AuthState.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE65ABE12D8B30230029BA19 /* AuthState.swift */; };
-		FE65ABE42D8B31770029BA19 /* ResponseModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE65ABE32D8B31770029BA19 /* ResponseModels.swift */; };
+		FE65ABE62D8B35E30029BA19 /* OAuthDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE65ABE52D8B35E20029BA19 /* OAuthDTO.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -235,11 +233,9 @@
 		FE65ABCD2D8B282D0029BA19 /* NetworkMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkMonitor.swift; sourceTree = "<group>"; };
 		FE65ABD52D8B28A80029BA19 /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
 		FE65ABD92D8B2F100029BA19 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
-		FE65ABDB2D8B2FA70029BA19 /* AuthEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthEndpoint.swift; sourceTree = "<group>"; };
 		FE65ABDD2D8B2FCA0029BA19 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		FE65ABDF2D8B2FF10029BA19 /* UserDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDTO.swift; sourceTree = "<group>"; };
 		FE65ABE12D8B30230029BA19 /* AuthState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthState.swift; sourceTree = "<group>"; };
-		FE65ABE32D8B31770029BA19 /* ResponseModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseModels.swift; sourceTree = "<group>"; };
+		FE65ABE52D8B35E20029BA19 /* OAuthDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OAuthDTO.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -856,8 +852,7 @@
 		FE65ABD12D8B28670029BA19 /* DTOs */ = {
 			isa = PBXGroup;
 			children = (
-				FE65ABDF2D8B2FF10029BA19 /* UserDTO.swift */,
-				FE65ABE32D8B31770029BA19 /* ResponseModels.swift */,
+				FE65ABE52D8B35E20029BA19 /* OAuthDTO.swift */,
 			);
 			path = DTOs;
 			sourceTree = "<group>";
@@ -865,7 +860,6 @@
 		FE65ABD22D8B286D0029BA19 /* Endpoints */ = {
 			isa = PBXGroup;
 			children = (
-				FE65ABDB2D8B2FA70029BA19 /* AuthEndpoint.swift */,
 			);
 			path = Endpoints;
 			sourceTree = "<group>";
@@ -1089,7 +1083,6 @@
 				935BEFE12D57759800DAAA07 /* RestaurantOfToday.swift in Sources */,
 				935BEFEA2D5778DE00DAAA07 /* LiveSearchRanking.swift in Sources */,
 				9338F25D2D59A577009B151B /* Spliter.swift in Sources */,
-				FE65ABDC2D8B2FA70029BA19 /* AuthEndpoint.swift in Sources */,
 				93DD58B32D64687400C1EF5B /* RestaurantFeature.swift in Sources */,
 				93B434952D328ECC0087C3ED /* ContentView.swift in Sources */,
 				93DD58B72D647E8800C1EF5B /* RestaurantPros.swift in Sources */,
@@ -1099,6 +1092,7 @@
 				935BEFEF2D577C7C00DAAA07 /* CustomModifier.swift in Sources */,
 				9389FC552D32ACE60092F336 /* InitialView.swift in Sources */,
 				FE05A74F2D3D32970078E498 /* SubstractView.swift in Sources */,
+				FE65ABE62D8B35E30029BA19 /* OAuthDTO.swift in Sources */,
 				935BF01A2D57BF6A00DAAA07 /* RestaurantDetailHeader.swift in Sources */,
 				935BEFD82D57741600DAAA07 /* HomeHeader.swift in Sources */,
 				FE65ABDE2D8B2FCA0029BA19 /* User.swift in Sources */,
@@ -1107,7 +1101,6 @@
 				935BEFFC2D57816400DAAA07 /* MyPageReview.swift in Sources */,
 				935E66192D62F65B002D2ACD /* ReviewRestaurant.swift in Sources */,
 				935BEFDF2D57756A00DAAA07 /* RestaurantListRanking.swift in Sources */,
-				FE65ABE42D8B31770029BA19 /* ResponseModels.swift in Sources */,
 				FE17E6332D8B1E0900A24779 /* View+Extensions.swift in Sources */,
 				931297A72D5726B600E44AF3 /* InitialBottomSheet.swift in Sources */,
 				935BF0162D57A33E00DAAA07 /* Report.swift in Sources */,
@@ -1120,7 +1113,6 @@
 				93A9E34F2D4D0B270000E349 /* SearchedShop.swift in Sources */,
 				93A9E3442D4BC5AC0000E349 /* AlarmContentView.swift in Sources */,
 				9377FEFA2D6AFD20006904BA /* SearchResultView.swift in Sources */,
-				FE65ABE02D8B2FF10029BA19 /* UserDTO.swift in Sources */,
 				935BEFFE2D5781A900DAAA07 /* MyPageCSCenter.swift in Sources */,
 				FE05A74D2D3D319D0078E498 /* SearchView.swift in Sources */,
 				93DD58B52D647E7D00C1EF5B /* RestaurantCons.swift in Sources */,
