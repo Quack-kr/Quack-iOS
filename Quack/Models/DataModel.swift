@@ -14,15 +14,6 @@ struct Like {
     var likeType: String // FIXME: Change to enum
 }
 
-struct User {
-    let id: Int
-    let providerType: SocialMediaType
-    let providerId: Int
-    let email: String
-    var nickname: String
-    var profileImg: String
-}
-
 struct Restaurant {
     let id: Int
     var name: String
@@ -67,6 +58,27 @@ struct Alarm: Hashable {
     func getTime() -> String {
         return "1시간 전"
     }
+}
+
+// TODO: Make Restaurant Protocol
+struct LiveRankingRestaurant {
+    let ranking: Int
+    let name: String
+    let category: FoodCategory // TODO: Change to enum
+    let description: String
+    let img: String
+    let distance: Int
+    let avgPrice: Int // TODO: Add function to adjusting comma
+    let isOpen: Bool // TODO: Add function to return proper string
+}
+
+struct SearchedRestaurant {
+    let name: String
+    let category: FoodCategory // TODO: Change to enum
+    let img: String
+    let distance: Int
+    let avgPrice: Int
+    let isOpen: Bool
 }
 
 // MARK: - PostData

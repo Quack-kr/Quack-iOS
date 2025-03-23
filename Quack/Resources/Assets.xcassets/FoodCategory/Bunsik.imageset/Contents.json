@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "bunsik.svg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>kakao${KakaoAppKey}</string>
+			</array>
+		</dict>
+	</array>
+	<key>KakaoAppKey</key>
+	<string>$(KakaoAppKey)</string>
+	<key>LSApplicationQueriesSchemes</key>
+	<array>
+		<string>kakaokompassauth</string>
+		<string>kakaolink</string>
+		<string>kakaoplus</string>
+	</array>
+	<key>NMFClientId</key>
+	<string>$(NaverClientId)</string>
+	<key>UIAppFonts</key>
+	<array>
+		<string>PretendardVariable.ttf</string>
+		<string>TheJamsilThin.otf</string>
+		<string>TheJamsilLight.otf</string>
+		<string>TheJamsilRegular.otf</string>
+		<string>TheJamsilMedium.otf</string>
+		<string>TheJamsilBold.otf</string>
+		<string>TheJamsilExtraBold.otf</string>
+	</array>
+</dict>
+</plist>
