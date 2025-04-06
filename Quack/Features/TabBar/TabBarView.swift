@@ -57,7 +57,7 @@ struct TabBarView: View {
                             .font(.pretendard(.number(400)))
                             .foregroundStyle(Color(hex: "#EFEEDF"))
                     }.tag(2)
-                    .background(Color(hex: "#171714"))
+                    .background(Color.background)
 
                 MyPageView()
                     .tabItem {

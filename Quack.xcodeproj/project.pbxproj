@@ -452,13 +452,13 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
-		FE17E5FC2D8B1D9800A24779 /* Alarm */ = {
+		FE17E5FC2D8B1D9800A24779 /* Alarm_Demo */ = {
 			isa = PBXGroup;
 			children = (
 				FE17E5F82D8B1D9800A24779 /* Components */,
 				FE17E5FB2D8B1D9800A24779 /* Views */,
 			);
-			path = Alarm;
+			path = Alarm_Demo;
 			sourceTree = "<group>";
 		};
 		FE17E5FD2D8B1D9800A24779 /* Authentication */ = {
@@ -491,13 +491,13 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
-		FE17E6022D8B1D9800A24779 /* Home */ = {
+		FE17E6022D8B1D9800A24779 /* Home_Demo */ = {
 			isa = PBXGroup;
 			children = (
 				FE17E5FE2D8B1D9800A24779 /* Components */,
 				FE17E6012D8B1D9800A24779 /* Views */,
 			);
-			path = Home;
+			path = Home_Demo;
 			sourceTree = "<group>";
 		};
 		FE17E6032D8B1D9800A24779 /* Components */ = {
@@ -521,7 +521,7 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
-		FE17E6072D8B1D9800A24779 /* MyPage */ = {
+		FE17E6072D8B1D9800A24779 /* MyPage_Demo */ = {
 			isa = PBXGroup;
 			children = (
 				9387BCDB2D90383D003AE729 /* MyPageEndpoint.swift */,
@@ -531,7 +531,7 @@
 				FE17E6032D8B1D9800A24779 /* Components */,
 				FE17E6062D8B1D9800A24779 /* Views */,
 			);
-			path = MyPage;
+			path = MyPage_Demo;
 			sourceTree = "<group>";
 		};
 		FE17E6082D8B1D9800A24779 /* Components */ = {
@@ -630,13 +630,13 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
-		FE17E6162D8B1D9800A24779 /* Search */ = {
+		FE17E6162D8B1D9800A24779 /* Search_Demo */ = {
 			isa = PBXGroup;
 			children = (
 				FE17E6122D8B1D9800A24779 /* Components */,
 				FE17E6152D8B1D9800A24779 /* Views */,
 			);
-			path = Search;
+			path = Search_Demo;
 			sourceTree = "<group>";
 		};
 		FE17E6172D8B1D9800A24779 /* Components */ = {
@@ -686,13 +686,13 @@
 			isa = PBXGroup;
 			children = (
 				FE65ABC32D8B249C0029BA19 /* TabBar */,
-				FE17E5FC2D8B1D9800A24779 /* Alarm */,
+				FE17E5FC2D8B1D9800A24779 /* Alarm_Demo */,
 				FE17E5FD2D8B1D9800A24779 /* Authentication */,
 				FE17E60C2D8B1D9800A24779 /* RestaurantDetail */,
-				FE17E6022D8B1D9800A24779 /* Home */,
-				FE17E6072D8B1D9800A24779 /* MyPage */,
+				FE17E6022D8B1D9800A24779 /* Home_Demo */,
+				FE17E6072D8B1D9800A24779 /* MyPage_Demo */,
 				FE17E6112D8B1D9800A24779 /* Review */,
-				FE17E6162D8B1D9800A24779 /* Search */,
+				FE17E6162D8B1D9800A24779 /* Search_Demo */,
 				FE17E61B2D8B1D9800A24779 /* Substract */,
 			);
 			path = Features;
