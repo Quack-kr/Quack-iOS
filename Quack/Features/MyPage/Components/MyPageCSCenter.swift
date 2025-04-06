@@ -13,7 +13,9 @@ struct MyPageCSCenter: View {
             Text("고객센터")
                 .textModifier(.theJamsil, 700, 18, "#EFEEDF")
 
-            Button(action: {}, label: {
+            Button(action: {
+
+            }, label: {
                 HStack {
                     Image(.inquiry)
 
@@ -25,6 +27,8 @@ struct MyPageCSCenter: View {
                     Image(.chevronRight)
                 }
             })
+            .opacity(0.5)
+            .disabled(true)
 
         }
         .textModifier(.pretendard, 400, 16, "#EFEEDF")
