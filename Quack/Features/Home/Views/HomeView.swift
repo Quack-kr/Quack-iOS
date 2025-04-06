@@ -7,32 +7,14 @@
 
 import SwiftUI
 
-struct HomeView: View { // TODO: 1차 출시 시에 HomeView 제거하기 - Branch로 분기
-    @EnvironmentObject private var coordinator: Coordinator<Destination>
-    @State private var isSheetPresented = false
-    @Binding var selection: Int
-    @State private var currentLocation = "왕십리"
-    let locations = CurrentLocation.allCases
+struct HomeView: View {
 
     var body: some View {
-        ScrollView {
-            VStack(spacing: 16) {
-                HomeHeader(isSheetPresented: $isSheetPresented, selection: $selection)
 
-                HomeBanner()
-
-                HomeRestaurantList()
-            }
-        }
-        .scrollIndicators(.hidden)
-        .padding(.horizontal, 16)
-        .sheet(isPresented: $isSheetPresented, content: {
-            HomeBottomSheet(currentLocation: $currentLocation, isSheetPresented: $isSheetPresented)
-        })
     }
 }
 
 #Preview {
-    HomeView(selection: .constant(0))
+    HomeView()
         .background(Color.background)
 }
