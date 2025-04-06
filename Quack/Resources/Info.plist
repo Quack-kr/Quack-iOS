@@ -33,5 +33,7 @@
 		<string>TheJamsilBold.otf</string>
 		<string>TheJamsilExtraBold.otf</string>
 	</array>
+	<key>ServerURI</key>
+	<string>$(ServerURI)</string>
 </dict>
 </plist>
