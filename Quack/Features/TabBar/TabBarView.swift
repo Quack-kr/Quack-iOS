@@ -45,6 +45,7 @@ struct TabBarView: View {
                             .foregroundStyle(Color(hex: "#EFEEDF"))
                     }.tag(1)
                     .background(Color.background)
+                    .overlay(SearchViewOverlay())
 
                 SubstractView(selection: $selection)
                     .tabItem {
