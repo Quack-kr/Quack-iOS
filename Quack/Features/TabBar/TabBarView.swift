@@ -20,7 +20,7 @@ struct TabBarView: View {
                 content: {
 
             Group {
-                HomeView(selection: $selection)
+                HomeView()
                     .tabItem {
                         VStack {
                             Image(.home)
