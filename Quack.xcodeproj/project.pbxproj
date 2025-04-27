@@ -185,6 +185,7 @@
 		93A9E34A2D4C031B0000E349 /* Enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
 		93A9E34C2D4C03B90000E349 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		93A9E34E2D4D0B270000E349 /* SearchedShop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchedShop.swift; sourceTree = "<group>"; };
+		93AEB4302DBE2901001C0DB3 /* Quack.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Quack.entitlements; sourceTree = "<group>"; };
 		93B4348F2D328ECC0087C3ED /* Quack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Quack.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		93B434922D328ECC0087C3ED /* QuackApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuackApp.swift; sourceTree = "<group>"; };
 		93B434942D328ECC0087C3ED /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -401,6 +402,7 @@
 		93B434912D328ECC0087C3ED /* Quack */ = {
 			isa = PBXGroup;
 			children = (
+				93AEB4302DBE2901001C0DB3 /* Quack.entitlements */,
 				FE17E61C2D8B1D9800A24779 /* Features */,
 				FE860AC72D8B188700AA1C75 /* Shared */,
 				FE860AC42D8B181600AA1C75 /* Core */,
@@ -1238,6 +1240,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Quack/Quack.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Quack/Preview Content\"";
@@ -1276,6 +1279,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Quack/Quack.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Quack/Preview Content\"";
