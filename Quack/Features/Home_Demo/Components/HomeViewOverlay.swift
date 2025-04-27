@@ -26,6 +26,7 @@ struct HomeViewOverlay: View {
                         Image(.search)
                             .frame(height: 24)
                     })
+                    .disabled(true) // FIXME: 검색 기능 구현 후 버튼 비활성화 해제하기
 
                     Button(action: {
                         coordinator.push(.alarmView)
@@ -33,6 +34,8 @@ struct HomeViewOverlay: View {
                         Image(.notify)
                             .frame(height: 24)
                     })
+                    .disabled(true) // FIXME: 알림 기능 구현 후 버튼 비활성화 해제하기
+                    .opacity(0.5)
                 }
             }
             .padding(.leading, 8)

@@ -39,12 +39,14 @@ struct MyPageEtc: View {
                     Image(.chevronRight)
                 }
             })
+            .disabled(true)
+            .opacity(0.5)
 
             HStack {
                 Image(.notice)
 
                 // TODO: 버전 동적으로 변경
-                Text("버전 정보 1.0.0")
+                Text("버전 정보 0.1.0")
 
                 Spacer()
             }

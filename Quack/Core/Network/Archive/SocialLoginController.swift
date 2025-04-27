@@ -9,12 +9,11 @@ import Foundation
 import KakaoSDKUser
 import KakaoSDKAuth
 
- @MainActor
+@MainActor
 class SocialLoginController: ObservableObject {
     var oauthToken: OAuthToken?
 
     nonisolated init() {
-
     }
 
     func socialLogin(_ socialLoginType: SocialLoginType) async -> String? {

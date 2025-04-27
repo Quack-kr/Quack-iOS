@@ -30,6 +30,8 @@ struct SubstractHeader: View {
                     }, label: {
                         Image(.notify)
                     })
+                    .disabled(true)
+                    .opacity(0.5)
                 }
                 .padding(.horizontal, 16)
                 

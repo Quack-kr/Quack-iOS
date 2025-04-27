@@ -26,10 +26,9 @@ extension AuthEndpoint: TargetType {
     var path: String {
         switch self {
         case .login(_, let socialLoginType):
-            return "/auth/login/\(socialLoginType)"
-
+            return "/auth/login/?client_type=\"\(socialLoginType)\""
         case .logout(let socialLoginType):
-            return "/auth/logout/\(socialLoginType)"
+            return "/auth/logout"
         case .getInitialSignUpInfo, .signup:
             return "/registration"
         }

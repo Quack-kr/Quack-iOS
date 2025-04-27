@@ -103,7 +103,7 @@ struct SignUpView: View {
                         Task {
                             await signUpState.signup(nickname: signUpState.nickname)
 
-                            if signUpState.isRegister {
+                            if signUpState.isRegister { // TODO : 테스크 분리하기, 현재 로직 분리가 필요함.
                                 coordinator.push(.tabBarView)
                             } else {
                                 showAlert = true
